@@ -16,7 +16,7 @@ const Project = Joi.object().keys({
 		.min(1)
 		.required(),
 	keywords: Joi.array()
-		.items(Joi.string())
+		.items(Joi.string().min(1))
 		.required(),
 	language: Joi.string()
 		.valid(languages)
@@ -27,4 +27,7 @@ const schema = Joi.array().items(Project);
 
 Joi.validate(projects, schema)
 	.then(console.log)
-	.catch(console.warn);
+	.catch(error => {
+		console.warn(error.details);
+		process.exit(1);
+	});
