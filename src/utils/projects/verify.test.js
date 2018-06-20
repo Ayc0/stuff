@@ -6,6 +6,7 @@ const languages = require('../languages/').default;
 
 const Project = Joi.object().keys({
 	name: Joi.string().required(),
+	description: Joi.string().required(),
 	sources: Joi.object()
 		.keys({
 			github: Joi.string(),

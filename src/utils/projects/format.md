@@ -9,6 +9,7 @@
     "pypi": "String"
   },
   "keywords": ["String"],
+  "description": "!String",
   "language": "!String"
 }
 ```
