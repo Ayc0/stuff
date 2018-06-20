@@ -1,1 +1,52 @@
-[]
+[
+	{
+		"name": "MicroBundle",
+		"sources": {
+			"github": "https://github.com/developit/microbundle",
+			"npm": "http://npmjs.com/package/microbundle"
+		},
+		"keywords": ["js", "build", "tool"],
+		"language": "JavaScript",
+		"description": "Zero-configuration bundler for tiny modules"
+	},
+	{
+		"name": "Preact",
+		"sources": {
+			"github": "https://github.com/developit/preact",
+			"npm": "http://npmjs.com/package/preact"
+		},
+		"keywords": ["js", "framework", "react", "jsx", "small"],
+		"language": "JavaScript",
+		"description": "Fast 3kB React alternative with the same modern API. Components & Virtual DOM"
+	},
+	{
+		"name": "Mitt",
+		"sources": {
+			"github": "https://github.com/developit/mitt",
+			"npm": "http://npmjs.com/package/mitt"
+		},
+		"keywords": ["js", "event"],
+		"language": "JavaScript",
+		"description": "Tiny 200 byte functional event emitter / pubsub"
+	},
+	{
+		"name": "DLV",
+		"sources": {
+			"github": "https://github.com/developit/dlv",
+			"npm": "http://npmjs.com/package/dlv"
+		},
+		"keywords": ["js", "deep", "property"],
+		"language": "JavaScript",
+		"description": "Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"
+	},
+	{
+		"name": "Tags Input",
+		"sources": {
+			"github": "https://github.com/developit/tags-input",
+			"npm": "http://npmjs.com/package/tags-input"
+		},
+		"keywords": ["js", "html", "css", "input", "tags"],
+		"language": "JavaScript",
+		"description": "<input type=\"tags\"> like magic"
+	}
+]
