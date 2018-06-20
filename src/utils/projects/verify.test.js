@@ -2,7 +2,9 @@ const Joi = require('joi');
 
 const projects = require('./projects.json');
 
-const languages = require('../languages/').default;
+const languages = require('../languages/list.json');
+
+const languagesList = Object.keys(languages);
 
 const Project = Joi.object().keys({
 	name: Joi.string().required(),
@@ -19,7 +21,7 @@ const Project = Joi.object().keys({
 		.items(Joi.string().min(1))
 		.required(),
 	language: Joi.string()
-		.valid(languages)
+		.valid(languagesList)
 		.required()
 });
 
