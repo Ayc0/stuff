@@ -7,7 +7,6 @@ export default (config, env, helpers) => {
 
 	// Add Emotion in babelrc
 	babelConfig.plugins.push('emotion');
-	console.log(babelConfig);
 
 	// Set alias for $
 	config.resolve.alias['%'] = path.resolve(__dirname, 'src');
