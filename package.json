@@ -32,7 +32,9 @@
 	},
 	"dependencies": {
 		"emotion": "^9.2.3",
+		"fuse.js": "^3.2.1",
 		"joi": "^13.4.0",
+		"lodash": "^4.17.10",
 		"preact": "^8.2.6",
 		"preact-compat": "^3.17.0",
 		"preact-emotion": "^9.2.3",
