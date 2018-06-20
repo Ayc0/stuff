@@ -5,13 +5,15 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-		"build": "preact build",
+		"build": "rm -rf build && preact build",
 		"serve": "preact build && preact serve",
 		"dev": "preact watch",
 		"lint": "eslint src",
 		"test:projects": "node src/utils/projects/verify.test.js",
 		"test": "yarn test:projects",
-		"deploy": "yarn test && rm -rf build && preact build && git add build && git commit -am $npm_package_version && git tag $npm_package_version && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages"
+		"deploy": "yarn test && yarn build && yarn deploy:tag && yarn deploy:publish_build",
+		"deploy:tag": "git add build && git commit -am $npm_package_version && git tag $npm_package_version",
+		"deploy:publish_build": "git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages"
 	},
 	"eslintConfig": {
 		"extends": "eslint-config-synacor"
