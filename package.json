@@ -11,7 +11,7 @@
 		"lint": "eslint src",
 		"test:projects": "node src/utils/projects/verify.test.js",
 		"test": "yarn test:projects",
-		"deploy": "yarn test && preact build && git add build && git commit -am $npm_package_version && git tag $npm_package_version && git subtree push --prefix build origin gh-pages && rm -rf build"
+		"deploy": "yarn test && preact build && git add build && git commit -am $npm_package_version && git tag $npm_package_version && git subtree push --prefix build origin gh-pages"
 	},
 	"eslintConfig": {
 		"extends": "eslint-config-synacor"
