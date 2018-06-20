@@ -453,7 +453,7 @@ preact_router_es_Router.Link = preact_router_es_Link;
 var _ref = Object(preact_min["h"])(
   'div',
   null,
-  'Favorite Projects'
+  'Favorite Projects rest'
 );
 
 var FavoriteProjects = function FavoriteProjects() {
