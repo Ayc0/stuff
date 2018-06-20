@@ -6,26 +6,29 @@ const languages = require('../languages/list.json');
 
 const languagesList = Object.keys(languages);
 
-const Project = Joi.object().keys({
-	name: Joi.string().required(),
-	description: Joi.string().required(),
-	sources: Joi.object()
-		.keys({
-			github: Joi.string(),
-			npm: Joi.string(),
-			pypi: Joi.string()
-		})
+const object = keys => Joi.object().keys(keys);
+const array = items => Joi.array().items(items);
+const string = () => Joi.string();
+const url = () => string().uri();
+
+const Project = object({
+	name: string().required(),
+	description: string().required(),
+	sources: object({
+		website: url(),
+		github: url(),
+		npm: url(),
+		pypi: url()
+	})
 		.min(1)
 		.required(),
-	keywords: Joi.array()
-		.items(Joi.string().min(1))
-		.required(),
-	language: Joi.string()
+	keywords: array(string()).required(),
+	language: string()
 		.valid(languagesList)
 		.required()
 });
 
-const schema = Joi.array().items(Project);
+const schema = array(Project);
 
 Joi.validate(projects, schema)
 	.then(console.log)

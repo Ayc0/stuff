@@ -4,6 +4,7 @@
 {
   "name": "!String",
   "sources": {
+    "website": "String",
     "github": "String",
     "npm": "String",
     "pypi": "String"
