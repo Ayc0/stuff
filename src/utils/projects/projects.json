@@ -68,5 +68,15 @@
     "keywords": ["search", "fuzzy"],
     "language": "JavaScript",
     "description": "Lightweight fuzzy-search library"
+  },
+  {
+    "name": "docz",
+    "sources": {
+      "website": "https://www.docz.site/",
+      "github": "https://github.com/pedronauck/docz/"
+    },
+    "keywords": ["doc", "mardown", "mdx", "playground"],
+    "language": "JavaScript",
+    "description": "It has never been so easy to document your things!"
   }
 ]
