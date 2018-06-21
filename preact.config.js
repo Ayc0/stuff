@@ -10,8 +10,9 @@ export default (config, env, helpers) => {
   babelConfig.plugins.push('emotion');
 
   // Alias sources location
-  config.output.publicPath = '/stuff/';
-
+  if (env.isProd) {
+    config.output.publicPath = '/stuff/';
+  }
   // Set alias for $
   config.resolve.alias['%'] = path.resolve(__dirname, 'src');
 };
