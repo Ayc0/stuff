@@ -8,13 +8,12 @@
     "build": "rm -rf build && preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src",
+    "test:lint": "eslint src",
     "test:projects": "node src/utils/projects/verify.test.js",
-    "test": "yarn lint && yarn test:projects",
-    "deploy": "yarn test && yarn build && yarn deploy:alias_stuff && yarn deploy:tag && yarn deploy:publish_build",
+    "test": "yarn test:lint && yarn test:projects",
     "deploy:tag": "git add build && git commit -am $npm_package_version && git tag $npm_package_version",
     "deploy:publish_build": "git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages",
-    "deploy:alias_stuff": "sed -i 's/href=\"\\//href=\"\\/stuff\\//g' build/index.html && sed -i 's/src=\"\\//src=\"\\/stuff\\//g' build/index.html"
+    "deploy": "yarn test && yarn build && yarn deploy:tag && yarn deploy:publish_build"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor",
