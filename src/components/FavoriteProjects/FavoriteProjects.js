@@ -4,6 +4,7 @@ import flatten from 'lodash/flatten';
 import uniq from 'lodash/uniq';
 
 import Search from '%/components/Search';
+import Row from '%/components/Row';
 import Tag from '%/components/Tag';
 import projects, { search } from '%/utils/projects';
 
@@ -24,12 +25,15 @@ class FavoriteProjects extends Component {
     const keywords = uniq(flatten(this.projects.map(project => project.keywords))).sort();
     return (
       <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Search placeholder="Search library" value={term} onChange={this.onChange} />
-          <div style={{ display: 'flex', width: '40%', flexWrap: 'wrap', maxHeight: '6.2em', overflow: 'auto' }}>
-            {keywords.map(keyword => <Tag>{keyword}</Tag>)}
-          </div>
-        </div>
+        <Search
+          placeholder="Search library"
+          value={term}
+          onChange={this.onChange}
+          style={{ wrapper: { maxWidth: '15em' } }}
+        />
+        <Row style={{ padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' }}>
+          {keywords.map(keyword => <Tag>{keyword}</Tag>)}
+        </Row>
         <table>
           {Object.entries(categories).map(([categoryName, categoryProjects]) => [
             <thead key={`head_${categoryName}`}>

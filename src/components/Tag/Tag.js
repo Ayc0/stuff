@@ -8,7 +8,7 @@ const Wrapper = styled.div(
   {
     border: 'none',
     borderRadius: '1em',
-    margin: '3px',
+    margin: '3px 5px',
     padding: '.25em .5em',
     fontWeight: 600
   },
