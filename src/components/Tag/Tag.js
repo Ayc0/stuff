@@ -29,11 +29,20 @@ const Label = styled.label({
 
 let counter = 0;
 
-const Tag = ({ active, children, onToggle, color, ...props }) => {
+const isString = string => typeof string === 'string' || string instanceof String;
+
+const childrenIsString = children =>
+  isString(children) || (Array.isArray(children) && children.length === 1 && isString(children[0]));
+
+const Tag = ({ active, onToggle, color, ...props }) => {
   const id = `tag__${counter++}`;
+
+  const name = props.name || (childrenIsString(props.children) && props.children + '');
+  const children = props.children || [props.name];
+
   return (
     <Wrapper active={active} color={color}>
-      <Checkbox id={id} type="checkbox" checked={active} onChange={getValue(onToggle)} />
+      <Checkbox id={id} type="checkbox" checked={active} value={name} onChange={getValue(onToggle)} />
       <Label htmlFor={id}>{children}</Label>
     </Wrapper>
   );
@@ -43,6 +52,7 @@ Tag.defaultProps = {
   color: 'primary',
   active: false,
   onToggle: () => {},
+  name: '',
   children: null
 };
 
