@@ -3607,6 +3607,68 @@ Search_Search.defaultProps = {
 /* harmony default export */ var components_Search_Search = (Search_Search);
 // CONCATENATED MODULE: ./components/Search/index.js
 
+// CONCATENATED MODULE: ./components/Row/Row.js
+var Row__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+var Row = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+  target: 'e8ztj3d0'
+})(function (props) {
+  var justifyContent = void 0;
+  var alignItems = void 0;
+
+  if (props.right) {
+    justifyContent = 'flex-end';
+  } else if (props.middle) {
+    justifyContent = 'center';
+  } else {
+    justifyContent = 'flex-start';
+  }
+
+  if (props.top) {
+    alignItems = 'flex-start';
+  } else if (props.bottom) {
+    alignItems = 'flex-end';
+  } else {
+    alignItems = 'center';
+  }
+
+  if (props.column) {
+    var _ref = [alignItems, justifyContent];
+    justifyContent = _ref[0];
+    alignItems = _ref[1];
+  }
+
+  if (props.spaceBetween) {
+    justifyContent = 'space-between';
+  }
+
+  return Row__extends({
+    display: 'flex',
+    flexDirection: props.column ? 'column' : 'row',
+    flexWrap: props.wrap && 'wrap',
+    justifyContent: justifyContent,
+    alignItems: alignItems
+  }, props.style);
+});
+
+Row.defaultProps = {
+  column: false,
+  left: true,
+  center: undefined,
+  right: undefined,
+  spaceBetween: undefined,
+  top: undefined,
+  bottom: undefined,
+  middle: undefined,
+  wrap: undefined,
+  style: {}
+};
+
+/* harmony default export */ var Row_Row = (Row);
+// CONCATENATED MODULE: ./components/Row/index.js
+
 // CONCATENATED MODULE: ./components/Tag/Tag.js
 
 
@@ -3623,7 +3685,7 @@ var Tag_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
 })({
   border: 'none',
   borderRadius: '1em',
-  margin: '3px',
+  margin: '3px 5px',
   padding: '.25em .5em',
   fontWeight: 600
 }, function (_ref) {
@@ -3727,6 +3789,7 @@ function FavoriteProjects__inherits(subClass, superClass) { if (typeof superClas
 
 
 
+
 var FavoriteProjects_FavoriteProjects = function (_Component) {
   FavoriteProjects__inherits(FavoriteProjects, _Component);
 
@@ -3762,21 +3825,22 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
     return Object(preact_min["h"])(
       'div',
       null,
+      Object(preact_min["h"])(components_Search_Search, {
+        placeholder: 'Search library',
+        value: term,
+        onChange: this.onChange,
+        style: { wrapper: { maxWidth: '15em' } }
+      }),
       Object(preact_min["h"])(
-        'div',
-        { style: { display: 'flex', justifyContent: 'space-between' } },
-        Object(preact_min["h"])(components_Search_Search, { placeholder: 'Search library', value: term, onChange: this.onChange }),
-        Object(preact_min["h"])(
-          'div',
-          { style: { display: 'flex', width: '40%', flexWrap: 'wrap', maxHeight: '6.2em', overflow: 'auto' } },
-          keywords.map(function (keyword) {
-            return Object(preact_min["h"])(
-              components_Tag_Tag,
-              null,
-              keyword
-            );
-          })
-        )
+        Row_Row,
+        { style: { padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' } },
+        keywords.map(function (keyword) {
+          return Object(preact_min["h"])(
+            components_Tag_Tag,
+            null,
+            keyword
+          );
+        })
       ),
       Object(preact_min["h"])(
         'table',
