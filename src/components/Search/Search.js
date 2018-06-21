@@ -8,7 +8,8 @@ import MagnifyingGlass from './MagnifyingGlass';
 
 const Wrapper = styled.div({
   position: 'relative',
-  fontSize: '1.2em'
+  fontSize: '1.2em',
+  height: '1.6em'
 });
 
 const MGWrapper = styled.div({
@@ -19,6 +20,7 @@ const MGWrapper = styled.div({
 
 const Input = styled.input({
   backgroundColor: 'inherit',
+  width: 'calc(100% - 1.5em)',
   borderRadius: '2em',
   paddingLeft: '1.5em',
   height: '100%',
@@ -49,14 +51,17 @@ class Search extends Component {
 
   input = null;
 
-  render({ onChange, ...props }) {
+  render({ onChange, style, ...props }) {
+    const wrapperStyle = style.wrapper || {};
+    const inputStyle = style.input || {};
     return (
-      <Wrapper>
+      <Wrapper style={wrapperStyle}>
         <MGWrapper onClick={this.setFocus}>
           <MagnifyingGlass color={this.state.focus ? getColor('primary-d1') : 'black'} size="1.2em" />
         </MGWrapper>
         <Input
           {...props}
+          style={inputStyle}
           innerRef={this.ref}
           type="text"
           onInput={getValue(onChange)}
