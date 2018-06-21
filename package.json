@@ -21,7 +21,8 @@
       "indent": [
         "error",
         2
-      ]
+      ],
+      "react/jsx-indent-props": "off"
     }
   },
   "eslintIgnore": [
@@ -41,9 +42,11 @@
     "fuse.js": "^3.2.1",
     "joi": "^13.4.0",
     "lodash": "^4.17.10",
+    "node-sass": "^4.9.0",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-emotion": "^9.2.3",
-    "preact-router": "^2.5.7"
+    "preact-router": "^2.5.7",
+    "sass-loader": "^7.0.3"
   }
 }
