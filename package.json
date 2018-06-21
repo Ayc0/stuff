@@ -16,7 +16,13 @@
 		"deploy:publish_build": "git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages"
 	},
 	"eslintConfig": {
-		"extends": "eslint-config-synacor"
+    "extends": "eslint-config-synacor",
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ]
+    }
 	},
 	"eslintIgnore": [
 		"build/*"

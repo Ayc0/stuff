@@ -1,72 +1,72 @@
 [
-	{
-		"name": "MicroBundle",
-		"sources": {
-			"github": "https://github.com/developit/microbundle",
-			"npm": "http://npmjs.com/package/microbundle"
-		},
-		"keywords": ["js", "build", "tool"],
-		"language": "JavaScript",
-		"description": "Zero-configuration bundler for tiny modules"
-	},
-	{
-		"name": "Preact",
-		"sources": {
-			"github": "https://github.com/developit/preact",
-			"npm": "http://npmjs.com/package/preact"
-		},
-		"keywords": ["js", "framework", "react", "jsx", "small"],
-		"language": "JavaScript",
-		"description": "Fast 3kB React alternative with the same modern API. Components & Virtual DOM"
-	},
-	{
-		"name": "Mitt",
-		"sources": {
-			"github": "https://github.com/developit/mitt",
-			"npm": "http://npmjs.com/package/mitt"
-		},
-		"keywords": ["js", "event"],
-		"language": "JavaScript",
-		"description": "Tiny 200 byte functional event emitter / pubsub"
-	},
-	{
-		"name": "DLV",
-		"sources": {
-			"github": "https://github.com/developit/dlv",
-			"npm": "http://npmjs.com/package/dlv"
-		},
-		"keywords": ["js", "deep", "property"],
-		"language": "JavaScript",
-		"description": "Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"
-	},
-	{
-		"name": "Tags Input",
-		"sources": {
-			"github": "https://github.com/developit/tags-input",
-			"npm": "http://npmjs.com/package/tags-input"
-		},
-		"keywords": ["js", "html", "css", "input", "tags"],
-		"language": "JavaScript",
-		"description": "<input type=\"tags\"> like magic"
-	},
-	{
-		"name": "NumPy",
-		"sources": {
-			"github": "https://github.com/numpy/numpy",
-			"pypi": "https://pypi.org/project/numpy/"
-		},
-		"language": "Python",
-		"keywords": ["array", "vector"],
-		"description":
-			"NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."
-	},
-	{
-		"name": "Fuse.js",
-		"sources": {
-			"website": "http://fusejs.io/"
-		},
-		"keywords": ["search", "fuzzy"],
-		"language": "JavaScript",
-		"description": "Lightweight fuzzy-search library"
-	}
+  {
+    "name": "MicroBundle",
+    "sources": {
+      "github": "https://github.com/developit/microbundle",
+      "npm": "http://npmjs.com/package/microbundle"
+    },
+    "keywords": ["js", "build", "tool"],
+    "language": "JavaScript",
+    "description": "Zero-configuration bundler for tiny modules"
+  },
+  {
+    "name": "Preact",
+    "sources": {
+      "github": "https://github.com/developit/preact",
+      "npm": "http://npmjs.com/package/preact"
+    },
+    "keywords": ["js", "framework", "react", "jsx", "small"],
+    "language": "JavaScript",
+    "description": "Fast 3kB React alternative with the same modern API. Components & Virtual DOM"
+  },
+  {
+    "name": "Mitt",
+    "sources": {
+      "github": "https://github.com/developit/mitt",
+      "npm": "http://npmjs.com/package/mitt"
+    },
+    "keywords": ["js", "event"],
+    "language": "JavaScript",
+    "description": "Tiny 200 byte functional event emitter / pubsub"
+  },
+  {
+    "name": "DLV",
+    "sources": {
+      "github": "https://github.com/developit/dlv",
+      "npm": "http://npmjs.com/package/dlv"
+    },
+    "keywords": ["js", "deep", "property"],
+    "language": "JavaScript",
+    "description": "Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"
+  },
+  {
+    "name": "Tags Input",
+    "sources": {
+      "github": "https://github.com/developit/tags-input",
+      "npm": "http://npmjs.com/package/tags-input"
+    },
+    "keywords": ["js", "html", "css", "input", "tags"],
+    "language": "JavaScript",
+    "description": "<input type=\"tags\"> like magic"
+  },
+  {
+    "name": "NumPy",
+    "sources": {
+      "github": "https://github.com/numpy/numpy",
+      "pypi": "https://pypi.org/project/numpy/"
+    },
+    "language": "Python",
+    "keywords": ["array", "vector"],
+    "description":
+      "NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."
+  },
+  {
+    "name": "Fuse.js",
+    "sources": {
+      "website": "http://fusejs.io/"
+    },
+    "keywords": ["search", "fuzzy"],
+    "language": "JavaScript",
+    "description": "Lightweight fuzzy-search library"
+  }
 ]

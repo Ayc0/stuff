@@ -12,27 +12,27 @@ const string = () => Joi.string();
 const url = () => string().uri();
 
 const Project = object({
-	name: string().required(),
-	description: string().required(),
-	sources: object({
-		website: url(),
-		github: url(),
-		npm: url(),
-		pypi: url()
-	})
-		.min(1)
-		.required(),
-	keywords: array(string()).required(),
-	language: string()
-		.valid(languagesList)
-		.required()
+  name: string().required(),
+  description: string().required(),
+  sources: object({
+    website: url(),
+    github: url(),
+    npm: url(),
+    pypi: url()
+  })
+    .min(1)
+    .required(),
+  keywords: array(string()).required(),
+  language: string()
+    .valid(languagesList)
+    .required()
 });
 
 const schema = array(Project);
 
 Joi.validate(projects, schema)
-	.then(console.log)
-	.catch(error => {
-		console.warn(error.details);
-		process.exit(1);
-	});
+  .then(console.log)
+  .catch(error => {
+    console.warn(error.details);
+    process.exit(1);
+  });
