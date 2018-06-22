@@ -3712,18 +3712,29 @@ var Label = /*#__PURE__*/preact_emotion_dist_index_es('label', {
 
 var counter = 0;
 
+var isString = function isString(string) {
+  return typeof string === 'string' || string instanceof String;
+};
+
+var childrenIsString = function childrenIsString(children) {
+  return isString(children) || Array.isArray(children) && children.length === 1 && isString(children[0]);
+};
+
 var Tag_Tag = function Tag(_ref2) {
   var active = _ref2.active,
-      children = _ref2.children,
       onToggle = _ref2.onToggle,
       color = _ref2.color,
-      props = Tag__objectWithoutProperties(_ref2, ['active', 'children', 'onToggle', 'color']);
+      props = Tag__objectWithoutProperties(_ref2, ['active', 'onToggle', 'color']);
 
   var id = 'tag__' + counter++;
+
+  var name = props.name || childrenIsString(props.children) && props.children + '';
+  var children = props.children || [props.name];
+
   return Object(preact_min["h"])(
     Tag_Wrapper,
     { active: active, color: color },
-    Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, onChange: utils_getValue(onToggle) }),
+    Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, value: name, onChange: utils_getValue(onToggle) }),
     Object(preact_min["h"])(
       Label,
       { htmlFor: id },
@@ -3736,6 +3747,7 @@ Tag_Tag.defaultProps = {
   color: 'primary',
   active: false,
   onToggle: function onToggle() {},
+  name: '',
   children: null
 };
 
@@ -3747,8 +3759,8 @@ var fuse = __webpack_require__("Wp9p");
 var fuse_default = /*#__PURE__*/__webpack_require__.n(fuse);
 
 // EXTERNAL MODULE: ./utils/projects/projects.json
-var projects = __webpack_require__("PEMc");
-var projects_default = /*#__PURE__*/__webpack_require__.n(projects);
+var projects_projects = __webpack_require__("PEMc");
+var projects_default = /*#__PURE__*/__webpack_require__.n(projects_projects);
 
 // CONCATENATED MODULE: ./utils/projects/index.js
 
@@ -3790,6 +3802,17 @@ function FavoriteProjects__inherits(subClass, superClass) { if (typeof superClas
 
 
 
+
+var TagList = /*#__PURE__*/preact_emotion_dist_index_es(Row_Row, {
+  target: 'e9cxdkp0'
+})({ padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' });
+
+var FavoriteProjects_getKeywordsFromProjects = function getKeywordsFromProjects(projects) {
+  return uniq_default()(flatten_default()(projects.map(function (project) {
+    return project.keywords;
+  }))).sort();
+};
+
 var FavoriteProjects_FavoriteProjects = function (_Component) {
   FavoriteProjects__inherits(FavoriteProjects, _Component);
 
@@ -3802,26 +3825,58 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = FavoriteProjects__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { term: '' }, _this.projects = utils_projects, _this.onChange = function (term) {
+    return _ret = (_temp = (_this = FavoriteProjects__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { term: '', selectedTags: [] }, _this._projects = utils_projects, _this.projects = utils_projects, _this.keywords = FavoriteProjects_getKeywordsFromProjects(utils_projects), _this.onChange = function (term) {
       return _this.setState({ term: term });
+    }, _this.onToggle = function (keyword) {
+      return _this.setState(function (_ref) {
+        var selectedTags = _ref.selectedTags;
+
+        if (!selectedTags.includes(keyword)) {
+          return { selectedTags: [].concat(selectedTags, [keyword]) };
+        }
+        return { selectedTags: selectedTags.filter(function (tag) {
+            return tag !== keyword;
+          }) };
+      });
     }, _temp), FavoriteProjects__possibleConstructorReturn(_this, _ret);
   }
 
   FavoriteProjects.prototype.componentWillUpdate = function componentWillUpdate(nextProps, nextState) {
-    if (this.state.term !== nextState.term) {
-      this.projects = projects_search(nextState.term);
+    var _this2 = this;
+
+    var termHasChanged = this.state.term !== nextState.term;
+    var selectedTagsHaveChanged = this.state.selectedTags.length !== nextState.selectedTags.length;
+
+    if (termHasChanged) {
+      this._projects = projects_search(nextState.term);
+    }
+
+    if (termHasChanged || selectedTagsHaveChanged) {
+      if (nextState.selectedTags.length) {
+        this.projects = this._projects.filter(function (project) {
+          return nextState.selectedTags.every(function (tag) {
+            return project.keywords.includes(tag);
+          });
+        });
+      } else {
+        this.projects = this._projects;
+      }
+      this.keywords = FavoriteProjects_getKeywordsFromProjects(this.projects);
+      nextState.selectedTags = nextState.selectedTags.filter(function (tag) {
+        return _this2.keywords.includes(tag);
+      });
     }
   };
 
-  FavoriteProjects.prototype.render = function render(_ref, _ref2) {
-    var term = _ref2.term;
+  FavoriteProjects.prototype.render = function render(_ref2, _ref3) {
+    var _this3 = this;
 
-    _objectDestructuringEmpty(_ref);
+    var term = _ref3.term,
+        selectedTags = _ref3.selectedTags;
+
+    _objectDestructuringEmpty(_ref2);
 
     var categories = groupBy_default()(this.projects, 'language');
-    var keywords = uniq_default()(flatten_default()(this.projects.map(function (project) {
-      return project.keywords;
-    }))).sort();
     return Object(preact_min["h"])(
       'div',
       null,
@@ -3832,12 +3887,12 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
         style: { wrapper: { maxWidth: '15em' } }
       }),
       Object(preact_min["h"])(
-        Row_Row,
-        { style: { padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' } },
-        keywords.map(function (keyword) {
+        TagList,
+        null,
+        this.keywords.map(function (keyword) {
           return Object(preact_min["h"])(
             components_Tag_Tag,
-            null,
+            { onToggle: _this3.onToggle, active: selectedTags.includes(keyword) },
             keyword
           );
         })
@@ -3845,9 +3900,9 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
       Object(preact_min["h"])(
         'table',
         null,
-        Object.entries(categories).map(function (_ref3) {
-          var categoryName = _ref3[0],
-              categoryProjects = _ref3[1];
+        Object.entries(categories).map(function (_ref4) {
+          var categoryName = _ref4[0],
+              categoryProjects = _ref4[1];
           return [Object(preact_min["h"])(
             'thead',
             { key: 'head_' + categoryName },
