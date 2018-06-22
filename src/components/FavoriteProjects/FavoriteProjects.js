@@ -15,6 +15,7 @@ const getKeywordsFromProjects = projects => uniq(flatten(projects.map(project =>
 
 class FavoriteProjects extends Component {
   state = { term: '', selectedTags: [] };
+  _projects = projects;
   projects = projects;
   keywords = getKeywordsFromProjects(projects);
 
@@ -29,15 +30,29 @@ class FavoriteProjects extends Component {
     });
 
   componentWillUpdate(nextProps, nextState) {
-    if (this.state.term !== nextState.term) {
-      this.projects = search(nextState.term);
+    const termHasChanged = this.state.term !== nextState.term;
+    const selectedTagsHaveChanged = this.state.selectedTags.length !== nextState.selectedTags.length;
+
+    if (termHasChanged) {
+      this._projects = search(nextState.term);
+    }
+
+    if (termHasChanged || selectedTagsHaveChanged) {
+      if (nextState.selectedTags.length) {
+        this.projects = this._projects.filter(project =>
+          nextState.selectedTags.every(tag => project.keywords.includes(tag))
+        );
+      }
+      else {
+        this.projects = this._projects;
+      }
       this.keywords = getKeywordsFromProjects(this.projects);
       nextState.selectedTags = nextState.selectedTags.filter(tag => this.keywords.includes(tag));
     }
   }
 
   render({}, { term, selectedTags }) {
-    const categories = groupBy(projects, 'language');
+    const categories = groupBy(this.projects, 'language');
     return (
       <div>
         <Search
