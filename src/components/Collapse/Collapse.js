@@ -18,7 +18,7 @@ class Collapse extends Component {
 
   open = () => {
     this.div.style.transitionTimingFunction = 'ease-in';
-    this.div.style.maxHeight = '0px';
+    this.div.style.maxHeight = this.props.minHeight;
     setTimeout(() => {
       this.div.style.maxHeight = this.height();
       this.timeoutID = setTimeout(() => {
@@ -41,13 +41,13 @@ class Collapse extends Component {
     this.div.style.transitionTimingFunction = 'ease-out';
     this.div.style.maxHeight = this.height();
     setTimeout(() => {
-      this.div.style.maxHeight = '0px';
+      this.div.style.maxHeight = this.props.minHeight;
     }, 10);
   };
 
   componentDidMount = () => {
     if (!this.props.open) {
-      this.div.style.maxHeight = '0px';
+      this.div.style.maxHeight = this.props.minHeight;
     }
   };
 
@@ -62,9 +62,9 @@ class Collapse extends Component {
     }
   }
 
-  render({ children, timing }) {
+  render({ children, timing, open, ...props }) {
     return (
-      <Wrapper timing={timing} innerRef={this.bindRef}>
+      <Wrapper {...props} timing={timing} innerRef={this.bindRef}>
         {children}
       </Wrapper>
     );
@@ -72,7 +72,8 @@ class Collapse extends Component {
 }
 
 Collapse.defaultProps = {
-  timing: 100
+  timing: 100,
+  minHeight: '0px'
 };
 
 export default Collapse;
