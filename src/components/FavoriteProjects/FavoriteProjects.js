@@ -9,6 +9,8 @@ import Row from '%/components/Row';
 import Tag from '%/components/Tag';
 import projects, { search } from '%/utils/projects';
 
+import Category from './Category';
+
 const TagList = styled(Row)({ padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' });
 
 const getKeywordsFromProjects = projects => uniq(flatten(projects.map(project => project.keywords))).sort();
@@ -53,6 +55,7 @@ class FavoriteProjects extends Component {
 
   render({}, { term, selectedTags }) {
     const categories = groupBy(this.projects, 'language');
+    console.log(categories);
     return (
       <div>
         <Search
@@ -68,21 +71,11 @@ class FavoriteProjects extends Component {
             </Tag>
           ))}
         </TagList>
-        <table>
-          {Object.entries(categories).map(([categoryName, categoryProjects]) => [
-            <thead key={`head_${categoryName}`}>
-              <th>{categoryName}</th>
-            </thead>,
-            <tbody key={`body_${categoryName}`}>
-              {categoryProjects.map(project => (
-                <tr key={project.name}>
-                  <td>{project.name}</td>
-                  <td>{project.description}</td>
-                </tr>
-              ))}
-            </tbody>
-          ])}
-        </table>
+        <Row column>
+          {Object.entries(categories).map(([categoryName, categoryProjects]) => (
+            <Category name={categoryName} projects={categoryProjects} />
+          ))}
+        </Row>
       </div>
     );
   }
