@@ -11,7 +11,12 @@ import projects, { search } from '%/utils/projects';
 
 import Category from './Category';
 
-const TagList = styled(Row)({ padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' });
+const TagList = styled(Row)({
+  padding: '.6em 0 .3em 0',
+  marginBottom: '2em',
+  maxHeight: '3.2em',
+  overflow: 'auto'
+});
 
 const getKeywordsFromProjects = projects => uniq(flatten(projects.map(project => project.keywords))).sort();
 

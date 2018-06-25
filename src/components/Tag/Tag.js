@@ -9,22 +9,18 @@ const Wrapper = styled.div(
     border: 'none',
     borderRadius: '1em',
     margin: '3px 5px',
-    padding: '.25em .5em',
     fontWeight: 600
   },
-  ({ active, color }) => ({
+  ({ active, color, noOutline }) => ({
     backgroundColor: active ? getColor(color) : undefined,
-    boxShadow: active ? undefined : `0 0 0 2px ${getColor(color)}`,
+    boxShadow: active || noOutline ? undefined : `0 0 0 2px ${getColor(color)}`,
+    padding: noOutline ? 0 : '.25em .5em',
     color: active ? 'white' : getColor(color)
   })
 );
 
 const Checkbox = styled.input({
   display: 'none'
-});
-
-const Label = styled.label({
-  cursor: 'pointer'
 });
 
 let counter = 0;
@@ -40,10 +36,14 @@ const Tag = ({ active, onToggle, color, ...props }) => {
   const name = props.name || (childrenIsString(props.children) && props.children + '');
   const children = props.children || [props.name];
 
+  const clickable = onToggle !== undefined;
+
   return (
-    <Wrapper active={active} color={color}>
-      <Checkbox id={id} type="checkbox" checked={active} value={name} onChange={getValue(onToggle)} />
-      <Label htmlFor={id}>{children}</Label>
+    <Wrapper active={active} noOutline={!clickable} color={color}>
+      <Checkbox id={id} type="checkbox" checked={active} value={name} onChange={getValue(onToggle || (() => {}))} />
+      <label htmlFor={id} clickable={clickable}>
+        {children}
+      </label>
     </Wrapper>
   );
 };
@@ -51,7 +51,7 @@ const Tag = ({ active, onToggle, color, ...props }) => {
 Tag.defaultProps = {
   color: 'primary',
   active: false,
-  onToggle: () => {},
+  onToggle: undefined,
   name: '',
   children: null
 };
