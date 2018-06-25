@@ -27,7 +27,7 @@ const Input = styled.input({
   border: 'none',
   fontSize: '1em',
   outline: 'none',
-  boxShadow: '0 0 0 1px black',
+  boxShadow: `0 0 0 1px ${getColor('text')}`,
   ':focus': {
     boxShadow: `0 0 0 1px ${getColor('primary')}`,
     color: getColor('primary-d1'),
@@ -57,7 +57,7 @@ class Search extends Component {
     return (
       <Wrapper style={wrapperStyle}>
         <MGWrapper onClick={this.setFocus}>
-          <MagnifyingGlass color={this.state.focus ? getColor('primary-d1') : 'black'} size="1.2em" />
+          <MagnifyingGlass color={this.state.focus ? getColor('primary-d1') : getColor('text')} size="1.2em" />
         </MGWrapper>
         <Input
           {...props}
