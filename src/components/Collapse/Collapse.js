@@ -1,12 +1,10 @@
 import { h, Component } from 'preact';
 import styled from 'preact-emotion';
 
-const timing = 300;
-
-const Wrapper = styled.div({
+const Wrapper = styled.div(({ timing }) => ({
   overflow: 'hidden',
   transition: `max-height ${timing}ms`
-});
+}));
 
 class Collapse extends Component {
   div = null;
@@ -16,7 +14,7 @@ class Collapse extends Component {
     this.div = ref;
   };
 
-  height = () => `${this.div.scrollHeight + 20}px`;
+  height = () => `${this.div.scrollHeight}px`;
 
   open = () => {
     this.div.style.transitionTimingFunction = 'ease-in';
@@ -24,10 +22,15 @@ class Collapse extends Component {
     setTimeout(() => {
       this.div.style.maxHeight = this.height();
       this.timeoutID = setTimeout(() => {
-        this.div.style.maxHeight = '';
+        this.div.style.maxHeight = 'none';
         this.timeoutID = null;
-      }, timing);
-    }, 0);
+
+        // force update because of weird issue
+        this.div.style.display = 'none';
+        this.div.offsetHeight;
+        this.div.style.display = 'block';
+      }, this.props.timing);
+    }, 10);
   };
 
   close = () => {
@@ -39,11 +42,13 @@ class Collapse extends Component {
     this.div.style.maxHeight = this.height();
     setTimeout(() => {
       this.div.style.maxHeight = '0px';
-    }, 0);
+    }, 10);
   };
 
   componentDidMount = () => {
-    this.div.style.maxHeight = this.props.open ? this.height() : '0';
+    if (!this.props.open) {
+      this.div.style.maxHeight = '0px';
+    }
   };
 
   componentDidUpdate(prevProps) {
@@ -57,9 +62,17 @@ class Collapse extends Component {
     }
   }
 
-  render({ children }) {
-    return <Wrapper innerRef={this.bindRef}>{children}</Wrapper>;
+  render({ children, timing }) {
+    return (
+      <Wrapper timing={timing} innerRef={this.bindRef}>
+        {children}
+      </Wrapper>
+    );
   }
 }
+
+Collapse.defaultProps = {
+  timing: 100
+};
 
 export default Collapse;
