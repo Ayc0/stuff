@@ -12,6 +12,7 @@
   {
     "name": "Preact",
     "sources": {
+      "website": "https://preactjs.com/",
       "github": "https://github.com/developit/preact",
       "npm": "http://npmjs.com/package/preact"
     },
@@ -63,7 +64,9 @@
   {
     "name": "Fuse.js",
     "sources": {
-      "website": "http://fusejs.io/"
+      "website": "http://fusejs.io/",
+      "github": "https://github.com/krisk/fuse",
+      "npm": "http://npmjs.com/package/fuse.js"
     },
     "keywords": ["search", "fuzzy"],
     "language": "JavaScript",
@@ -73,7 +76,8 @@
     "name": "docz",
     "sources": {
       "website": "https://www.docz.site/",
-      "github": "https://github.com/pedronauck/docz/"
+      "github": "https://github.com/pedronauck/docz/",
+      "npm": "http://npmjs.com/package/docz"
     },
     "keywords": ["doc", "mardown", "mdx", "playground"],
     "language": "JavaScript",
