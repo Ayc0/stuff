@@ -55,7 +55,6 @@ class FavoriteProjects extends Component {
 
   render({}, { term, selectedTags }) {
     const categories = groupBy(this.projects, 'language');
-    console.log(categories);
     return (
       <div>
         <Search

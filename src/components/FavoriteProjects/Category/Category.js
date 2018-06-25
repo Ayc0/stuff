@@ -6,12 +6,7 @@ import Collapse from '%/components/Collapse';
 
 import Caret from './Caret';
 
-const Project = ({ project }) => (
-  <Row key={project.name}>
-    <div>{project.name}</div>
-    <div>{project.description}</div>
-  </Row>
-);
+import Project from './Project';
 
 class Category extends Component {
   state = { open: true };
@@ -20,11 +15,11 @@ class Category extends Component {
 
   render({ name, projects }, { open }) {
     return (
-      <div>
-        <Row clickable as="th" onClick={this.toggleOpen}>
-          <Caret size=".4em" color={getColor('text')} style={{ marginRight: '1em' }} open={open} /> {name}
+      <div fluid>
+        <Row clickable onClick={this.toggleOpen}>
+          <Caret size=".5em" color={getColor('text')} style={{ marginRight: '1em' }} open={open} /> <h2>{name}</h2>
         </Row>
-        <Collapse open={open}>{projects.map(project => <Project project={project} />)}</Collapse>
+        <Collapse open={open}>{projects.map(project => <Project key={project.name} project={project} />)}</Collapse>
       </div>
     );
   }
