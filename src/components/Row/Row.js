@@ -1,48 +1,53 @@
-import styled from 'preact-emotion';
+import { h } from 'preact';
+import { css } from 'emotion';
 
-const Row = styled.div(props => {
+const Row = ({ right, middle, left, center, top, bottom, column, spaceBetween, wrap, as, className, ...props }) => {
   let justifyContent;
   let alignItems;
 
-  if (props.right) {
+  if (right) {
     justifyContent = 'flex-end';
   }
-  else if (props.middle) {
+  else if (middle) {
     justifyContent = 'center';
   }
   else {
     justifyContent = 'flex-start';
   }
 
-  if (props.top) {
+  if (top) {
     alignItems = 'flex-start';
   }
-  else if (props.bottom) {
+  else if (bottom) {
     alignItems = 'flex-end';
   }
   else {
     alignItems = 'center';
   }
 
-  if (props.column) {
+  if (column) {
     [justifyContent, alignItems] = [alignItems, justifyContent];
   }
 
-  if (props.spaceBetween) {
+  if (spaceBetween) {
     justifyContent = 'space-between';
   }
 
-  return {
+  const style = {
     display: 'flex',
-    flexDirection: props.column ? 'column' : 'row',
-    flexWrap: props.wrap && 'wrap',
+    flexDirection: column ? 'column' : 'row',
+    flexWrap: wrap && 'wrap',
     justifyContent,
-    alignItems,
-    ...props.style
+    alignItems
   };
-});
+
+  const classNames = [...(className || '').split(' '), css(style)];
+
+  return h(as, { ...props, className: classNames.join(' ') });
+};
 
 Row.defaultProps = {
+  as: 'div',
   column: false,
   left: true,
   center: undefined,
