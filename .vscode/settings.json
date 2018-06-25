@@ -1,6 +1,10 @@
 {
-	"path-intellisense.mappings": {
-		"%": "${workspaceRoot}/src"
-	},
-	"typescript.quickSuggestionsForPaths": false
+  "path-intellisense.mappings": {
+    "%": "${workspaceRoot}/src"
+  },
+  "typescript.quickSuggestionsForPaths": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true
+  }
 }
