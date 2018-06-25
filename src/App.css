@@ -9,3 +9,7 @@ body {
 *[clickable]:hover {
   cursor: pointer;
 }
+
+*[fluid] {
+  width: 100%;
+}
