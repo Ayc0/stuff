@@ -1,9 +1,6 @@
 module.exports = [
   {
     url: '/',
-    title: 'Homepage'
-  },
-  {
-    url: '/route/random'
+    title: 'Ayc0 - Packages browser'
   }
 ];

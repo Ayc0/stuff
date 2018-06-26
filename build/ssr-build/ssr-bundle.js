@@ -3918,7 +3918,7 @@ var Tag_Tag = function Tag(_ref2) {
     Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, value: name, onChange: utils_getValue(onToggle || function () {}) }),
     Object(preact_min["h"])(
       'label',
-      { htmlFor: id, clickable: clickable },
+      { 'for': id, clickable: clickable },
       children
     )
   );
@@ -4528,7 +4528,9 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
 
 
 
-var FavoriteProjects__ref = Object(preact_min["h"])(components_View_View, { name: 'Ayc0 - Packages browser', component: components_FavoriteProjects_FavoriteProjects });
+var FavoriteProjects_name = 'Ayc0 - Packages browser';
+
+var FavoriteProjects__ref = Object(preact_min["h"])(components_View_View, { name: FavoriteProjects_name, component: components_FavoriteProjects_FavoriteProjects });
 
 var view = function view() {
   return FavoriteProjects__ref;
