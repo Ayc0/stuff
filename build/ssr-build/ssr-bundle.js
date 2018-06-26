@@ -107,6 +107,46 @@ module.exports = listCacheDelete;
 
 /***/ }),
 
+/***/ "/NGI":
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayMap = __webpack_require__("BblM"),
+    baseIteratee = __webpack_require__("lW7l"),
+    baseMap = __webpack_require__("wrrS"),
+    baseSortBy = __webpack_require__("urtK"),
+    baseUnary = __webpack_require__("PnXa"),
+    compareMultiple = __webpack_require__("X7Fw"),
+    identity = __webpack_require__("Jpv1");
+
+/**
+ * The base implementation of `_.orderBy` without param guards.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function[]|Object[]|string[]} iteratees The iteratees to sort by.
+ * @param {string[]} orders The sort orders of `iteratees`.
+ * @returns {Array} Returns the new sorted array.
+ */
+function baseOrderBy(collection, iteratees, orders) {
+  var index = -1;
+  iteratees = arrayMap(iteratees.length ? iteratees : [identity], baseUnary(baseIteratee));
+
+  var result = baseMap(collection, function (value, key, collection) {
+    var criteria = arrayMap(iteratees, function (iteratee) {
+      return iteratee(value);
+    });
+    return { 'criteria': criteria, 'index': ++index, 'value': value };
+  });
+
+  return baseSortBy(result, function (object, other) {
+    return compareMultiple(object, other, orders);
+  });
+}
+
+module.exports = baseOrderBy;
+
+/***/ }),
+
 /***/ "0FvR":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -302,6 +342,49 @@ function baseIsTypedArray(value) {
 }
 
 module.exports = baseIsTypedArray;
+
+/***/ }),
+
+/***/ "2NNl":
+/***/ (function(module, exports) {
+
+/** Used to detect hot functions by number of calls within a span of milliseconds. */
+var HOT_COUNT = 800,
+    HOT_SPAN = 16;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeNow = Date.now;
+
+/**
+ * Creates a function that'll short out and invoke `identity` instead
+ * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
+ * milliseconds.
+ *
+ * @private
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new shortable function.
+ */
+function shortOut(func) {
+  var count = 0,
+      lastCalled = 0;
+
+  return function () {
+    var stamp = nativeNow(),
+        remaining = HOT_SPAN - (stamp - lastCalled);
+
+    lastCalled = stamp;
+    if (remaining > 0) {
+      if (++count >= HOT_COUNT) {
+        return arguments[0];
+      }
+    } else {
+      count = 0;
+    }
+    return func.apply(undefined, arguments);
+  };
+}
+
+module.exports = shortOut;
 
 /***/ }),
 
@@ -1550,6 +1633,60 @@ function baseFindIndex(array, predicate, fromIndex, fromRight) {
 }
 
 module.exports = baseFindIndex;
+
+/***/ }),
+
+/***/ "JXMh":
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseFlatten = __webpack_require__("5cZt"),
+    baseOrderBy = __webpack_require__("/NGI"),
+    baseRest = __webpack_require__("f4Fl"),
+    isIterateeCall = __webpack_require__("R62e");
+
+/**
+ * Creates an array of elements, sorted in ascending order by the results of
+ * running each element in a collection thru each iteratee. This method
+ * performs a stable sort, that is, it preserves the original sort order of
+ * equal elements. The iteratees are invoked with one argument: (value).
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {...(Function|Function[])} [iteratees=[_.identity]]
+ *  The iteratees to sort by.
+ * @returns {Array} Returns the new sorted array.
+ * @example
+ *
+ * var users = [
+ *   { 'user': 'fred',   'age': 48 },
+ *   { 'user': 'barney', 'age': 36 },
+ *   { 'user': 'fred',   'age': 40 },
+ *   { 'user': 'barney', 'age': 34 }
+ * ];
+ *
+ * _.sortBy(users, [function(o) { return o.user; }]);
+ * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+ *
+ * _.sortBy(users, ['user', 'age']);
+ * // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
+ */
+var sortBy = baseRest(function (collection, iteratees) {
+  if (collection == null) {
+    return [];
+  }
+  var length = iteratees.length;
+  if (length > 1 && isIterateeCall(collection, iteratees[0], iteratees[1])) {
+    iteratees = [];
+  } else if (length > 2 && isIterateeCall(iteratees[0], iteratees[1], iteratees[2])) {
+    iteratees = [iteratees[0]];
+  }
+  return baseOrderBy(collection, baseFlatten(iteratees, 1), []);
+});
+
+module.exports = sortBy;
 
 /***/ }),
 
@@ -3797,6 +3934,10 @@ Tag_Tag.defaultProps = {
 var fuse = __webpack_require__("Wp9p");
 var fuse_default = /*#__PURE__*/__webpack_require__.n(fuse);
 
+// EXTERNAL MODULE: ../node_modules/lodash/sortBy.js
+var sortBy = __webpack_require__("JXMh");
+var sortBy_default = /*#__PURE__*/__webpack_require__.n(sortBy);
+
 // EXTERNAL MODULE: ./utils/projects/projects.json
 var projects_projects = __webpack_require__("PEMc");
 var projects_default = /*#__PURE__*/__webpack_require__.n(projects_projects);
@@ -3806,20 +3947,24 @@ var projects_default = /*#__PURE__*/__webpack_require__.n(projects_projects);
 
 
 
-var projects_fuse = new fuse_default.a(projects_default.a, {
+var utils_projects_projects = sortBy_default()(projects_default.a, function (p) {
+  return p.name.toLowerCase();
+});
+
+var projects_fuse = new fuse_default.a(utils_projects_projects, {
   shouldSort: true,
   threshold: 0.4,
   keys: ['name', 'keywords', 'language', { name: 'description', value: 0.4 }]
 });
 
-var projects_search = function search(term) {
+var search = function search(term) {
   if (!term) {
-    return projects_default.a;
+    return utils_projects_projects;
   }
   return projects_fuse.search(term);
 };
 
-/* harmony default export */ var utils_projects = (projects_default.a);
+/* harmony default export */ var utils_projects = (utils_projects_projects);
 // CONCATENATED MODULE: ./components/Collapse/Collapse.js
 var Collapse__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -4306,7 +4451,7 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
     var selectedTagsHaveChanged = this.state.selectedTags.length !== nextState.selectedTags.length;
 
     if (termHasChanged) {
-      this._projects = projects_search(nextState.term);
+      this._projects = search(nextState.term);
     }
 
     if (termHasChanged || selectedTagsHaveChanged) {
@@ -4683,6 +4828,26 @@ module.exports = Map;
 
 /***/ }),
 
+/***/ "KRxT":
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseSetToString = __webpack_require__("UJWv"),
+    shortOut = __webpack_require__("2NNl");
+
+/**
+ * Sets the `toString` method of `func` to return `string`.
+ *
+ * @private
+ * @param {Function} func The function to modify.
+ * @param {Function} string The `toString` result.
+ * @returns {Function} Returns `func`.
+ */
+var setToString = shortOut(baseSetToString);
+
+module.exports = setToString;
+
+/***/ }),
+
 /***/ "LIpy":
 /***/ (function(module, exports) {
 
@@ -4985,7 +5150,7 @@ module.exports = nodeUtil;
 /***/ "PEMc":
 /***/ (function(module, exports) {
 
-module.exports = [{"name":"MicroBundle","sources":{"github":"https://github.com/developit/microbundle","npm":"http://npmjs.com/package/microbundle"},"keywords":["js","build","tool"],"language":"JavaScript","description":"Zero-configuration bundler for tiny modules"},{"name":"Preact","sources":{"website":"https://preactjs.com/","github":"https://github.com/developit/preact","npm":"http://npmjs.com/package/preact"},"keywords":["js","framework","react","jsx","small"],"language":"JavaScript","description":"Fast 3kB React alternative with the same modern API. Components & Virtual DOM"},{"name":"Mitt","sources":{"github":"https://github.com/developit/mitt","npm":"http://npmjs.com/package/mitt"},"keywords":["js","event"],"language":"JavaScript","description":"Tiny 200 byte functional event emitter / pubsub"},{"name":"DLV","sources":{"github":"https://github.com/developit/dlv","npm":"http://npmjs.com/package/dlv"},"keywords":["js","deep","property"],"language":"JavaScript","description":"Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"},{"name":"Tags Input","sources":{"github":"https://github.com/developit/tags-input","npm":"http://npmjs.com/package/tags-input"},"keywords":["js","html","css","input","tags"],"language":"JavaScript","description":"<input type=\"tags\"> like magic"},{"name":"NumPy","sources":{"github":"https://github.com/numpy/numpy","pypi":"https://pypi.org/project/numpy/"},"language":"Python","keywords":["array","vector"],"description":"NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."},{"name":"Fuse.js","sources":{"website":"http://fusejs.io/","github":"https://github.com/krisk/fuse","npm":"http://npmjs.com/package/fuse.js"},"keywords":["search","fuzzy"],"language":"JavaScript","description":"Lightweight fuzzy-search library"},{"name":"docz","sources":{"website":"https://www.docz.site/","github":"https://github.com/pedronauck/docz/","npm":"http://npmjs.com/package/docz"},"keywords":["doc","mardown","mdx","playground"],"language":"JavaScript","description":"It has never been so easy to document your things!"}]
+module.exports = [{"name":"MicroBundle","sources":{"github":"https://github.com/developit/microbundle","npm":"http://npmjs.com/package/microbundle"},"keywords":["build","tool"],"language":"JavaScript","description":"Zero-configuration bundler for tiny modules"},{"name":"Preact","sources":{"website":"https://preactjs.com/","github":"https://github.com/developit/preact","npm":"http://npmjs.com/package/preact"},"keywords":["framework","react","jsx","small"],"language":"JavaScript","description":"Fast 3kB React alternative with the same modern API. Components & Virtual DOM"},{"name":"Mitt","sources":{"github":"https://github.com/developit/mitt","npm":"http://npmjs.com/package/mitt"},"keywords":["event"],"language":"JavaScript","description":"Tiny 200 byte functional event emitter / pubsub"},{"name":"Greenlet","sources":{"github":"https://github.com/developit/greenlet","npm":"http://npmjs.com/package/greenlet"},"keywords":["async","worker"],"language":"JavaScript","description":"Move an async function into its own thread"},{"name":"DLV","sources":{"github":"https://github.com/developit/dlv","npm":"http://npmjs.com/package/dlv"},"keywords":["deep","property"],"language":"JavaScript","description":"Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"},{"name":"Tags Input","sources":{"github":"https://github.com/developit/tags-input","npm":"http://npmjs.com/package/tags-input"},"keywords":["html","css","input","tags"],"language":"JavaScript","description":"<input type=\"tags\"> like magic"},{"name":"NumPy","sources":{"github":"https://github.com/numpy/numpy","pypi":"https://pypi.org/project/numpy/"},"language":"Python","keywords":["array","vector"],"description":"NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."},{"name":"Fuse.js","sources":{"website":"http://fusejs.io/","github":"https://github.com/krisk/fuse","npm":"http://npmjs.com/package/fuse.js"},"keywords":["search","fuzzy"],"language":"JavaScript","description":"Lightweight fuzzy-search library"},{"name":"docz","sources":{"website":"https://www.docz.site/","github":"https://github.com/pedronauck/docz","npm":"http://npmjs.com/package/docz"},"keywords":["doc","mardown","mdx","playground"],"language":"JavaScript","description":"It has never been so easy to document your things!"},{"name":"Parcel","sources":{"website":"https://parceljs.org/","github":"https://github.com/parcel-bundler/parcel","npm":"http://npmjs.com/package/parcel"},"keywords":["bundle","zero-config"],"language":"JavaScript","description":"Blazing fast, zero configuration web application bundler"},{"name":"Sluggr","sources":{"github":"https://github.com/ayc0/sluggr","npm":"http://npmjs.com/package/sluggr"},"keywords":["string","slugger"],"language":"JavaScript","description":"Small string slugger"},{"name":"Apollo","sources":{"website":"https://www.apollographql.com/"},"keywords":["GQL","API","full-stack"],"language":"TypeScript","description":"Apollo is a family of technologies you can incrementally add to your stack: Apollo Client to connect data to your UI, Apollo Engine for infrastructure and tooling, and Apollo Server to translate your REST API and backends into a GraphQL schema."},{"name":"Vibrant","sources":{"github":"https://github.com/akfish/node-vibrant/","npm":"http://npmjs.com/package/node-vibrant"},"keywords":["color","palette"],"language":"TypeScript","description":"Extract prominent colors from an image"},{"name":"Reach Router","sources":{"website":"https://reach.tech/router","github":"https://github.com/reach/router","npm":"https://www.npmjs.com/package/@reach/router"},"keywords":["jsx","router"],"language":"JavaScript","description":"Next Generation Routing for React"},{"name":"Draft.js","sources":{"website":"https://draftjs.org/","github":"https://github.com/facebook/draft-js","npm":"https://www.npmjs.com/package/draft-js"},"keywords":["jsx","text editor"],"language":"JavaScript","description":"Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences."},{"name":"Styletron","sources":{"website":"http://styletron.js.org/","github":"https://github.com/rtsao/styletron"},"keywords":["CSS-in-JS","atomic"],"language":"JavaScript","description":"Styletron is completely un-opinionated about the shape of style objects. Styletron is made up of three key concepts: Styled components, Drivers, Rendering engines"},{"name":"Emotion","sources":{"website":"https://emotion.sh/","github":"https://github.com/emotion-js/emotion"},"keywords":["CSS-in-JS"],"language":"JavaScript","description":"Emotion is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS."}]
 
 /***/ }),
 
@@ -5037,6 +5202,39 @@ module.exports = baseUnary;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "438c17272c5f0e9f4a6da34d3e4bc5bd.png";
+
+/***/ }),
+
+/***/ "R62e":
+/***/ (function(module, exports, __webpack_require__) {
+
+var eq = __webpack_require__("LIpy"),
+    isArrayLike = __webpack_require__("LN6c"),
+    isIndex = __webpack_require__("A+gr"),
+    isObject = __webpack_require__("u9vI");
+
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+function isIterateeCall(value, index, object) {
+  if (!isObject(object)) {
+    return false;
+  }
+  var type = typeof index;
+  if (type == 'number' ? isArrayLike(object) && isIndex(index, object.length) : type == 'string' && index in object) {
+    return eq(object[index], value);
+  }
+  return false;
+}
+
+module.exports = isIterateeCall;
 
 /***/ }),
 
@@ -5207,6 +5405,34 @@ module.exports = stackDelete;
 
 /***/ }),
 
+/***/ "UJWv":
+/***/ (function(module, exports, __webpack_require__) {
+
+var constant = __webpack_require__("WMV8"),
+    defineProperty = __webpack_require__("kAdy"),
+    identity = __webpack_require__("Jpv1");
+
+/**
+ * The base implementation of `setToString` without support for hot loop shorting.
+ *
+ * @private
+ * @param {Function} func The function to modify.
+ * @param {Function} string The `toString` result.
+ * @returns {Function} Returns `func`.
+ */
+var baseSetToString = !defineProperty ? identity : function (func, string) {
+  return defineProperty(func, 'toString', {
+    'configurable': true,
+    'enumerable': false,
+    'value': constant(string),
+    'writable': true
+  });
+};
+
+module.exports = baseSetToString;
+
+/***/ }),
+
 /***/ "UY82":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5367,6 +5593,38 @@ function baseGetAllKeys(object, keysFunc, symbolsFunc) {
 }
 
 module.exports = baseGetAllKeys;
+
+/***/ }),
+
+/***/ "WMV8":
+/***/ (function(module, exports) {
+
+/**
+ * Creates a function that returns `value`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Util
+ * @param {*} value The value to return from the new function.
+ * @returns {Function} Returns the new constant function.
+ * @example
+ *
+ * var objects = _.times(2, _.constant({ 'a': 1 }));
+ *
+ * console.log(objects);
+ * // => [{ 'a': 1 }, { 'a': 1 }]
+ *
+ * console.log(objects[0] === objects[1]);
+ * // => true
+ */
+function constant(value) {
+  return function () {
+    return value;
+  };
+}
+
+module.exports = constant;
 
 /***/ }),
 
@@ -6411,6 +6669,56 @@ module.exports = baseGetAllKeys;
 
 /***/ }),
 
+/***/ "X7Fw":
+/***/ (function(module, exports, __webpack_require__) {
+
+var compareAscending = __webpack_require__("qW88");
+
+/**
+ * Used by `_.orderBy` to compare multiple properties of a value to another
+ * and stable sort them.
+ *
+ * If `orders` is unspecified, all values are sorted in ascending order. Otherwise,
+ * specify an order of "desc" for descending or "asc" for ascending sort order
+ * of corresponding values.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {boolean[]|string[]} orders The order to sort by for each property.
+ * @returns {number} Returns the sort order indicator for `object`.
+ */
+function compareMultiple(object, other, orders) {
+  var index = -1,
+      objCriteria = object.criteria,
+      othCriteria = other.criteria,
+      length = objCriteria.length,
+      ordersLength = orders.length;
+
+  while (++index < length) {
+    var result = compareAscending(objCriteria[index], othCriteria[index]);
+    if (result) {
+      if (index >= ordersLength) {
+        return result;
+      }
+      var order = orders[index];
+      return result * (order == 'desc' ? -1 : 1);
+    }
+  }
+  // Fixes an `Array#sort` bug in the JS engine embedded in Adobe applications
+  // that causes it, under certain circumstances, to provide the same value for
+  // `object` and `other`. See https://github.com/jashkenas/underscore/pull/1247
+  // for more details.
+  //
+  // This also ensures a stable sort in V8 and other engines.
+  // See https://bugs.chromium.org/p/v8/issues/detail?id=90 for more details.
+  return object.index - other.index;
+}
+
+module.exports = compareMultiple;
+
+/***/ }),
+
 /***/ "XJYD":
 /***/ (function(module, exports) {
 
@@ -6540,6 +6848,37 @@ function setToArray(set) {
 }
 
 module.exports = setToArray;
+
+/***/ }),
+
+/***/ "a+zQ":
+/***/ (function(module, exports) {
+
+/**
+ * A faster alternative to `Function#apply`, this function invokes `func`
+ * with the `this` binding of `thisArg` and the arguments of `args`.
+ *
+ * @private
+ * @param {Function} func The function to invoke.
+ * @param {*} thisArg The `this` binding of `func`.
+ * @param {Array} args The arguments to invoke `func` with.
+ * @returns {*} Returns the result of `func`.
+ */
+function apply(func, thisArg, args) {
+  switch (args.length) {
+    case 0:
+      return func.call(thisArg);
+    case 1:
+      return func.call(thisArg, args[0]);
+    case 2:
+      return func.call(thisArg, args[0], args[1]);
+    case 3:
+      return func.call(thisArg, args[0], args[1], args[2]);
+  }
+  return func.apply(thisArg, args);
+}
+
+module.exports = apply;
 
 /***/ }),
 
@@ -6755,6 +7094,29 @@ function baseGetTag(value) {
 }
 
 module.exports = baseGetTag;
+
+/***/ }),
+
+/***/ "f4Fl":
+/***/ (function(module, exports, __webpack_require__) {
+
+var identity = __webpack_require__("Jpv1"),
+    overRest = __webpack_require__("qXFa"),
+    setToString = __webpack_require__("KRxT");
+
+/**
+ * The base implementation of `_.rest` which doesn't validate or coerce arguments.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @returns {Function} Returns the new function.
+ */
+function baseRest(func, start) {
+  return setToString(overRest(func, start, identity), func + '');
+}
+
+module.exports = baseRest;
 
 /***/ }),
 
@@ -7987,6 +8349,87 @@ module.exports = hashDelete;
 
 /***/ }),
 
+/***/ "qW88":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSymbol = __webpack_require__("bgO7");
+
+/**
+ * Compares values to sort them in ascending order.
+ *
+ * @private
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {number} Returns the sort order indicator for `value`.
+ */
+function compareAscending(value, other) {
+  if (value !== other) {
+    var valIsDefined = value !== undefined,
+        valIsNull = value === null,
+        valIsReflexive = value === value,
+        valIsSymbol = isSymbol(value);
+
+    var othIsDefined = other !== undefined,
+        othIsNull = other === null,
+        othIsReflexive = other === other,
+        othIsSymbol = isSymbol(other);
+
+    if (!othIsNull && !othIsSymbol && !valIsSymbol && value > other || valIsSymbol && othIsDefined && othIsReflexive && !othIsNull && !othIsSymbol || valIsNull && othIsDefined && othIsReflexive || !valIsDefined && othIsReflexive || !valIsReflexive) {
+      return 1;
+    }
+    if (!valIsNull && !valIsSymbol && !othIsSymbol && value < other || othIsSymbol && valIsDefined && valIsReflexive && !valIsNull && !valIsSymbol || othIsNull && valIsDefined && valIsReflexive || !othIsDefined && valIsReflexive || !othIsReflexive) {
+      return -1;
+    }
+  }
+  return 0;
+}
+
+module.exports = compareAscending;
+
+/***/ }),
+
+/***/ "qXFa":
+/***/ (function(module, exports, __webpack_require__) {
+
+var apply = __webpack_require__("a+zQ");
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max;
+
+/**
+ * A specialized version of `baseRest` which transforms the rest array.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @param {Function} transform The rest array transform.
+ * @returns {Function} Returns the new function.
+ */
+function overRest(func, start, transform) {
+  start = nativeMax(start === undefined ? func.length - 1 : start, 0);
+  return function () {
+    var args = arguments,
+        index = -1,
+        length = nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index < length) {
+      array[index] = args[start + index];
+    }
+    index = -1;
+    var otherArgs = Array(start + 1);
+    while (++index < start) {
+      otherArgs[index] = args[index];
+    }
+    otherArgs[start] = transform(array);
+    return apply(func, this, otherArgs);
+  };
+}
+
+module.exports = overRest;
+
+/***/ }),
+
 /***/ "qxaq":
 /***/ (function(module, exports) {
 
@@ -8441,6 +8884,33 @@ module.exports = getRawTag;
 
 /***/ }),
 
+/***/ "urtK":
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.sortBy` which uses `comparer` to define the
+ * sort order of `array` and replaces criteria objects with their corresponding
+ * values.
+ *
+ * @private
+ * @param {Array} array The array to sort.
+ * @param {Function} comparer The function to define sort order.
+ * @returns {Array} Returns `array`.
+ */
+function baseSortBy(array, comparer) {
+  var length = array.length;
+
+  array.sort(comparer);
+  while (length--) {
+    array[length] = array[length].value;
+  }
+  return array;
+}
+
+module.exports = baseSortBy;
+
+/***/ }),
+
 /***/ "uvMU":
 /***/ (function(module, exports) {
 
@@ -8563,6 +9033,34 @@ var root = __webpack_require__("MIhM");
 var Symbol = root.Symbol;
 
 module.exports = Symbol;
+
+/***/ }),
+
+/***/ "wrrS":
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseEach = __webpack_require__("z7ms"),
+    isArrayLike = __webpack_require__("LN6c");
+
+/**
+ * The base implementation of `_.map` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function baseMap(collection, iteratee) {
+  var index = -1,
+      result = isArrayLike(collection) ? Array(collection.length) : [];
+
+  baseEach(collection, function (value, key, collection) {
+    result[++index] = iteratee(value, key, collection);
+  });
+  return result;
+}
+
+module.exports = baseMap;
 
 /***/ }),
 
