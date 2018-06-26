@@ -5,15 +5,20 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "rm -rf build && preact build",
-    "serve": "preact build && preact serve",
+    "build:prerender": "node utils/prerender.js",
+    "clean:prerender": "rm -f prerender-urls.json",
+    "clean:build": "rm -rf build",
+    "build:preact": "preact build",
+    "build": "yarn clean:build && yarn build:prerender && yarn build:preact && yarn clean:prerender",
+    "serve": "yarn build:preact && preact serve",
     "dev": "preact watch",
     "test:lint": "eslint src",
     "test:projects": "node src/utils/projects/verify.test.js",
     "test": "yarn test:lint && yarn test:projects",
     "deploy:tag": "git add build && git commit -am $npm_package_version && git tag $npm_package_version",
     "deploy:publish_build": "git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages",
-    "deploy": "yarn test && yarn build && node bumpVersion.js && yarn deploy:tag && yarn deploy:publish_build"
+    "deploy:bump_version": "node utils/bumpVersion.js",
+    "deploy": "yarn test && yarn build && yarn deploy:bump_version && yarn deploy:tag && yarn deploy:publish_build"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor",

@@ -42,7 +42,7 @@ const Tag = ({ active, onToggle, color, ...props }) => {
   return (
     <Wrapper active={active} noOutline={!clickable} color={color}>
       <Checkbox id={id} type="checkbox" checked={active} value={name} onChange={getValue(onToggle || (() => {}))} />
-      <label htmlFor={id} clickable={clickable}>
+      <label for={id} clickable={clickable}>
         {children}
       </label>
     </Wrapper>
