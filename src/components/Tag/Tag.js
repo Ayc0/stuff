@@ -9,7 +9,8 @@ const Wrapper = styled.div(
     border: 'none',
     borderRadius: '1em',
     margin: '3px 5px',
-    fontWeight: 600
+    fontWeight: 600,
+    whiteSpace: 'nowrap'
   },
   ({ active, color, noOutline }) => ({
     backgroundColor: active ? getColor(color) : undefined,
