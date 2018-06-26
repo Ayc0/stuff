@@ -178,5 +178,17 @@
     "language": "JavaScript",
     "description":
       "Emotion is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS."
+  },
+  {
+    "name": "SortableJS",
+    "sources": {
+      "website": "http://cheton.github.io/react-sortable/",
+      "github": "https://github.com/cheton/react-sortable",
+      "npm": "https://www.npmjs.com/package/react-sortablejs"
+    },
+    "keywords": ["drag", "jsx"],
+    "language": "JavaScript",
+    "description":
+      "Sortable is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices"
   }
 ]
