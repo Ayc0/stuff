@@ -18,17 +18,26 @@ const Tile = styled(Row)(
   })
 );
 
+const TagWrapper = styled(Row)`
+  @media (max-width: 500px) {
+    order: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+`;
+
 const Project = ({ project }) => (
   <Tile column language={project.language}>
-    <Row top fluid>
-      <h3 style={{ margin: 0, flex: 1 }}>{project.name}</h3>
-      {project.keywords.map(keyword => <Tag color="accent">{keyword}</Tag>)}
+    <Row top fluid wrap>
+      <h3 style={{ margin: 0, flexGrow: 1 }}>{project.name}</h3>
+      <TagWrapper>{project.keywords.map(keyword => <Tag color="accent">{keyword}</Tag>)}</TagWrapper>
       {Object.entries(project.sources).map(([type, link]) => (
         <Source key={type} type={type} link={link} size="1.5em" style={{ marginLeft: '.5em' }} />
       ))}
     </Row>
     <Row fluid clickable>
-      <Description style={{ width: '60%' }}>{project.description}</Description>
+      <Description style={{ maxWidth: '30em' }}>{project.description}</Description>
     </Row>
   </Tile>
 );
