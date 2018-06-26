@@ -51,6 +51,10 @@ class Search extends Component {
 
   input = null;
 
+  componentDidMount() {
+    this.setFocus();
+  }
+
   render({ onChange, style, ...props }) {
     const wrapperStyle = style.wrapper || {};
     const inputStyle = style.input || {};
