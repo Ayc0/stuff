@@ -1775,14 +1775,15 @@ var V = function ca(W) {
           case 125:
           case 59:
             g = (0 < m ? g.replace(N, "") : g).trim();
-            if (1 < (t = g.length)) switch (0 === E && (q = g.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (g = g.replace(" ", ":")).length), 0 < z && void 0 !== (A = I(1, g, c, d, B, x, p.length, h, a, h)) && 0 === (t = (g = A.trim()).length) && (g = "\x00\x00"), q = g.charCodeAt(0), m = g.charCodeAt(1), q + m) {
+            if (1 < (t = g.length)) switch (0 === E && (q = g.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (g = g.replace(" ", ":")).length), 0 < z && void 0 !== (A = I(1, g, c, d, B, x, p.length, h, a, h)) && 0 === (t = (g = A.trim()).length) && (g = "\x00\x00"), q = g.charCodeAt(0), m = g.charCodeAt(1), q) {
               case 0:
                 break;
 
-              case 169:
-              case 163:
-                H += g + f.charAt(n);
-                break;
+              case 64:
+                if (105 === m || 99 === m) {
+                  H += g + f.charAt(n);
+                  break;
+                }
 
               default:
                 58 !== g.charCodeAt(t - 1) && (p += P(g, q, m, g.charCodeAt(2)));
@@ -1796,7 +1797,7 @@ var V = function ca(W) {
       switch (e) {
         case 13:
         case 10:
-          47 === b ? b = 0 : 0 === 1 + q && (m = 1, g += "\x00");
+          47 === b ? b = 0 : 0 === 1 + q && 107 !== h && 0 < g.length && (m = 1, g += "\x00");
           0 < z * Y && I(0, g, c, d, B, x, p.length, h, a, h);
           x = 1;
           B++;
@@ -2045,7 +2046,9 @@ var V = function ca(W) {
         return "-webkit-" + a + "-moz-" + a + "-ms-" + a + a;
 
       case 883:
-        return 45 === a.charCodeAt(8) ? "-webkit-" + a + a : a;
+        if (45 === a.charCodeAt(8)) return "-webkit-" + a + a;
+        if (0 < a.indexOf("image-set(", 11)) return a.replace(ka, "$1-webkit-$2") + a;
+        break;
 
       case 932:
         if (45 === a.charCodeAt(4)) switch (a.charCodeAt(5)) {
@@ -2069,7 +2072,7 @@ var V = function ca(W) {
         return "-webkit-box-pack" + b + "-webkit-" + a + "-ms-flex-pack" + b + a;
 
       case 1005:
-        return ka.test(a) ? a.replace(aa, ":-webkit-") + a.replace(aa, ":-moz-") + a : a;
+        return la.test(a) ? a.replace(aa, ":-webkit-") + a.replace(aa, ":-moz-") + a : a;
 
       case 1e3:
         b = a.substring(13).trim();
@@ -2135,11 +2138,11 @@ var V = function ca(W) {
 
       case 931:
       case 953:
-        if (!0 === la.test(d)) return 115 === (b = d.substring(d.indexOf(":") + 1)).charCodeAt(0) ? P(d.replace("stretch", "fill-available"), c, f, h).replace(":fill-available", ":stretch") : a.replace(b, "-webkit-" + b) + a.replace(b, "-moz-" + b.replace("fill-", "")) + a;
+        if (!0 === ma.test(d)) return 115 === (b = d.substring(d.indexOf(":") + 1)).charCodeAt(0) ? P(d.replace("stretch", "fill-available"), c, f, h).replace(":fill-available", ":stretch") : a.replace(b, "-webkit-" + b) + a.replace(b, "-moz-" + b.replace("fill-", "")) + a;
         break;
 
       case 962:
-        if (a = "-webkit-" + a + (102 === a.charCodeAt(5) ? "-ms-" + a : "") + a, 211 === f + h && 105 === a.charCodeAt(13) && 0 < a.indexOf("transform", 10)) return a.substring(0, a.indexOf(";", 27) + 1).replace(ma, "$1-webkit-$2") + a;
+        if (a = "-webkit-" + a + (102 === a.charCodeAt(5) ? "-ms-" + a : "") + a, 211 === f + h && 105 === a.charCodeAt(13) && 0 < a.indexOf("transform", 10)) return a.substring(0, a.indexOf(";", 27) + 1).replace(na, "$1-webkit-$2") + a;
     }
 
     return a;
@@ -2149,12 +2152,12 @@ var V = function ca(W) {
     var f = d.indexOf(1 === c ? ":" : "{"),
         h = d.substring(0, 3 !== c ? f : 10);
     f = d.substring(f + 1, d.length - 1);
-    return H(2 !== c ? h : h.replace(na, "$1"), f, c);
+    return H(2 !== c ? h : h.replace(oa, "$1"), f, c);
   }
 
   function fa(d, c) {
     var f = P(c, c.charCodeAt(0), c.charCodeAt(1), c.charCodeAt(2));
-    return f !== c + ";" ? f.replace(oa, " or ($1)").substring(4) : "(" + c + ")";
+    return f !== c + ";" ? f.replace(pa, " or ($1)").substring(4) : "(" + c + ")";
   }
 
   function I(d, c, f, h, a, k, b, u, l, q) {
@@ -2232,8 +2235,8 @@ var V = function ca(W) {
   var da = /^\0+/g,
       N = /[\0\r\f]/g,
       aa = /: */g,
-      ka = /zoo|gra/,
-      ma = /([,: ])(transform)/g,
+      la = /zoo|gra/,
+      na = /([,: ])(transform)/g,
       ja = /,\r+?/g,
       F = /([\t\r\n ])*\f?&/g,
       ha = /@(k\w+)\s*(\S*)\s*/,
@@ -2241,10 +2244,11 @@ var V = function ca(W) {
       ia = /:(read-only)/g,
       G = /[svh]\w+-[tblr]{2}/,
       ea = /\(\s*(.*)\s*\)/g,
-      oa = /([\s\S]*?);/g,
+      pa = /([\s\S]*?);/g,
       ba = /-self|flex-/g,
-      na = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
-      la = /stretch|:\s*\w+\-(?:conte|avail)/,
+      oa = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
+      ma = /stretch|:\s*\w+\-(?:conte|avail)/,
+      ka = /([^-])(image-set\()/,
       x = 1,
       B = 1,
       C = 0,
@@ -3427,6 +3431,25 @@ preact_router_es_Router.Link = preact_router_es_Link;
 
 /* harmony default export */ var preact_router_es = (preact_router_es_Router);
 //# sourceMappingURL=preact-router.es.js.map
+// CONCATENATED MODULE: ./components/View/View.js
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+
+
+var View_View = function View(_ref) {
+  var name = _ref.name,
+      component = _ref.component,
+      props = _objectWithoutProperties(_ref, ['name', 'component']);
+
+  if (typeof window !== 'undefined') {
+    document.title = name;
+  }
+  return Object(preact_min["h"])(component, props);
+};
+
+/* harmony default export */ var components_View_View = (View_View);
+// CONCATENATED MODULE: ./components/View/index.js
+
 // EXTERNAL MODULE: ../node_modules/lodash/groupBy.js
 var groupBy = __webpack_require__("ly9C");
 var groupBy_default = /*#__PURE__*/__webpack_require__.n(groupBy);
@@ -3471,7 +3494,7 @@ var verify = function verify(color) {
 // source https://codepen.io/artemdemo/pen/HzDLn
 
 var MagnifyingGlass = /*#__PURE__*/preact_emotion_dist_index_es('div', {
-  target: 'e4hvamj0'
+  target: 'el79lao0'
 })('font-size:', function (props) {
   return props.size;
 }, ';display:inline-block;width:0.4em;height:0.4em;border:0.1em solid ', function (props) {
@@ -3491,7 +3514,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+function Search__objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3508,7 +3531,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
-  target: 'e1cwbuf30'
+  target: 'ekbohl70'
 })({
   position: 'relative',
   fontSize: '1.2em',
@@ -3516,7 +3539,7 @@ var Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
 });
 
 var MGWrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
-  target: 'e1cwbuf31'
+  target: 'ekbohl71'
 })({
   position: 'absolute',
   left: '0.4em',
@@ -3524,7 +3547,7 @@ var MGWrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
 });
 
 var Input = /*#__PURE__*/preact_emotion_dist_index_es('input', {
-  target: 'e1cwbuf32'
+  target: 'ekbohl72'
 })({
   backgroundColor: 'inherit',
   width: 'calc(100% - 1.5em)',
@@ -3534,7 +3557,7 @@ var Input = /*#__PURE__*/preact_emotion_dist_index_es('input', {
   border: 'none',
   fontSize: '1em',
   outline: 'none',
-  boxShadow: '0 0 0 1px black',
+  boxShadow: '0 0 0 1px ' + getColor('text'),
   ':focus': {
     boxShadow: '0 0 0 1px ' + getColor('primary'),
     color: getColor('primary-d1'),
@@ -3570,7 +3593,7 @@ var Search_Search = function (_Component) {
   Search.prototype.render = function render(_ref) {
     var onChange = _ref.onChange,
         style = _ref.style,
-        props = _objectWithoutProperties(_ref, ['onChange', 'style']);
+        props = Search__objectWithoutProperties(_ref, ['onChange', 'style']);
 
     var wrapperStyle = style.wrapper || {};
     var inputStyle = style.input || {};
@@ -3580,7 +3603,7 @@ var Search_Search = function (_Component) {
       Object(preact_min["h"])(
         MGWrapper,
         { onClick: this.setFocus },
-        Object(preact_min["h"])(Search_MagnifyingGlass, { color: this.state.focus ? getColor('primary-d1') : 'black', size: '1.2em' })
+        Object(preact_min["h"])(Search_MagnifyingGlass, { color: this.state.focus ? getColor('primary-d1') : getColor('text'), size: '1.2em' })
       ),
       Object(preact_min["h"])(Input, _extends({}, props, {
         style: inputStyle,
@@ -3610,50 +3633,69 @@ Search_Search.defaultProps = {
 // CONCATENATED MODULE: ./components/Row/Row.js
 var Row__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function Row__objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 
-var Row = /*#__PURE__*/preact_emotion_dist_index_es('div', {
-  target: 'e8ztj3d0'
-})(function (props) {
+
+
+var Row_Row = function Row(_ref) {
+  var right = _ref.right,
+      middle = _ref.middle,
+      left = _ref.left,
+      center = _ref.center,
+      top = _ref.top,
+      bottom = _ref.bottom,
+      column = _ref.column,
+      spaceBetween = _ref.spaceBetween,
+      wrap = _ref.wrap,
+      as = _ref.as,
+      className = _ref.className,
+      props = Row__objectWithoutProperties(_ref, ['right', 'middle', 'left', 'center', 'top', 'bottom', 'column', 'spaceBetween', 'wrap', 'as', 'className']);
+
   var justifyContent = void 0;
   var alignItems = void 0;
 
-  if (props.right) {
+  if (right) {
     justifyContent = 'flex-end';
-  } else if (props.middle) {
+  } else if (middle) {
     justifyContent = 'center';
   } else {
     justifyContent = 'flex-start';
   }
 
-  if (props.top) {
+  if (top) {
     alignItems = 'flex-start';
-  } else if (props.bottom) {
+  } else if (bottom) {
     alignItems = 'flex-end';
   } else {
     alignItems = 'center';
   }
 
-  if (props.column) {
-    var _ref = [alignItems, justifyContent];
-    justifyContent = _ref[0];
-    alignItems = _ref[1];
+  if (column) {
+    var _ref2 = [alignItems, justifyContent];
+    justifyContent = _ref2[0];
+    alignItems = _ref2[1];
   }
 
-  if (props.spaceBetween) {
+  if (spaceBetween) {
     justifyContent = 'space-between';
   }
 
-  return Row__extends({
+  var style = {
     display: 'flex',
-    flexDirection: props.column ? 'column' : 'row',
-    flexWrap: props.wrap && 'wrap',
+    flexDirection: column ? 'column' : 'row',
+    flexWrap: wrap && 'wrap',
     justifyContent: justifyContent,
     alignItems: alignItems
-  }, props.style);
-});
+  };
 
-Row.defaultProps = {
+  var classNames = [].concat((className || '').split(' '), [/*#__PURE__*/index_es_css(style)]);
+
+  return Object(preact_min["h"])(as, Row__extends({}, props, { className: classNames.join(' ') }));
+};
+
+Row_Row.defaultProps = {
+  as: 'div',
   column: false,
   left: true,
   center: undefined,
@@ -3666,7 +3708,7 @@ Row.defaultProps = {
   style: {}
 };
 
-/* harmony default export */ var Row_Row = (Row);
+/* harmony default export */ var components_Row_Row = (Row_Row);
 // CONCATENATED MODULE: ./components/Row/index.js
 
 // CONCATENATED MODULE: ./components/Tag/Tag.js
@@ -3681,33 +3723,28 @@ function Tag__objectWithoutProperties(obj, keys) { var target = {}; for (var i i
 
 
 var Tag_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
-  target: 'euj2erp0'
+  target: 'e1i0cbp10'
 })({
   border: 'none',
   borderRadius: '1em',
   margin: '3px 5px',
-  padding: '.25em .5em',
   fontWeight: 600
 }, function (_ref) {
   var active = _ref.active,
-      color = _ref.color;
+      color = _ref.color,
+      noOutline = _ref.noOutline;
   return {
     backgroundColor: active ? getColor(color) : undefined,
-    boxShadow: active ? undefined : '0 0 0 2px ' + getColor(color),
+    boxShadow: active || noOutline ? undefined : '0 0 0 2px ' + getColor(color),
+    padding: noOutline ? 0 : '.25em .5em',
     color: active ? 'white' : getColor(color)
   };
 });
 
 var Checkbox = /*#__PURE__*/preact_emotion_dist_index_es('input', {
-  target: 'euj2erp1'
+  target: 'e1i0cbp11'
 })({
   display: 'none'
-});
-
-var Label = /*#__PURE__*/preact_emotion_dist_index_es('label', {
-  target: 'euj2erp2'
-})({
-  cursor: 'pointer'
 });
 
 var counter = 0;
@@ -3731,13 +3768,15 @@ var Tag_Tag = function Tag(_ref2) {
   var name = props.name || childrenIsString(props.children) && props.children + '';
   var children = props.children || [props.name];
 
+  var clickable = onToggle !== undefined;
+
   return Object(preact_min["h"])(
     Tag_Wrapper,
-    { active: active, color: color },
-    Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, value: name, onChange: utils_getValue(onToggle) }),
+    { active: active, noOutline: !clickable, color: color },
+    Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, value: name, onChange: utils_getValue(onToggle || function () {}) }),
     Object(preact_min["h"])(
-      Label,
-      { htmlFor: id },
+      'label',
+      { htmlFor: id, clickable: clickable },
       children
     )
   );
@@ -3746,7 +3785,7 @@ var Tag_Tag = function Tag(_ref2) {
 Tag_Tag.defaultProps = {
   color: 'primary',
   active: false,
-  onToggle: function onToggle() {},
+  onToggle: undefined,
   name: '',
   children: null
 };
@@ -3781,6 +3820,418 @@ var projects_search = function search(term) {
 };
 
 /* harmony default export */ var utils_projects = (projects_default.a);
+// CONCATENATED MODULE: ./components/Collapse/Collapse.js
+var Collapse__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+function Collapse__objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function Collapse__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Collapse__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function Collapse__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Collapse_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+  target: 'e2j8qdz0'
+})(function (_ref) {
+  var timing = _ref.timing;
+  return {
+    overflow: 'hidden',
+    transition: 'max-height ' + timing + 'ms'
+  };
+});
+
+var Collapse_Collapse = function (_Component) {
+  Collapse__inherits(Collapse, _Component);
+
+  function Collapse() {
+    var _temp, _this, _ret;
+
+    Collapse__classCallCheck(this, Collapse);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = Collapse__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.div = null, _this.timeoutID = null, _this.bindRef = function (ref) {
+      _this.div = ref;
+    }, _this.height = function () {
+      return _this.div.scrollHeight + 'px';
+    }, _this.open = function () {
+      _this.div.style.transitionTimingFunction = 'ease-in';
+      _this.div.style.maxHeight = _this.props.minHeight;
+      setTimeout(function () {
+        _this.div.style.maxHeight = _this.height();
+        _this.timeoutID = setTimeout(function () {
+          _this.div.style.maxHeight = 'none';
+          _this.timeoutID = null;
+
+          // force update because of weird issue
+          _this.div.style.display = 'none';
+          _this.div.offsetHeight;
+          _this.div.style.display = 'block';
+        }, _this.props.timing);
+      }, 10);
+    }, _this.close = function () {
+      if (_this.timeoutID) {
+        clearTimeout(_this.timeoutID);
+        _this.timeoutID = null;
+      }
+      _this.div.style.transitionTimingFunction = 'ease-out';
+      _this.div.style.maxHeight = _this.height();
+      setTimeout(function () {
+        _this.div.style.maxHeight = _this.props.minHeight;
+      }, 10);
+    }, _this.componentDidMount = function () {
+      if (!_this.props.open) {
+        _this.div.style.maxHeight = _this.props.minHeight;
+      }
+    }, _temp), Collapse__possibleConstructorReturn(_this, _ret);
+  }
+
+  Collapse.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (prevProps.open !== this.props.open) {
+      if (this.props.open) {
+        this.open();
+      }
+      if (!this.props.open) {
+        this.close();
+      }
+    }
+  };
+
+  Collapse.prototype.render = function render(_ref2) {
+    var children = _ref2.children,
+        timing = _ref2.timing,
+        open = _ref2.open,
+        props = Collapse__objectWithoutProperties(_ref2, ['children', 'timing', 'open']);
+
+    return Object(preact_min["h"])(
+      Collapse_Wrapper,
+      Collapse__extends({}, props, { timing: timing, innerRef: this.bindRef }),
+      children
+    );
+  };
+
+  return Collapse;
+}(preact_min["Component"]);
+
+Collapse_Collapse.defaultProps = {
+  timing: 100,
+  minHeight: '0px'
+};
+
+/* harmony default export */ var components_Collapse_Collapse = (Collapse_Collapse);
+// CONCATENATED MODULE: ./components/Collapse/index.js
+
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Caret.js
+
+
+var Caret = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+  target: 'e1ftyql10'
+})('font-size:', function (props) {
+  return props.size;
+}, ';width:0;height:0;border-top:1em solid transparent;border-bottom:1em solid transparent;border-left:1em solid ', function (props) {
+  return props.color;
+}, ';transition:transform 0.1s linear;transform-origin:0.3em center;transform:rotate(', function (props) {
+  return props.open ? '90deg' : '0';
+}, ');');
+
+Caret.defaultProps = {
+  size: '1em',
+  color: 'inherit',
+  open: false
+};
+
+/* harmony default export */ var Category_Caret = (Caret);
+// EXTERNAL MODULE: ./components/Source/website.png
+var website = __webpack_require__("VLqJ");
+var website_default = /*#__PURE__*/__webpack_require__.n(website);
+
+// EXTERNAL MODULE: ./components/Source/github.png
+var github = __webpack_require__("QmqX");
+var github_default = /*#__PURE__*/__webpack_require__.n(github);
+
+// CONCATENATED MODULE: ./components/Source/Source.js
+var Source__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+
+
+
+
+var Source_Source = function Source(_ref) {
+  var type = _ref.type,
+      link = _ref.link,
+      size = _ref.size,
+      style = _ref.style,
+      imageStyle = _ref.imageStyle;
+
+  var image = void 0;
+  switch (type) {
+    case 'website':
+      image = website_default.a;
+      break;
+    case 'github':
+      image = github_default.a;
+      break;
+    case 'npm':
+      image = 'https://static.npmjs.com/f1786e9b7cba9753ca7b9c40e8b98f67.png';
+      break;
+    case 'pypi':
+      image = 'https://pypi.org/static/images/logo-small.6eef541e.svg';
+      break;
+    default:
+      image = null;
+      break;
+  }
+  return Object(preact_min["h"])(
+    'a',
+    { href: link, style: Source__extends({ fontSize: size }, style) },
+    Object(preact_min["h"])('img', { src: image, alt: link, style: Source__extends({ width: '1em', height: '1em' }, imageStyle) })
+  );
+};
+
+Source_Source.defaultProps = {
+  style: {},
+  imageStyle: {},
+  size: '2em'
+};
+
+/* harmony default export */ var components_Source_Source = (Source_Source);
+// CONCATENATED MODULE: ./components/Source/index.js
+
+// CONCATENATED MODULE: ./utils/languages/index.js
+var list = __webpack_require__("MmfF");
+
+var languages = Object.keys(list);
+
+/* harmony default export */ var utils_languages = (languages);
+
+var getLanguage = function getLanguage(languageName) {
+  if (languages.includes(languageName)) {
+    return list[languageName];
+  }
+  return null;
+};
+
+var languages_getColor = function getColor(languageName) {
+  var language = getLanguage(languageName);
+  return language ? language.color : null;
+};
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/Description.js
+var Description__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+function Description__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Description__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function Description__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Description_Description = function (_Component) {
+  Description__inherits(Description, _Component);
+
+  function Description() {
+    var _temp, _this, _ret;
+
+    Description__classCallCheck(this, Description);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = Description__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { open: false }, _this.toggleOpen = function () {
+      return _this.setState(function (_ref) {
+        var open = _ref.open;
+        return { open: !open };
+      });
+    }, _temp), Description__possibleConstructorReturn(_this, _ret);
+  }
+
+  Description.prototype.render = function render(_ref2, _ref3) {
+    var children = _ref2.children,
+        style = _ref2.style;
+    var open = _ref3.open;
+
+    return Object(preact_min["h"])(
+      components_Collapse_Collapse,
+      {
+        open: open,
+        onClick: this.toggleOpen,
+        minHeight: '1.2em',
+        style: Description__extends({ textOverflow: 'ellipsis', whiteSpace: open ? '' : 'nowrap' }, style)
+      },
+      children
+    );
+  };
+
+  return Description;
+}(preact_min["Component"]);
+
+Description_Description.defaultProps = {
+  style: {}
+};
+
+/* harmony default export */ var Project_Description = (Description_Description);
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/Project.js
+
+
+
+
+
+
+
+
+
+
+
+var Tile = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
+  target: 'enkut0x0'
+})({
+  margin: '1em 0',
+  padding: '.5em 0 .5em 1em'
+}, function (_ref) {
+  var language = _ref.language;
+  return {
+    boxShadow: 'inset ' + languages_getColor(language) + ' 0.4em 0px 0 0px'
+  };
+});
+
+var TagWrapper = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
+  target: 'enkut0x1'
+})('@media (max-width:500px){order:1;flex-wrap:wrap;width:100%;margin-bottom:0.5em;}');
+
+var Project_Project = function Project(_ref2) {
+  var project = _ref2.project;
+  return Object(preact_min["h"])(
+    Tile,
+    { column: true, language: project.language },
+    Object(preact_min["h"])(
+      components_Row_Row,
+      { top: true, fluid: true, wrap: true },
+      Object(preact_min["h"])(
+        'h3',
+        { style: { margin: 0, flexGrow: 1 } },
+        project.name
+      ),
+      Object(preact_min["h"])(
+        TagWrapper,
+        null,
+        project.keywords.map(function (keyword) {
+          return Object(preact_min["h"])(
+            components_Tag_Tag,
+            { color: 'accent' },
+            keyword
+          );
+        })
+      ),
+      Object.entries(project.sources).map(function (_ref3) {
+        var type = _ref3[0],
+            link = _ref3[1];
+        return Object(preact_min["h"])(components_Source_Source, { key: type, type: type, link: link, size: '1.5em', style: { marginLeft: '.5em' } });
+      })
+    ),
+    Object(preact_min["h"])(
+      components_Row_Row,
+      { fluid: true, clickable: true },
+      Object(preact_min["h"])(
+        Project_Description,
+        { style: { maxWidth: '30em' } },
+        project.description
+      )
+    )
+  );
+};
+
+/* harmony default export */ var Category_Project_Project = (Project_Project);
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/index.js
+
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Category.js
+
+
+function Category__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Category__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function Category__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+var Category_Category = function (_Component) {
+  Category__inherits(Category, _Component);
+
+  function Category() {
+    var _temp, _this, _ret;
+
+    Category__classCallCheck(this, Category);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = Category__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { open: true }, _this.toggleOpen = function () {
+      return _this.setState(function (_ref) {
+        var open = _ref.open;
+        return { open: !open };
+      });
+    }, _temp), Category__possibleConstructorReturn(_this, _ret);
+  }
+
+  Category.prototype.render = function render(_ref2, _ref3) {
+    var name = _ref2.name,
+        projects = _ref2.projects;
+    var open = _ref3.open;
+
+    return Object(preact_min["h"])(
+      'div',
+      { fluid: true },
+      Object(preact_min["h"])(
+        components_Row_Row,
+        { clickable: true, onClick: this.toggleOpen },
+        Object(preact_min["h"])(Category_Caret, { size: '.5em', color: getColor('text'), style: { marginRight: '1em' }, open: open }),
+        ' ',
+        Object(preact_min["h"])(
+          'h2',
+          null,
+          name
+        )
+      ),
+      Object(preact_min["h"])(
+        components_Collapse_Collapse,
+        { open: open },
+        projects.map(function (project) {
+          return Object(preact_min["h"])(Category_Project_Project, { key: project.name, project: project });
+        })
+      )
+    );
+  };
+
+  return Category;
+}(preact_min["Component"]);
+
+/* harmony default export */ var FavoriteProjects_Category_Category = (Category_Category);
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/index.js
+
 // CONCATENATED MODULE: ./components/FavoriteProjects/FavoriteProjects.js
 
 
@@ -3803,9 +4254,16 @@ function FavoriteProjects__inherits(subClass, superClass) { if (typeof superClas
 
 
 
-var TagList = /*#__PURE__*/preact_emotion_dist_index_es(Row_Row, {
-  target: 'e9cxdkp0'
-})({ padding: '.6em 0 .3em 0', marginBottom: '2em', maxHeight: '3.2em', overflow: 'auto' });
+
+
+var TagList = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
+  target: 'e1pho4wl0'
+})({
+  padding: '.6em 0 .3em 0',
+  marginBottom: '2em',
+  maxHeight: '3.2em',
+  overflow: 'auto'
+});
 
 var FavoriteProjects_getKeywordsFromProjects = function getKeywordsFromProjects(projects) {
   return uniq_default()(flatten_default()(projects.map(function (project) {
@@ -3898,39 +4356,12 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
         })
       ),
       Object(preact_min["h"])(
-        'table',
-        null,
+        components_Row_Row,
+        { column: true },
         Object.entries(categories).map(function (_ref4) {
           var categoryName = _ref4[0],
               categoryProjects = _ref4[1];
-          return [Object(preact_min["h"])(
-            'thead',
-            { key: 'head_' + categoryName },
-            Object(preact_min["h"])(
-              'th',
-              null,
-              categoryName
-            )
-          ), Object(preact_min["h"])(
-            'tbody',
-            { key: 'body_' + categoryName },
-            categoryProjects.map(function (project) {
-              return Object(preact_min["h"])(
-                'tr',
-                { key: project.name },
-                Object(preact_min["h"])(
-                  'td',
-                  null,
-                  project.name
-                ),
-                Object(preact_min["h"])(
-                  'td',
-                  null,
-                  project.description
-                )
-              );
-            })
-          )];
+          return Object(preact_min["h"])(FavoriteProjects_Category_Category, { name: categoryName, projects: categoryProjects });
         })
       )
     );
@@ -3944,6 +4375,16 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
 
 // CONCATENATED MODULE: ./views/FavoriteProjects.js
 
+
+
+
+var FavoriteProjects__ref = Object(preact_min["h"])(components_View_View, { name: 'Ayc0 - Packages browser', component: components_FavoriteProjects_FavoriteProjects });
+
+var view = function view() {
+  return FavoriteProjects__ref;
+};
+
+/* harmony default export */ var views_FavoriteProjects = (view);
 // CONCATENATED MODULE: ./views/index.js
 
 
@@ -3954,7 +4395,7 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
 var views__ref = Object(preact_min["h"])(
   preact_router_es,
   null,
-  Object(preact_min["h"])(components_FavoriteProjects_FavoriteProjects, { 'default': true })
+  Object(preact_min["h"])(views_FavoriteProjects, { 'default': true })
 );
 
 var Routes = function Routes() {
@@ -3975,7 +4416,7 @@ var App_default = /*#__PURE__*/__webpack_require__.n(App);
 
 
 var Container = /*#__PURE__*/preact_emotion_dist_index_es('div', {
-  target: 'e1x7lww90'
+  target: 'e88xnj40'
 })({
   margin: '2em auto',
   maxWidth: '900px',
@@ -4339,6 +4780,13 @@ module.exports = root;
 
 /***/ }),
 
+/***/ "MmfF":
+/***/ (function(module, exports) {
+
+module.exports = {"1C Enterprise":{"color":"#814CCC","url":"https://github.com/trending?l=1C-Enterprise"},"ABAP":{"color":"#E8274B","url":"https://github.com/trending?l=ABAP"},"ActionScript":{"color":"#882B0F","url":"https://github.com/trending?l=ActionScript"},"Ada":{"color":"#02f88c","url":"https://github.com/trending?l=Ada"},"Agda":{"color":"#315665","url":"https://github.com/trending?l=Agda"},"AGS Script":{"color":"#B9D9FF","url":"https://github.com/trending?l=AGS-Script"},"Alloy":{"color":"#64C800","url":"https://github.com/trending?l=Alloy"},"AMPL":{"color":"#E6EFBB","url":"https://github.com/trending?l=AMPL"},"ANTLR":{"color":"#9DC3FF","url":"https://github.com/trending?l=ANTLR"},"API Blueprint":{"color":"#2ACCA8","url":"https://github.com/trending?l=API-Blueprint"},"APL":{"color":"#5A8164","url":"https://github.com/trending?l=APL"},"AppleScript":{"color":"#101F1F","url":"https://github.com/trending?l=AppleScript"},"Arc":{"color":"#aa2afe","url":"https://github.com/trending?l=Arc"},"Arduino":{"color":"#bd79d1","url":"https://github.com/trending?l=Arduino"},"ASP":{"color":"#6a40fd","url":"https://github.com/trending?l=ASP"},"AspectJ":{"color":"#a957b0","url":"https://github.com/trending?l=AspectJ"},"Assembly":{"color":"#6E4C13","url":"https://github.com/trending?l=Assembly"},"ATS":{"color":"#1ac620","url":"https://github.com/trending?l=ATS"},"AutoHotkey":{"color":"#6594b9","url":"https://github.com/trending?l=AutoHotkey"},"AutoIt":{"color":"#1C3552","url":"https://github.com/trending?l=AutoIt"},"Ballerina":{"color":"#FF5000","url":"https://github.com/trending?l=Ballerina"},"Batchfile":{"color":"#C1F12E","url":"https://github.com/trending?l=Batchfile"},"BlitzMax":{"color":"#cd6400","url":"https://github.com/trending?l=BlitzMax"},"Boo":{"color":"#d4bec1","url":"https://github.com/trending?l=Boo"},"Brainfuck":{"color":"#2F2530","url":"https://github.com/trending?l=Brainfuck"},"C":{"color":"#555555","url":"https://github.com/trending?l=C"},"C#":{"color":"#178600","url":"https://github.com/trending?l=Csharp"},"C++":{"color":"#f34b7d","url":"https://github.com/trending?l=C++"},"Ceylon":{"color":"#dfa535","url":"https://github.com/trending?l=Ceylon"},"Chapel":{"color":"#8dc63f","url":"https://github.com/trending?l=Chapel"},"Cirru":{"color":"#ccccff","url":"https://github.com/trending?l=Cirru"},"Clarion":{"color":"#db901e","url":"https://github.com/trending?l=Clarion"},"Clean":{"color":"#3F85AF","url":"https://github.com/trending?l=Clean"},"Click":{"color":"#E4E6F3","url":"https://github.com/trending?l=Click"},"Clojure":{"color":"#db5855","url":"https://github.com/trending?l=Clojure"},"CoffeeScript":{"color":"#244776","url":"https://github.com/trending?l=CoffeeScript"},"ColdFusion":{"color":"#ed2cd6","url":"https://github.com/trending?l=ColdFusion"},"Common Lisp":{"color":"#3fb68b","url":"https://github.com/trending?l=Common-Lisp"},"Component Pascal":{"color":"#B0CE4E","url":"https://github.com/trending?l=Component-Pascal"},"Crystal":{"color":"#776791","url":"https://github.com/trending?l=Crystal"},"CSS":{"color":"#563d7c","url":"https://github.com/trending?l=CSS"},"Cuda":{"color":"#3A4E3A","url":"https://github.com/trending?l=Cuda"},"D":{"color":"#ba595e","url":"https://github.com/trending?l=D"},"Dart":{"color":"#00B4AB","url":"https://github.com/trending?l=Dart"},"DataWeave":{"color":"#003a52","url":"https://github.com/trending?l=DataWeave"},"DM":{"color":"#447265","url":"https://github.com/trending?l=DM"},"Dogescript":{"color":"#cca760","url":"https://github.com/trending?l=Dogescript"},"Dylan":{"color":"#6c616e","url":"https://github.com/trending?l=Dylan"},"E":{"color":"#ccce35","url":"https://github.com/trending?l=E"},"eC":{"color":"#913960","url":"https://github.com/trending?l=eC"},"ECL":{"color":"#8a1267","url":"https://github.com/trending?l=ECL"},"Eiffel":{"color":"#946d57","url":"https://github.com/trending?l=Eiffel"},"Elixir":{"color":"#6e4a7e","url":"https://github.com/trending?l=Elixir"},"Elm":{"color":"#60B5CC","url":"https://github.com/trending?l=Elm"},"Emacs Lisp":{"color":"#c065db","url":"https://github.com/trending?l=Emacs-Lisp"},"EmberScript":{"color":"#FFF4F3","url":"https://github.com/trending?l=EmberScript"},"EQ":{"color":"#a78649","url":"https://github.com/trending?l=EQ"},"Erlang":{"color":"#B83998","url":"https://github.com/trending?l=Erlang"},"F#":{"color":"#b845fc","url":"https://github.com/trending?l=Fsharp"},"Factor":{"color":"#636746","url":"https://github.com/trending?l=Factor"},"Fancy":{"color":"#7b9db4","url":"https://github.com/trending?l=Fancy"},"Fantom":{"color":"#14253c","url":"https://github.com/trending?l=Fantom"},"FLUX":{"color":"#88ccff","url":"https://github.com/trending?l=FLUX"},"Forth":{"color":"#341708","url":"https://github.com/trending?l=Forth"},"Fortran":{"color":"#4d41b1","url":"https://github.com/trending?l=Fortran"},"FreeMarker":{"color":"#0050b2","url":"https://github.com/trending?l=FreeMarker"},"Frege":{"color":"#00cafe","url":"https://github.com/trending?l=Frege"},"Game Maker Language":{"color":"#8fb200","url":"https://github.com/trending?l=Game-Maker-Language"},"Genie":{"color":"#fb855d","url":"https://github.com/trending?l=Genie"},"Gherkin":{"color":"#5B2063","url":"https://github.com/trending?l=Gherkin"},"Glyph":{"color":"#e4cc98","url":"https://github.com/trending?l=Glyph"},"Gnuplot":{"color":"#f0a9f0","url":"https://github.com/trending?l=Gnuplot"},"Go":{"color":"#375eab","url":"https://github.com/trending?l=Go"},"Golo":{"color":"#88562A","url":"https://github.com/trending?l=Golo"},"Gosu":{"color":"#82937f","url":"https://github.com/trending?l=Gosu"},"Grammatical Framework":{"color":"#79aa7a","url":"https://github.com/trending?l=Grammatical-Framework"},"Groovy":{"color":"#e69f56","url":"https://github.com/trending?l=Groovy"},"Hack":{"color":"#878787","url":"https://github.com/trending?l=Hack"},"Harbour":{"color":"#0e60e3","url":"https://github.com/trending?l=Harbour"},"Haskell":{"color":"#5e5086","url":"https://github.com/trending?l=Haskell"},"Haxe":{"color":"#df7900","url":"https://github.com/trending?l=Haxe"},"HTML":{"color":"#e34c26","url":"https://github.com/trending?l=HTML"},"Hy":{"color":"#7790B2","url":"https://github.com/trending?l=Hy"},"IDL":{"color":"#a3522f","url":"https://github.com/trending?l=IDL"},"Io":{"color":"#a9188d","url":"https://github.com/trending?l=Io"},"Ioke":{"color":"#078193","url":"https://github.com/trending?l=Ioke"},"Isabelle":{"color":"#FEFE00","url":"https://github.com/trending?l=Isabelle"},"J":{"color":"#9EEDFF","url":"https://github.com/trending?l=J"},"Java":{"color":"#b07219","url":"https://github.com/trending?l=Java"},"JavaScript":{"color":"#f1e05a","url":"https://github.com/trending?l=JavaScript"},"Jolie":{"color":"#843179","url":"https://github.com/trending?l=Jolie"},"JSONiq":{"color":"#40d47e","url":"https://github.com/trending?l=JSONiq"},"Julia":{"color":"#a270ba","url":"https://github.com/trending?l=Julia"},"Jupyter Notebook":{"color":"#DA5B0B","url":"https://github.com/trending?l=Jupyter-Notebook"},"Kotlin":{"color":"#F18E33","url":"https://github.com/trending?l=Kotlin"},"KRL":{"color":"#28431f","url":"https://github.com/trending?l=KRL"},"Lasso":{"color":"#999999","url":"https://github.com/trending?l=Lasso"},"Lex":{"color":"#DBCA00","url":"https://github.com/trending?l=Lex"},"LiveScript":{"color":"#499886","url":"https://github.com/trending?l=LiveScript"},"LLVM":{"color":"#185619","url":"https://github.com/trending?l=LLVM"},"LOLCODE":{"color":"#cc9900","url":"https://github.com/trending?l=LOLCODE"},"LookML":{"color":"#652B81","url":"https://github.com/trending?l=LookML"},"LSL":{"color":"#3d9970","url":"https://github.com/trending?l=LSL"},"Lua":{"color":"#000080","url":"https://github.com/trending?l=Lua"},"Makefile":{"color":"#427819","url":"https://github.com/trending?l=Makefile"},"Mask":{"color":"#f97732","url":"https://github.com/trending?l=Mask"},"Matlab":{"color":"#e16737","url":"https://github.com/trending?l=Matlab"},"Max":{"color":"#c4a79c","url":"https://github.com/trending?l=Max"},"MAXScript":{"color":"#00a6a6","url":"https://github.com/trending?l=MAXScript"},"Mercury":{"color":"#ff2b2b","url":"https://github.com/trending?l=Mercury"},"Meson":{"color":"#007800","url":"https://github.com/trending?l=Meson"},"Metal":{"color":"#8f14e9","url":"https://github.com/trending?l=Metal"},"Mirah":{"color":"#c7a938","url":"https://github.com/trending?l=Mirah"},"MQL4":{"color":"#62A8D6","url":"https://github.com/trending?l=MQL4"},"MQL5":{"color":"#4A76B8","url":"https://github.com/trending?l=MQL5"},"MTML":{"color":"#b7e1f4","url":"https://github.com/trending?l=MTML"},"NCL":{"color":"#28431f","url":"https://github.com/trending?l=NCL"},"Nearley":{"color":"#990000","url":"https://github.com/trending?l=Nearley"},"Nemerle":{"color":"#3d3c6e","url":"https://github.com/trending?l=Nemerle"},"nesC":{"color":"#94B0C7","url":"https://github.com/trending?l=nesC"},"NetLinx":{"color":"#0aa0ff","url":"https://github.com/trending?l=NetLinx"},"NetLinx+ERB":{"color":"#747faa","url":"https://github.com/trending?l=NetLinx+ERB"},"NetLogo":{"color":"#ff6375","url":"https://github.com/trending?l=NetLogo"},"NewLisp":{"color":"#87AED7","url":"https://github.com/trending?l=NewLisp"},"Nim":{"color":"#37775b","url":"https://github.com/trending?l=Nim"},"Nit":{"color":"#009917","url":"https://github.com/trending?l=Nit"},"Nix":{"color":"#7e7eff","url":"https://github.com/trending?l=Nix"},"Nu":{"color":"#c9df40","url":"https://github.com/trending?l=Nu"},"Objective-C":{"color":"#438eff","url":"https://github.com/trending?l=Objective-C"},"Objective-C++":{"color":"#6866fb","url":"https://github.com/trending?l=Objective-C++"},"Objective-J":{"color":"#ff0c5a","url":"https://github.com/trending?l=Objective-J"},"OCaml":{"color":"#3be133","url":"https://github.com/trending?l=OCaml"},"Omgrofl":{"color":"#cabbff","url":"https://github.com/trending?l=Omgrofl"},"ooc":{"color":"#b0b77e","url":"https://github.com/trending?l=ooc"},"Opal":{"color":"#f7ede0","url":"https://github.com/trending?l=Opal"},"Oxygene":{"color":"#cdd0e3","url":"https://github.com/trending?l=Oxygene"},"Oz":{"color":"#fab738","url":"https://github.com/trending?l=Oz"},"P4":{"color":"#7055b5","url":"https://github.com/trending?l=P4"},"Pan":{"color":"#cc0000","url":"https://github.com/trending?l=Pan"},"Papyrus":{"color":"#6600cc","url":"https://github.com/trending?l=Papyrus"},"Parrot":{"color":"#f3ca0a","url":"https://github.com/trending?l=Parrot"},"Pascal":{"color":"#E3F171","url":"https://github.com/trending?l=Pascal"},"PAWN":{"color":"#dbb284","url":"https://github.com/trending?l=PAWN"},"Pep8":{"color":"#C76F5B","url":"https://github.com/trending?l=Pep8"},"Perl":{"color":"#0298c3","url":"https://github.com/trending?l=Perl"},"Perl 6":{"color":"#0000fb","url":"https://github.com/trending?l=Perl-6"},"PHP":{"color":"#4F5D95","url":"https://github.com/trending?l=PHP"},"PigLatin":{"color":"#fcd7de","url":"https://github.com/trending?l=PigLatin"},"Pike":{"color":"#005390","url":"https://github.com/trending?l=Pike"},"PLSQL":{"color":"#dad8d8","url":"https://github.com/trending?l=PLSQL"},"PogoScript":{"color":"#d80074","url":"https://github.com/trending?l=PogoScript"},"PostScript":{"color":"#da291c","url":"https://github.com/trending?l=PostScript"},"PowerBuilder":{"color":"#8f0f8d","url":"https://github.com/trending?l=PowerBuilder"},"PowerShell":{"color":"#012456","url":"https://github.com/trending?l=PowerShell"},"Processing":{"color":"#0096D8","url":"https://github.com/trending?l=Processing"},"Prolog":{"color":"#74283c","url":"https://github.com/trending?l=Prolog"},"Propeller Spin":{"color":"#7fa2a7","url":"https://github.com/trending?l=Propeller-Spin"},"Puppet":{"color":"#302B6D","url":"https://github.com/trending?l=Puppet"},"PureBasic":{"color":"#5a6986","url":"https://github.com/trending?l=PureBasic"},"PureScript":{"color":"#1D222D","url":"https://github.com/trending?l=PureScript"},"Python":{"color":"#3572A5","url":"https://github.com/trending?l=Python"},"QML":{"color":"#44a51c","url":"https://github.com/trending?l=QML"},"R":{"color":"#198CE7","url":"https://github.com/trending?l=R"},"Racket":{"color":"#22228f","url":"https://github.com/trending?l=Racket"},"Ragel":{"color":"#9d5200","url":"https://github.com/trending?l=Ragel"},"RAML":{"color":"#77d9fb","url":"https://github.com/trending?l=RAML"},"Rascal":{"color":"#fffaa0","url":"https://github.com/trending?l=Rascal"},"Rebol":{"color":"#358a5b","url":"https://github.com/trending?l=Rebol"},"Red":{"color":"#f50000","url":"https://github.com/trending?l=Red"},"Ren'Py":{"color":"#ff7f7f","url":"https://github.com/trending?l=Ren'Py"},"Ring":{"color":"#0e60e3","url":"https://github.com/trending?l=Ring"},"Roff":{"color":"#ecdebe","url":"https://github.com/trending?l=Roff"},"Rouge":{"color":"#cc0088","url":"https://github.com/trending?l=Rouge"},"Ruby":{"color":"#701516","url":"https://github.com/trending?l=Ruby"},"RUNOFF":{"color":"#665a4e","url":"https://github.com/trending?l=RUNOFF"},"Rust":{"color":"#dea584","url":"https://github.com/trending?l=Rust"},"SaltStack":{"color":"#646464","url":"https://github.com/trending?l=SaltStack"},"SAS":{"color":"#B34936","url":"https://github.com/trending?l=SAS"},"Scala":{"color":"#c22d40","url":"https://github.com/trending?l=Scala"},"Scheme":{"color":"#1e4aec","url":"https://github.com/trending?l=Scheme"},"Self":{"color":"#0579aa","url":"https://github.com/trending?l=Self"},"Shell":{"color":"#89e051","url":"https://github.com/trending?l=Shell"},"Shen":{"color":"#120F14","url":"https://github.com/trending?l=Shen"},"Slash":{"color":"#007eff","url":"https://github.com/trending?l=Slash"},"Smalltalk":{"color":"#596706","url":"https://github.com/trending?l=Smalltalk"},"SourcePawn":{"color":"#5c7611","url":"https://github.com/trending?l=SourcePawn"},"SQF":{"color":"#3F3F3F","url":"https://github.com/trending?l=SQF"},"Squirrel":{"color":"#800000","url":"https://github.com/trending?l=Squirrel"},"SRecode Template":{"color":"#348a34","url":"https://github.com/trending?l=SRecode-Template"},"Stan":{"color":"#b2011d","url":"https://github.com/trending?l=Stan"},"Standard ML":{"color":"#dc566d","url":"https://github.com/trending?l=Standard-ML"},"SuperCollider":{"color":"#46390b","url":"https://github.com/trending?l=SuperCollider"},"Swift":{"color":"#ffac45","url":"https://github.com/trending?l=Swift"},"SystemVerilog":{"color":"#DAE1C2","url":"https://github.com/trending?l=SystemVerilog"},"Tcl":{"color":"#e4cc98","url":"https://github.com/trending?l=Tcl"},"Terra":{"color":"#00004c","url":"https://github.com/trending?l=Terra"},"TeX":{"color":"#3D6117","url":"https://github.com/trending?l=TeX"},"TI Program":{"color":"#A0AA87","url":"https://github.com/trending?l=TI-Program"},"Turing":{"color":"#cf142b","url":"https://github.com/trending?l=Turing"},"TypeScript":{"color":"#2b7489","url":"https://github.com/trending?l=TypeScript"},"UnrealScript":{"color":"#a54c4d","url":"https://github.com/trending?l=UnrealScript"},"Vala":{"color":"#fbe5cd","url":"https://github.com/trending?l=Vala"},"Verilog":{"color":"#b2b7f8","url":"https://github.com/trending?l=Verilog"},"VHDL":{"color":"#adb2cb","url":"https://github.com/trending?l=VHDL"},"Vim script":{"color":"#199f4b","url":"https://github.com/trending?l=Vim-script"},"Visual Basic":{"color":"#945db7","url":"https://github.com/trending?l=Visual-Basic"},"Volt":{"color":"#1F1F1F","url":"https://github.com/trending?l=Volt"},"Vue":{"color":"#2c3e50","url":"https://github.com/trending?l=Vue"},"WebAssembly":{"color":"#04133b","url":"https://github.com/trending?l=WebAssembly"},"wisp":{"color":"#7582D1","url":"https://github.com/trending?l=wisp"},"X10":{"color":"#4B6BEF","url":"https://github.com/trending?l=X10"},"xBase":{"color":"#403a40","url":"https://github.com/trending?l=xBase"},"XC":{"color":"#99DA07","url":"https://github.com/trending?l=XC"},"XQuery":{"color":"#5232e7","url":"https://github.com/trending?l=XQuery"},"XSLT":{"color":"#EB8CEB","url":"https://github.com/trending?l=XSLT"},"Yacc":{"color":"#4B6C4B","url":"https://github.com/trending?l=Yacc"},"Zephir":{"color":"#118f9e","url":"https://github.com/trending?l=Zephir"}}
+
+/***/ }),
+
 /***/ "N+h1":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4537,7 +4985,7 @@ module.exports = nodeUtil;
 /***/ "PEMc":
 /***/ (function(module, exports) {
 
-module.exports = [{"name":"MicroBundle","sources":{"github":"https://github.com/developit/microbundle","npm":"http://npmjs.com/package/microbundle"},"keywords":["js","build","tool"],"language":"JavaScript","description":"Zero-configuration bundler for tiny modules"},{"name":"Preact","sources":{"github":"https://github.com/developit/preact","npm":"http://npmjs.com/package/preact"},"keywords":["js","framework","react","jsx","small"],"language":"JavaScript","description":"Fast 3kB React alternative with the same modern API. Components & Virtual DOM"},{"name":"Mitt","sources":{"github":"https://github.com/developit/mitt","npm":"http://npmjs.com/package/mitt"},"keywords":["js","event"],"language":"JavaScript","description":"Tiny 200 byte functional event emitter / pubsub"},{"name":"DLV","sources":{"github":"https://github.com/developit/dlv","npm":"http://npmjs.com/package/dlv"},"keywords":["js","deep","property"],"language":"JavaScript","description":"Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"},{"name":"Tags Input","sources":{"github":"https://github.com/developit/tags-input","npm":"http://npmjs.com/package/tags-input"},"keywords":["js","html","css","input","tags"],"language":"JavaScript","description":"<input type=\"tags\"> like magic"},{"name":"NumPy","sources":{"github":"https://github.com/numpy/numpy","pypi":"https://pypi.org/project/numpy/"},"language":"Python","keywords":["array","vector"],"description":"NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."},{"name":"Fuse.js","sources":{"website":"http://fusejs.io/"},"keywords":["search","fuzzy"],"language":"JavaScript","description":"Lightweight fuzzy-search library"},{"name":"docz","sources":{"website":"https://www.docz.site/","github":"https://github.com/pedronauck/docz/"},"keywords":["doc","mardown","mdx","playground"],"language":"JavaScript","description":"It has never been so easy to document your things!"}]
+module.exports = [{"name":"MicroBundle","sources":{"github":"https://github.com/developit/microbundle","npm":"http://npmjs.com/package/microbundle"},"keywords":["js","build","tool"],"language":"JavaScript","description":"Zero-configuration bundler for tiny modules"},{"name":"Preact","sources":{"website":"https://preactjs.com/","github":"https://github.com/developit/preact","npm":"http://npmjs.com/package/preact"},"keywords":["js","framework","react","jsx","small"],"language":"JavaScript","description":"Fast 3kB React alternative with the same modern API. Components & Virtual DOM"},{"name":"Mitt","sources":{"github":"https://github.com/developit/mitt","npm":"http://npmjs.com/package/mitt"},"keywords":["js","event"],"language":"JavaScript","description":"Tiny 200 byte functional event emitter / pubsub"},{"name":"DLV","sources":{"github":"https://github.com/developit/dlv","npm":"http://npmjs.com/package/dlv"},"keywords":["js","deep","property"],"language":"JavaScript","description":"Safe deep property access in 130 bytes. x = dlv(obj, 'a.b.x')"},{"name":"Tags Input","sources":{"github":"https://github.com/developit/tags-input","npm":"http://npmjs.com/package/tags-input"},"keywords":["js","html","css","input","tags"],"language":"JavaScript","description":"<input type=\"tags\"> like magic"},{"name":"NumPy","sources":{"github":"https://github.com/numpy/numpy","pypi":"https://pypi.org/project/numpy/"},"language":"Python","keywords":["array","vector"],"description":"NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."},{"name":"Fuse.js","sources":{"website":"http://fusejs.io/","github":"https://github.com/krisk/fuse","npm":"http://npmjs.com/package/fuse.js"},"keywords":["search","fuzzy"],"language":"JavaScript","description":"Lightweight fuzzy-search library"},{"name":"docz","sources":{"website":"https://www.docz.site/","github":"https://github.com/pedronauck/docz/","npm":"http://npmjs.com/package/docz"},"keywords":["doc","mardown","mdx","playground"],"language":"JavaScript","description":"It has never been so easy to document your things!"}]
 
 /***/ }),
 
@@ -4582,6 +5030,13 @@ function baseUnary(func) {
 }
 
 module.exports = baseUnary;
+
+/***/ }),
+
+/***/ "QmqX":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "438c17272c5f0e9f4a6da34d3e4bc5bd.png";
 
 /***/ }),
 
@@ -4826,6 +5281,13 @@ module.exports = mapCacheSet;
 		};
 	};
 });
+
+/***/ }),
+
+/***/ "VLqJ":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fd0449f28059d9d24eaafa65dceaab4b.png";
 
 /***/ }),
 
