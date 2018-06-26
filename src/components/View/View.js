@@ -1,7 +1,9 @@
 import { h } from 'preact';
 
 const View = ({ name, component, ...props }) => {
-  document.title = name;
+  if (typeof window !== 'undefined') {
+    document.title = name;
+  }
   return h(component, props);
 };
 
