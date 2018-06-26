@@ -3727,6 +3727,10 @@ var Search_Search = function (_Component) {
     }, _this.input = null, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
+  Search.prototype.componentDidMount = function componentDidMount() {
+    this.setFocus();
+  };
+
   Search.prototype.render = function render(_ref) {
     var onChange = _ref.onChange,
         style = _ref.style,
@@ -3865,7 +3869,8 @@ var Tag_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
   border: 'none',
   borderRadius: '1em',
   margin: '3px 5px',
-  fontWeight: 600
+  fontWeight: 600,
+  whiteSpace: 'nowrap'
 }, function (_ref) {
   var active = _ref.active,
       color = _ref.color,
