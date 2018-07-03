@@ -36,8 +36,10 @@ const Project = ({ project }) => (
         <Source key={type} type={type} link={link} size="1.5em" style={{ marginLeft: '.5em' }} />
       ))}
     </Row>
-    <Row fluid clickable>
-      <Description style={{ maxWidth: '30em' }}>{project.description}</Description>
+    <Row fluid>
+      <Description clickable style={{ maxWidth: '30em' }}>
+        {project.description}
+      </Description>
     </Row>
   </Tile>
 );

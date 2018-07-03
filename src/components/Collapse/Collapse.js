@@ -1,7 +1,11 @@
 import { h, Component } from 'preact';
 import styled from 'preact-emotion';
 
-const Wrapper = styled.div(({ timing }) => ({
+const Div = ({ className, style, clickable, fluid, children, onClick, $ref, ...props }) => (
+  <div ref={$ref} {...{ className, style, clickable, fluid, children, onClick }} />
+);
+
+const Wrapper = styled(Div)(({ timing }) => ({
   overflow: 'hidden',
   transition: `max-height ${timing}ms`
 }));
@@ -64,7 +68,7 @@ class Collapse extends Component {
 
   render({ children, timing, open, ...props }) {
     return (
-      <Wrapper {...props} timing={timing} innerRef={this.bindRef}>
+      <Wrapper {...props} timing={timing} $ref={this.bindRef}>
         {children}
       </Wrapper>
     );

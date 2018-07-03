@@ -13,6 +13,7 @@ class Description extends Component {
         open={open}
         onClick={this.toggleOpen}
         minHeight="1.2em"
+        clickable
         style={{ textOverflow: 'ellipsis', whiteSpace: open ? '' : 'nowrap', ...style }}
       >
         {children}
