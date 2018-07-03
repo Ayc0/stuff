@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const projects = require('./projects.json');
+const projects = require('./list.json');
 
 const languages = require('../languages/list.json');
 
