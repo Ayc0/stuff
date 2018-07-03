@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js';
 import sortBy from 'lodash/sortBy';
 
-import rawProjects from './projects.json';
+import rawProjects from './list.json';
 const projects = sortBy(rawProjects, p => p.name.toLowerCase());
 
 const fuse = new Fuse(projects, {
