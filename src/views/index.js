@@ -9,7 +9,7 @@ import { getColor } from '%/utils/colors';
 import FavoriteProjects from './FavoriteProjects';
 import Extensions from './Extensions';
 
-const r = url => window.defaultPath + url;
+const r = url => (typeof window !== 'undefined' ? window.defaultPath : global.defaultPath) + url;
 
 const cssRow = css({
   background: `linear-gradient(180deg, ${getColor('background-d3')}, rgba(0,0,0,0))`,
