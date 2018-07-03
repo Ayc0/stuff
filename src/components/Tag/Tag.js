@@ -16,7 +16,12 @@ const Wrapper = styled.div(
     backgroundColor: active ? getColor(color) : undefined,
     boxShadow: active || noOutline ? undefined : `0 0 0 2px ${getColor(color)}`,
     padding: noOutline ? 0 : '.25em .5em',
-    color: active ? 'white' : getColor(color)
+    color: active ? 'white' : getColor(color),
+    ':hover': {
+      backgroundColor: active ? getColor(color + '-d3') : undefined,
+      boxShadow: active || noOutline ? undefined : `0 0 0 2px ${getColor(color + '-d3')}`,
+      color: active ? 'white' : getColor(color + '-d3')
+    }
   })
 );
 
@@ -42,7 +47,7 @@ const Tag = ({ active, onToggle, color, ...props }) => {
   return (
     <Wrapper active={active} noOutline={!clickable} color={color}>
       <Checkbox id={id} type="checkbox" checked={active} value={name} onChange={getValue(onToggle || (() => {}))} />
-      <label for={id} clickable={clickable}>
+      <label for={id} className="no-outline" clickable={clickable}>
         {children}
       </label>
     </Wrapper>
