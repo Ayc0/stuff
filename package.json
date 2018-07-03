@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ayc0-github-stuff",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn -s serve || yarn -s dev",
@@ -15,10 +15,11 @@
     "test:lint": "eslint src",
     "test:projects": "node src/utils/projects/verify.test.js",
     "test": "yarn -s test:lint && yarn -s test:projects",
-    "deploy:tag": "git add build && git commit -am $npm_package_version && git tag $npm_package_version",
+    "commit:tag": "git commit -am $npm_package_version && git tag $npm_package_version",
+    "deploy:tag": "git add build && yarn -s commit:tag",
     "deploy:publish_build": "git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages",
     "deploy:bump_version": "node utils/bumpVersion.js",
-    "deploy": "yarn -s test && yarn -s build && yarn -s deploy:bump_version && yarn -s deploy:tag && yarn -s deploy:publish_build"
+    "deploy": "yarn -s test && yarn -s build && yarn -s deploy:bump_version && yarn -s deploy:tag && yarn -s deploy:publish_build && git reset HEAD~ && yarn -s clean:build && git add package.json && yarn -s commit:tag"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor",
