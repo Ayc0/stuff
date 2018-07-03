@@ -4578,6 +4578,37 @@ var view = function view() {
 };
 
 /* harmony default export */ var views_FavoriteProjects = (view);
+// CONCATENATED MODULE: ./components/Extensions/Extensions.js
+
+
+
+var Extensions__ref = Object(preact_min["h"])(
+  'div',
+  null,
+  'Extensions'
+);
+
+var Extensions = function Extensions() {
+  return Extensions__ref;
+};
+
+/* harmony default export */ var Extensions_Extensions = (Extensions);
+// CONCATENATED MODULE: ./components/Extensions/index.js
+
+// CONCATENATED MODULE: ./views/Extensions.js
+
+
+
+
+var Extensions_name = 'Ayc0 - Visual Code extensions';
+
+var views_Extensions__ref = Object(preact_min["h"])(components_View_View, { name: Extensions_name, component: Extensions_Extensions });
+
+var Extensions_view = function view() {
+  return views_Extensions__ref;
+};
+
+/* harmony default export */ var views_Extensions = (Extensions_view);
 // CONCATENATED MODULE: ./views/index.js
 
 
@@ -4591,6 +4622,11 @@ var view = function view() {
 
 
 
+
+
+var r = function r(url) {
+  return (typeof window !== 'undefined' ? window.defaultPath : global.defaultPath) + url;
+};
 
 var cssRow = /*#__PURE__*/index_es_css({
   background: 'linear-gradient(180deg, ' + getColor('background-d3') + ', rgba(0,0,0,0))',
@@ -4613,15 +4649,21 @@ var views_A = function A(props) {
     match["Link"],
     {
       className: index_es_css(cssA) + ' link',
-      activeClassName: 'active', href: props.href },
+      activeClassName: 'active', href: r(props.href) },
     props.children
   );
 };
 
 var views__ref = Object(preact_min["h"])(
   views_A,
-  { href: '/projects' },
+  { href: 'projects' },
   'Favorite Projects'
+);
+
+var views__ref2 = Object(preact_min["h"])(
+  views_A,
+  { href: 'extensions' },
+  'VSCode extensions'
 );
 
 var views_Header = function Header() {
@@ -4632,22 +4674,24 @@ var views_Header = function Header() {
     Object(preact_min["h"])(
       components_Row_Row,
       { right: true, style: { maxWidth: '900px', width: '100%' } },
-      views__ref
+      views__ref,
+      views__ref2
     )
   );
 };
 
-var views__ref2 = Object(preact_min["h"])(
-  preact_router_es["default"],
-  null,
-  Object(preact_min["h"])(views_FavoriteProjects, { 'default': true })
-);
+var views__ref3 = Object(preact_min["h"])(views_FavoriteProjects, { 'default': true });
 
-var Routes = function Routes() {
-  return views__ref2;
+var views_Routes = function Routes() {
+  return Object(preact_min["h"])(
+    preact_router_es["default"],
+    null,
+    views__ref3,
+    Object(preact_min["h"])(views_Extensions, { path: r('extensions') })
+  );
 };
 
-/* harmony default export */ var views = (Routes);
+/* harmony default export */ var views = (views_Routes);
 // EXTERNAL MODULE: ./App.css
 var App = __webpack_require__("S03M");
 var App_default = /*#__PURE__*/__webpack_require__.n(App);
@@ -4684,6 +4728,14 @@ var App_App = function App() {
 // CONCATENATED MODULE: ./index.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "default", function() { return App_0; });
 
+
+var g = typeof window !== 'undefined' ? window : global;
+
+if (true) {
+  g.defaultPath = '/stuff/';
+} else {
+  g.defaultPath = '/';
+}
 
 /***/ }),
 
