@@ -1,10 +1,7 @@
 $colorsTheme: (
   primary: #1098f7,
   secondary: #2980b9,
-  accent: #e74c3c
-);
-
-$colors: (
+  accent: #e74c3c,
   background: #ecf0f1,
   text: #2c3e50
 );
@@ -12,16 +9,11 @@ $colors: (
 // ripped CSS4 vars out of color map
 :root {
   // each item in color map
-  @each $name, $color in $colors {
-    --#{$name}: #{$color};
-  }
-
-  // each item in color map
   @each $name, $color in $colorsTheme {
     --#{$name}: #{$color};
 
     // Add darker and lighter variants
-    @for $i from 1 through 5 {
+    @for $i from 1 through 3 {
       --#{$name}-l#{$i}: #{lighten($color, $i * 5%)};
       --#{$name}-d#{$i}: #{darken($color, $i * 5%)};
     }
