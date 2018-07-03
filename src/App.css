@@ -17,3 +17,13 @@ body {
 *[fluid] {
   width: 100%;
 }
+
+.link {
+  color: var(--secondary-d2);
+  text-decoration: none;
+}
+
+a.active {
+  color: var(--secondary-d1);
+  font-weight: bold;
+}
