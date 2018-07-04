@@ -18,6 +18,9 @@ const Source = ({ type, link, size, style, imageStyle }) => {
   case 'pypi':
     image = 'https://pypi.org/static/images/logo-small.6eef541e.svg';
     break;
+  case 'marketplace':
+    image = 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Visual_Studio_Code_1.18_icon.svg';
+    break;
   default:
     image = null;
     break;
