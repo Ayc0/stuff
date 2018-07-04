@@ -11,7 +11,7 @@ const Extension = ({ extension }) => (
     </Row>
     <Row column style={{ width: 'calc(100% - 5em)' }}>
       <Row middle fluid>
-        <h2
+        <h3
           style={{
             marginTop: '.5em',
             marginBottom: '.4em',
@@ -22,7 +22,7 @@ const Extension = ({ extension }) => (
           }}
         >
           {extension.name}
-        </h2>
+        </h3>
         {Object.entries(extension.sources).map(([type, link]) => (
           <Source key={type} type={type} link={link} size="1.5em" style={{ marginLeft: '.5em' }} />
         ))}
