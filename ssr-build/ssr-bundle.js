@@ -66,6 +66,13 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "+af4":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e769a36e76f3390f13ecf0772326e5e4.png";
+
+/***/ }),
+
 /***/ "+bWy":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -532,6 +539,20 @@ Router.Link = Link;
 
 /***/ }),
 
+/***/ "/kkd":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "dd0ba5bc647746769af0ce0966e5df83.png";
+
+/***/ }),
+
+/***/ "/uVk":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "36dd61d258a70f59a86094cbe4e15e63.png";
+
+/***/ }),
+
 /***/ "0FvR":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -843,6 +864,13 @@ function hasIn(object, path) {
 }
 
 module.exports = hasIn;
+
+/***/ }),
+
+/***/ "3VNC":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9085e04822a8ec9b78cdad6c598c8fa5.png";
 
 /***/ }),
 
@@ -1177,6 +1205,13 @@ module.exports = baseFlatten;
 
 /***/ }),
 
+/***/ "5q/H":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "37519d4f431a45f27667cc857b40a00a.png";
+
+/***/ }),
+
 /***/ "6ykg":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1355,6 +1390,13 @@ module.exports = stubArray;
 
 /***/ }),
 
+/***/ "83Dg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "54088683f8b5057f10d84cc4b447d1f7.png";
+
+/***/ }),
+
 /***/ "85ue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1374,6 +1416,27 @@ function mapCacheHas(key) {
 }
 
 module.exports = mapCacheHas;
+
+/***/ }),
+
+/***/ "8C03":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e5d3007b72bc7cd3f1ab5b77dd29b2e9.png";
+
+/***/ }),
+
+/***/ "8kPM":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "5788b2a0f852d11f2cdfd2edac3f2709.png";
+
+/***/ }),
+
+/***/ "9MfR":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "d637e1a82c3cf9502aff3e17504fa231.png";
 
 /***/ }),
 
@@ -1485,6 +1548,13 @@ function hashSet(key, value) {
 }
 
 module.exports = hashSet;
+
+/***/ }),
+
+/***/ "AoNO":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "1854b08961029295351e3d80e6f0d40d.png";
 
 /***/ }),
 
@@ -1702,6 +1772,13 @@ module.exports = isStrictComparable;
 
 /***/ }),
 
+/***/ "EKTW":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "69327cc29cb2d4954792f528aa9f5c05.png";
+
+/***/ }),
+
 /***/ "EiMJ":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1839,6 +1916,13 @@ function listCacheGet(key) {
 }
 
 module.exports = listCacheGet;
+
+/***/ }),
+
+/***/ "FNtt":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "1a4d2805d6f80bc53b45a959e0a14ca4.png";
 
 /***/ }),
 
@@ -2018,6 +2102,13 @@ function baseFindIndex(array, predicate, fromIndex, fromRight) {
 }
 
 module.exports = baseFindIndex;
+
+/***/ }),
+
+/***/ "J5pb":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "43f8fb98693c869119f7f2e5f2f6c4d6.png";
 
 /***/ }),
 
@@ -3866,7 +3957,7 @@ var Search_Search = function (_Component) {
 Search_Search.defaultProps = {
   className: '',
   value: '',
-  style: {},
+  style: { wrapper: { maxWidth: '15em' } },
   placeholder: '',
   onChange: function onChange() {}
 };
@@ -4177,6 +4268,9 @@ var Source_Source = function Source(_ref) {
     case 'pypi':
       image = 'https://pypi.org/static/images/logo-small.6eef541e.svg';
       break;
+    case 'marketplace':
+      image = 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Visual_Studio_Code_1.18_icon.svg';
+      break;
     default:
       image = null;
       break;
@@ -4197,25 +4291,7 @@ Source_Source.defaultProps = {
 /* harmony default export */ var components_Source_Source = (Source_Source);
 // CONCATENATED MODULE: ./components/Source/index.js
 
-// CONCATENATED MODULE: ./utils/languages/index.js
-var languages_list = __webpack_require__("MmfF");
-
-var languages = Object.keys(languages_list);
-
-/* harmony default export */ var utils_languages = (languages);
-
-var getLanguage = function getLanguage(languageName) {
-  if (languages.includes(languageName)) {
-    return languages_list[languageName];
-  }
-  return null;
-};
-
-var languages_getColor = function getColor(languageName) {
-  var language = getLanguage(languageName);
-  return language ? language.color : null;
-};
-// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/Description.js
+// CONCATENATED MODULE: ./components/Description/Description.js
 var Description__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -4272,12 +4348,31 @@ var Description_Description = function (_Component) {
 }(preact_min["Component"]);
 
 Description_Description.defaultProps = {
-  style: {}
+  style: { maxWidth: '30em' }
 };
 
-/* harmony default export */ var Project_Description = (Description_Description);
-// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/Project.js
+/* harmony default export */ var components_Description_Description = (Description_Description);
+// CONCATENATED MODULE: ./components/Description/index.js
 
+// CONCATENATED MODULE: ./utils/languages/index.js
+var languages_list = __webpack_require__("MmfF");
+
+var languages = Object.keys(languages_list);
+
+/* harmony default export */ var utils_languages = (languages);
+
+var getLanguage = function getLanguage(languageName) {
+  if (languages.includes(languageName)) {
+    return languages_list[languageName];
+  }
+  return null;
+};
+
+var languages_getColor = function getColor(languageName) {
+  var language = getLanguage(languageName);
+  return language ? language.color : null;
+};
+// CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/Project.js
 
 
 
@@ -4338,8 +4433,8 @@ var Project_Project = function Project(_ref2) {
       components_Row_Row,
       { fluid: true },
       Object(preact_min["h"])(
-        Project_Description,
-        { clickable: true, style: { maxWidth: '30em' } },
+        components_Description_Description,
+        null,
         project.description
       )
     )
@@ -4529,12 +4624,7 @@ var FavoriteProjects_FavoriteProjects = function (_Component) {
     return Object(preact_min["h"])(
       'div',
       null,
-      Object(preact_min["h"])(components_Search_Search, {
-        placeholder: 'Search library',
-        value: term,
-        onChange: this.onChange,
-        style: { wrapper: { maxWidth: '15em' } }
-      }),
+      Object(preact_min["h"])(components_Search_Search, { placeholder: 'Search library', value: term, onChange: this.onChange }),
       Object(preact_min["h"])(
         TagList,
         null,
@@ -4578,21 +4668,163 @@ var view = function view() {
 };
 
 /* harmony default export */ var views_FavoriteProjects = (view);
+// EXTERNAL MODULE: ./utils/extensions/list.json
+var extensions_list = __webpack_require__("zI0X");
+var extensions_list_default = /*#__PURE__*/__webpack_require__.n(extensions_list);
+
+// CONCATENATED MODULE: ./utils/extensions/index.js
+
+
+
+
+
+var utils_extensions_list = sortBy_default()(extensions_list_default.a.map(function (extension) {
+  if (extension.icon) {
+    extension.icon = __webpack_require__("xKE5")("./" + extension.icon);
+  }
+  return extension;
+}), 'name');
+
+var extensions_fuse = new fuse_default.a(utils_extensions_list, {
+  shouldSort: true,
+  threshold: 0.4,
+  keys: ['name', { name: 'description', value: 0.4 }]
+});
+
+var extensions_search = function search(term) {
+  if (!term) {
+    return utils_extensions_list;
+  }
+  return extensions_fuse.search(term);
+};
+
+/* harmony default export */ var extensions = (utils_extensions_list);
+// CONCATENATED MODULE: ./components/Extensions/Extension/Extension.js
+
+
+
+
+
+
+
+var Extension_Extension = function Extension(_ref) {
+  var extension = _ref.extension;
+  return Object(preact_min["h"])(
+    components_Row_Row,
+    { top: true, left: true, fluid: true, style: { marginBottom: '.6em' } },
+    Object(preact_min["h"])(
+      components_Row_Row,
+      { right: true, style: { width: '3em', marginTop: '1.2em', marginRight: '1em' } },
+      Object(preact_min["h"])('img', { src: extension.icon, alt: extension.name, style: { maxHeight: '3em', maxWidth: '100%' } })
+    ),
+    Object(preact_min["h"])(
+      components_Row_Row,
+      { column: true, style: { width: 'calc(100% - 5em)' } },
+      Object(preact_min["h"])(
+        components_Row_Row,
+        { middle: true, fluid: true },
+        Object(preact_min["h"])(
+          'h2',
+          {
+            style: {
+              marginTop: '.5em',
+              marginBottom: '.4em',
+              flex: 1,
+              whiteSpace: 'nowrap',
+              textOverflow: 'ellipsis',
+              overflow: 'hidden'
+            }
+          },
+          extension.name
+        ),
+        Object.entries(extension.sources).map(function (_ref2) {
+          var type = _ref2[0],
+              link = _ref2[1];
+          return Object(preact_min["h"])(components_Source_Source, { key: type, type: type, link: link, size: '1.5em', style: { marginLeft: '.5em' } });
+        })
+      ),
+      Object(preact_min["h"])(
+        components_Row_Row,
+        { fluid: true },
+        Object(preact_min["h"])(
+          components_Description_Description,
+          null,
+          extension.description
+        )
+      )
+    )
+  );
+};
+
+/* harmony default export */ var Extensions_Extension_Extension = (Extension_Extension);
+// CONCATENATED MODULE: ./components/Extensions/Extension/index.js
+
 // CONCATENATED MODULE: ./components/Extensions/Extensions.js
 
 
+function Extensions__objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
-var Extensions__ref = Object(preact_min["h"])(
-  'div',
-  null,
-  'Extensions'
-);
+function Extensions__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Extensions = function Extensions() {
-  return Extensions__ref;
-};
+function Extensions__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-/* harmony default export */ var Extensions_Extensions = (Extensions);
+function Extensions__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+var Extensions_Extensions = function (_Component) {
+  Extensions__inherits(Extensions, _Component);
+
+  function Extensions() {
+    var _temp, _this, _ret;
+
+    Extensions__classCallCheck(this, Extensions);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = Extensions__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { term: '' }, _this.extensions = extensions, _this.onChange = function (term) {
+      return _this.setState({ term: term });
+    }, _temp), Extensions__possibleConstructorReturn(_this, _ret);
+  }
+
+  Extensions.prototype.componentWillUpdate = function componentWillUpdate(nextProps, nextState) {
+    if (nextState.term !== this.state.term) {
+      this.extensions = extensions_search(nextState.term);
+    }
+  };
+
+  Extensions.prototype.render = function render(_ref, _ref2) {
+    var term = _ref2.term;
+
+    Extensions__objectDestructuringEmpty(_ref);
+
+    return Object(preact_min["h"])(
+      'div',
+      null,
+      Object(preact_min["h"])(components_Search_Search, { placeholder: 'Search extension', value: term, onChange: this.onChange }),
+      Object(preact_min["h"])(
+        components_Row_Row,
+        { column: true },
+        this.extensions.map(function (extension) {
+          return Object(preact_min["h"])(Extensions_Extension_Extension, { extension: extension });
+        })
+      )
+    );
+  };
+
+  return Extensions;
+}(preact_min["Component"]);
+
+/* harmony default export */ var components_Extensions_Extensions = (Extensions_Extensions);
 // CONCATENATED MODULE: ./components/Extensions/index.js
 
 // CONCATENATED MODULE: ./views/Extensions.js
@@ -4602,10 +4834,10 @@ var Extensions = function Extensions() {
 
 var Extensions_name = 'Ayc0 - Visual Code extensions';
 
-var views_Extensions__ref = Object(preact_min["h"])(components_View_View, { name: Extensions_name, component: Extensions_Extensions });
+var Extensions__ref = Object(preact_min["h"])(components_View_View, { name: Extensions_name, component: components_Extensions_Extensions });
 
 var Extensions_view = function view() {
-  return views_Extensions__ref;
+  return Extensions__ref;
 };
 
 /* harmony default export */ var views_Extensions = (Extensions_view);
@@ -5002,6 +5234,13 @@ module.exports = setToString;
 
 /***/ }),
 
+/***/ "L5mU":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "84890975f5dce4577a617cfd9eadf94e.png";
+
+/***/ }),
+
 /***/ "LIpy":
 /***/ (function(module, exports) {
 
@@ -5081,6 +5320,13 @@ function isArrayLike(value) {
 }
 
 module.exports = isArrayLike;
+
+/***/ }),
+
+/***/ "M/IF":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "24b85a8d405f42a01e0e023cbec5f6a2.png";
 
 /***/ }),
 
@@ -5443,6 +5689,13 @@ module.exports = baseIndexOf;
 
 /***/ }),
 
+/***/ "SA0F":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "5bf8a3ca0bb6bfb41063cdd672be9ad9.svg";
+
+/***/ }),
+
 /***/ "SfCF":
 /***/ (function(module, exports) {
 
@@ -5498,6 +5751,13 @@ function strictIndexOf(array, value, fromIndex) {
 }
 
 module.exports = strictIndexOf;
+
+/***/ }),
+
+/***/ "Si6r":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9aa878d30d75d5a8fccd0fbcd973a97b.png";
 
 /***/ }),
 
@@ -6923,6 +7183,20 @@ module.exports = ListCache;
 
 /***/ }),
 
+/***/ "XkPx":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ee621a30c2b9a50a64005f695dd10a0d.png";
+
+/***/ }),
+
+/***/ "XwFc":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "7cc2f2ddbc84e0d675636bec20ecd24d.png";
+
+/***/ }),
+
 /***/ "YIaf":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6995,6 +7269,13 @@ function setToArray(set) {
 }
 
 module.exports = setToArray;
+
+/***/ }),
+
+/***/ "Zq9j":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "4816ae547583db7b5208b9f63e6be02c.png";
 
 /***/ }),
 
@@ -7142,6 +7423,13 @@ function mapCacheDelete(key) {
 }
 
 module.exports = mapCacheDelete;
+
+/***/ }),
+
+/***/ "cLAf":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "0aa8f3b8a373745b68aef82d265d5399.png";
 
 /***/ }),
 
@@ -7759,6 +8047,13 @@ module.exports = defineProperty;
 
 /***/ }),
 
+/***/ "kppd":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "abd2410829a9aeb07e6d204107d8a838.png";
+
+/***/ }),
+
 /***/ "kwIb":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7817,6 +8112,13 @@ module.exports = function (module) {
 	}
 	return module;
 };
+
+/***/ }),
+
+/***/ "l7fk":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "87d91ee51c4324779cd3a83f808f3fb8.png";
 
 /***/ }),
 
@@ -7954,6 +8256,13 @@ var groupBy = createAggregator(function (result, value, key) {
 });
 
 module.exports = groupBy;
+
+/***/ }),
+
+/***/ "m9AN":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c9a8186ef718e6c62ba132cc53317ca0.png";
 
 /***/ }),
 
@@ -8329,6 +8638,13 @@ module.exports = equalByTag;
 
 /***/ }),
 
+/***/ "onNr":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "6f329024823f386dc7b2837382c81c7a.png";
+
+/***/ }),
+
 /***/ "p/0c":
 /***/ (function(module, exports) {
 
@@ -8382,6 +8698,20 @@ function baseIsArguments(value) {
 }
 
 module.exports = baseIsArguments;
+
+/***/ }),
+
+/***/ "pZJ7":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e58ef6d04f9eb8bb511783e98ea22696.png";
+
+/***/ }),
+
+/***/ "pfsb":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "8484dc20de647fd0550a08b98bb11581.png";
 
 /***/ }),
 
@@ -8500,6 +8830,13 @@ function hashDelete(key) {
 }
 
 module.exports = hashDelete;
+
+/***/ }),
+
+/***/ "qMb6":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "7f3b6bdd8a9f69a6308a71d39578f031.png";
 
 /***/ }),
 
@@ -9048,6 +9385,13 @@ module.exports = isObject;
 
 /***/ }),
 
+/***/ "uBHo":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "98084d9d049e924e9d3f2c6e294c555b.png";
+
+/***/ }),
+
 /***/ "uTXi":
 /***/ (function(module, exports) {
 
@@ -9385,6 +9729,59 @@ module.exports = listCacheHas;
 
 /***/ }),
 
+/***/ "xKE5":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./auto-rename-tag.png": "qMb6",
+	"./ayu.png": "pZJ7",
+	"./better-comments.png": "XwFc",
+	"./bracket-pair-colorizer.png": "8kPM",
+	"./code-spell-checker.png": "/uVk",
+	"./es7-react-js-snippets.png": "EKTW",
+	"./flow-for-vscode.png": "+af4",
+	"./gc-excelviewer.png": "M/IF",
+	"./gitlens.png": "m9AN",
+	"./graphql.svg": "SA0F",
+	"./java.png": "83Dg",
+	"./latex-support.png": "5q/H",
+	"./material-icon-theme.png": "onNr",
+	"./node-debug2.png": "uBHo",
+	"./path-intellisense.png": "XkPx",
+	"./prettier-vscode.png": "zOv4",
+	"./python.png": "AoNO",
+	"./reasonml.png": "L5mU",
+	"./regex.png": "pfsb",
+	"./sublime-keybindings.png": "8C03",
+	"./vscode-code-outline.png": "Zq9j",
+	"./vscode-docker.png": "9MfR",
+	"./vscode-eslint.png": "cLAf",
+	"./vscode-import-cost.png": "/kkd",
+	"./vscode-language-pack-fr.png": "Si6r",
+	"./vscode-mermaid-preview.png": "l7fk",
+	"./vscode-react-native.png": "kppd",
+	"./vscode-redux-devtools.png": "FNtt",
+	"./vscode-regexp-preivew.png": "3VNC",
+	"./vsliveshare.png": "J5pb"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "xKE5";
+
+/***/ }),
+
 /***/ "xqjy":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9530,6 +9927,20 @@ function baseMatchesProperty(path, srcValue) {
 }
 
 module.exports = baseMatchesProperty;
+
+/***/ }),
+
+/***/ "zI0X":
+/***/ (function(module, exports) {
+
+module.exports = [{"id":"auto-rename-tag","name":"Auto Rename Tag","description":"Auto rename paired HTML/XML tag","icon":"auto-rename-tag.png","sources":{"github":"https://github.com/formulahendry/vscode-auto-rename-tag.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"}},{"id":"ayu","name":"Ayu","description":"A simple theme with bright colors and comes in three versions — dark, light and mirage for all day long comfortable work.","icon":"ayu.png","sources":{"github":"https://github.com/jsenjoy/vscode-ayu","marketplace":"https://marketplace.visualstudio.com/items?itemName=teabyii.ayu"}},{"id":"better-comments","name":"Better Comments","description":"Improve your code commenting by annotating with alert, informational, TODOs, and more!","icon":"better-comments.png","sources":{"github":"https://github.com/aaron-bond/better-comments","marketplace":"https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments"}},{"id":"bracket-pair-colorizer","name":"Bracket Pair Colorizer","description":"A customizable extension for colorizing matching brackets","icon":"bracket-pair-colorizer.png","sources":{"github":"https://github.com/CoenraadS/BracketPair","marketplace":"https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"}},{"id":"vscode-code-outline","name":"Code Outline","description":"A code outline tree provider for VSCode","icon":"vscode-code-outline.png","sources":{"github":"https://github.com/patrys/vscode-code-outline","marketplace":"https://marketplace.visualstudio.com/items?itemName=patrys.vscode-code-outline"}},{"id":"code-spell-checker","name":"Code Spell Checker","description":"Spelling checker for source code","icon":"code-spell-checker.png","sources":{"github":"https://github.com/Jason-Rev/vscode-spell-checker","marketplace":"https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"}},{"id":"vscode-docker","name":"Docker","description":"Adds syntax highlighting, commands, hover tips, and linting for Dockerfile and docker-compose files.","icon":"vscode-docker.png","sources":{"github":"https://github.com/microsoft/vscode-docker.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker"}},{"id":"es7-react-js-snippets","name":"ES7 React/Redux/GraphQL/React-Native snippets","description":"Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax","icon":"es7-react-js-snippets.png","sources":{"github":"https://github.com/dsznajder/vscode-es7-javascript-react-snippets","marketplace":"https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets"}},{"id":"vscode-eslint","name":"ESLint","description":"Integrates ESLint JavaScript into VS Code.","icon":"vscode-eslint.png","sources":{"github":"https://github.com/Microsoft/vscode-eslint.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint"}},{"id":"gc-excelviewer","name":"Excel Viewer","description":"View Excel spreadsheets and CSV files within Visual Studio Code workspaces.","icon":"gc-excelviewer.png","sources":{"github":"https://github.com/jjuback/gc-excelviewer.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer"}},{"id":"flow-for-vscode","name":"Flow Language Support","description":"Flow support for VS Code","icon":"flow-for-vscode.png","sources":{"github":"https://github.com/flowtype/flow-for-vscode.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode"}},{"id":"vscode-language-pack-fr","name":"French Language Pack for Visual Studio Code","description":"Language pack extension for French","icon":"vscode-language-pack-fr.png","sources":{"github":"https://github.com/Microsoft/vscode-loc","marketplace":"https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr"}},{"id":"gitlens","name":"GitLens — Git supercharged","description":"Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more","icon":"gitlens.png","sources":{"github":"https://github.com/eamodio/vscode-gitlens.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"}},{"id":"graphql","name":"GraphQL","description":"Syntax highlighting for GraphQL queries and schemas","icon":"graphql.svg","sources":{"github":"https://github.com/apollostack/vscode-graphql.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=mquandalle.graphql"}},{"id":"vscode-import-cost","name":"Import Cost","description":"Display import/require package size in the editor","icon":"vscode-import-cost.png","sources":{"github":"https://github.com/wix/import-cost.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost"}},{"id":"latex-support","name":"LaTeX language support","description":"LaTeX language support for Visual Studio Code","icon":"latex-support.png","sources":{"github":"https://github.com/ProAdd-ons/vscode-LaTeX-support","marketplace":"https://marketplace.visualstudio.com/items?itemName=torn4dom4n.latex-support"}},{"id":"java","name":"Language Support for Java(TM) by Red Hat","description":"Java Linting, Intellisense, formatting, refactoring, Maven/Gradle support and more...","icon":"java.png","sources":{"github":"https://github.com/redhat-developer/vscode-java","marketplace":"https://marketplace.visualstudio.com/items?itemName=redhat.java"}},{"id":"material-icon-theme","name":"Material Icon Theme","description":"Material Design Icons for Visual Studio Code","icon":"material-icon-theme.png","sources":{"github":"https://github.com/PKief/vscode-material-icon-theme.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"}},{"id":"vscode-mermaid-preview","name":"Mermaid Preview","description":"Previews Mermaid diagrams in Visual Studio Code","icon":"vscode-mermaid-preview.png","sources":{"github":"https://github.com/vstirbu/vscode-mermaid-preview.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview"}},{"id":"node-debug2","name":"Node Debug 2","description":"%extension.description%","icon":"node-debug2.png","sources":{"github":"https://github.com/Microsoft/vscode-node-debug2.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vscode.node-debug2"}},{"id":"reasonml","name":"OCaml and Reason IDE","description":"OCaml and Reason language support","icon":"reasonml.png","sources":{"github":"https://github.com/freebroccolo/vscode-reasonml.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=freebroccolo.reasonml"}},{"id":"path-intellisense","name":"Path Intellisense","description":"Visual Studio Code plugin that autocompletes filenames","icon":"path-intellisense.png","sources":{"github":"https://github.com/ChristianKohler/PathIntellisense.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"}},{"id":"prettier-vscode","name":"Prettier - Code formatter","description":"VS Code plugin for prettier/prettier","icon":"prettier-vscode.png","sources":{"github":"https://github.com/prettier/prettier-vscode.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"}},{"id":"python","name":"Python","description":"Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.","icon":"python.png","sources":{"github":"https://github.com/Microsoft/vscode-python","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-python.python"}},{"id":"vscode-react-native","name":"React Native Tools","description":"Code-hinting, debugging and integrated commands for React Native","icon":"vscode-react-native.png","sources":{"github":"https://github.com/Microsoft/vscode-react-native","marketplace":"https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native"}},{"id":"vscode-redux-devtools","name":"Redux DevTools","description":"vscode redux devtools wrapper","icon":"vscode-redux-devtools.png","sources":{"github":"https://github.com/jkzing/vscode-redux-devtools","marketplace":"https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools"}},{"id":"vscode-regexp-preivew","name":"RegExp Preview and Editor","description":"VSCode extension based on regexper-static","icon":"vscode-regexp-preivew.png","sources":{"github":"https://github.com/le0zh/vscode-regexp-preivew.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew"}},{"id":"regex","name":"Regex Previewer","description":"Regex matches previewer for JavaScript, TypeScript, PHP and Haxe in Visual Studio Code.","icon":"regex.png","sources":{"github":"https://github.com/chrmarti/vscode-regex.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=chrmarti.regex"}},{"id":"sublime-keybindings","name":"Sublime Text Keymap and Settings Importer","description":"Import Sublime Text settings and keybindings into VS Code.","icon":"sublime-keybindings.png","sources":{"github":"https://github.com/Microsoft/vscode-sublime-keybindings.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings"}},{"id":"vsliveshare","name":"VS Live Share","description":"Real-time collaborative development from the comfort of your favorite tools.","icon":"vsliveshare.png","sources":{"github":"https://github.com/MicrosoftDocs/live-share","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare"}},{"id":"xml-format","name":"XML Format","description":"Format XML documents","sources":{"github":"https://github.com/mikeburgh/vscode-xml-format.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=mikeburgh.xml-format"}}]
+
+/***/ }),
+
+/***/ "zOv4":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "72abd8652ddf8236dda1d317bac537f9.png";
 
 /***/ })
 
