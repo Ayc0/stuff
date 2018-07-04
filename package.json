@@ -8,7 +8,7 @@
     "serve": "yarn -s build:preact && preact serve",
     "dev": "preact watch",
     "clean:build": "rm -rf build",
-    "build:preact": "preact build && mv build/stuff/* build/ && rmdir build/stuff",
+    "build:preact": "preact build && mv build/stuff/* build/ && rmdir build/stuff && sed -i 's/stuff\\/stuff/stuff/g' build/sw.js",
     "build": "yarn -s clean:build && yarn -s build:preact",
     "test:lint": "eslint src",
     "test:projects": "node src/utils/projects/verify.test.js",
