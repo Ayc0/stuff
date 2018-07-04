@@ -80,7 +80,7 @@ class Search extends Component {
 Search.defaultProps = {
   className: '',
   value: '',
-  style: {},
+  style: { wrapper: { maxWidth: '15em' } },
   placeholder: '',
   onChange: () => {}
 };

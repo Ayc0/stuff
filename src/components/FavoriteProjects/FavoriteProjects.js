@@ -62,12 +62,7 @@ class FavoriteProjects extends Component {
     const categories = groupBy(this.projects, 'language');
     return (
       <div>
-        <Search
-          placeholder="Search library"
-          value={term}
-          onChange={this.onChange}
-          style={{ wrapper: { maxWidth: '15em' } }}
-        />
+        <Search placeholder="Search library" value={term} onChange={this.onChange} />
         <TagList>
           {this.keywords.map(keyword => (
             <Tag onToggle={this.onToggle} active={selectedTags.includes(keyword)}>
