@@ -4,9 +4,8 @@ import styled from 'preact-emotion';
 import Row from '%/components/Row';
 import Tag from '%/components/Tag';
 import Source from '%/components/Source';
+import Description from '%/components/Description';
 import { getColor } from '%/utils/languages';
-
-import Description from './Description';
 
 const Tile = styled(Row)(
   {
@@ -37,9 +36,7 @@ const Project = ({ project }) => (
       ))}
     </Row>
     <Row fluid>
-      <Description clickable style={{ maxWidth: '30em' }}>
-        {project.description}
-      </Description>
+      <Description style={{ maxWidth: '30em' }}>{project.description}</Description>
     </Row>
   </Tile>
 );
