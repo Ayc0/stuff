@@ -4,11 +4,11 @@ module.exports = [
     title: 'Ayc0 - Packages browser'
   },
   {
-    url: '/projects',
+    url: '/stuff/projects',
     title: 'Ayc0 - Packages browser'
   },
   {
-    url: '/extensions',
+    url: '/stuff/extensions',
     title: 'VS Code extensions'
   }
 ];

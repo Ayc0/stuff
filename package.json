@@ -10,7 +10,7 @@
     "clean:prerender": "rm -f prerender-urls.json",
     "clean:build": "rm -rf build",
     "build:prerender": "node utils/prerender.js",
-    "build:preact": "preact build",
+    "build:preact": "preact build && mv build/stuff/* build/ && rmdir build/stuff",
     "build": "yarn -s clean:build && yarn -s build:prerender && yarn -s build:preact && yarn -s clean:prerender",
     "test:lint": "eslint src",
     "test:projects": "node src/utils/projects/verify.test.js",
