@@ -4724,7 +4724,7 @@ var Extension_Extension = function Extension(_ref) {
         components_Row_Row,
         { middle: true, fluid: true },
         Object(preact_min["h"])(
-          'h2',
+          'h3',
           {
             style: {
               marginTop: '.5em',
@@ -4832,7 +4832,7 @@ var Extensions_Extensions = function (_Component) {
 
 
 
-var Extensions_name = 'Ayc0 - Visual Code extensions';
+var Extensions_name = 'Ayc0 - VS Code extensions';
 
 var Extensions__ref = Object(preact_min["h"])(components_View_View, { name: Extensions_name, component: components_Extensions_Extensions });
 
