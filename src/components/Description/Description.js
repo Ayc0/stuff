@@ -23,7 +23,7 @@ class Description extends Component {
 }
 
 Description.defaultProps = {
-  style: {}
+  style: { maxWidth: '30em' }
 };
 
 export default Description;

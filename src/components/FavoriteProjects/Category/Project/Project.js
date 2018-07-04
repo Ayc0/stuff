@@ -36,7 +36,7 @@ const Project = ({ project }) => (
       ))}
     </Row>
     <Row fluid>
-      <Description style={{ maxWidth: '30em' }}>{project.description}</Description>
+      <Description>{project.description}</Description>
     </Row>
   </Tile>
 );
