@@ -1,6 +1,8 @@
 import { h } from 'preact';
 import styled from 'preact-emotion';
 
+import '@libshin/lazy-image/build/lazy-image.css';
+
 import Routes, { Header } from './views';
 import './App.css';
 

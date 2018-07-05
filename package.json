@@ -41,6 +41,7 @@
     "preact-cli": "^2.1.0"
   },
   "dependencies": {
+    "@libshin/lazy-image": "^0.2.1",
     "emotion": "^9.2.4",
     "fuse.js": "^3.2.1",
     "joi": "^13.4.0",

@@ -139,6 +139,16 @@
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.1.tgz#e44e596d03c9f16ba3b127ad333a8a072bcb5a0a"
 
+"@libshin/in-viewport@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@libshin/in-viewport/-/in-viewport-0.2.2.tgz#e31861dc5561e5dbe7833b399befe751635cad8d"
+
+"@libshin/lazy-image@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@libshin/lazy-image/-/lazy-image-0.2.1.tgz#8c909dc0029c0bc21ab630f055f753bfda421338"
+  dependencies:
+    "@libshin/in-viewport" "^0.2.2"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
