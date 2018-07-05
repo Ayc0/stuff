@@ -3674,6 +3674,10 @@ var dist_index_es_index = create_emotion_styled_dist_index_es(emotion_dist_index
 
 /* harmony default export */ var preact_emotion_dist_index_es = (dist_index_es_index);
 //# sourceMappingURL=index.es.js.map
+// EXTERNAL MODULE: ../node_modules/@libshin/lazy-image/build/lazy-image.css
+var lazy_image = __webpack_require__("Kaoj");
+var lazy_image_default = /*#__PURE__*/__webpack_require__.n(lazy_image);
+
 // EXTERNAL MODULE: ../node_modules/preact-router/dist/preact-router.es.js
 var preact_router_es = __webpack_require__("/QC5");
 
@@ -4668,6 +4672,45 @@ var view = function view() {
 };
 
 /* harmony default export */ var views_FavoriteProjects = (view);
+// CONCATENATED MODULE: ../node_modules/@libshin/lazy-image/build/lazy-image.m.js
+var lazy_image_m__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var t = {};function e(e) {
+  var n = String(Math.random()).substr(2) + Date.now();return t[n] = e, n;
+}function n(e) {
+  return delete t[e];
+}function o(t, n, o, i) {
+  void 0 === o && (o = {});var r = function (t, e, n, o) {
+    var i;return function () {
+      var r = function (t, e, n) {
+        void 0 === n && (n = {});var o = t.getBoundingClientRect(),
+            i = window.innerHeight || document.documentElement.clientHeight,
+            r = window.innerWidth || document.documentElement.clientWidth,
+            d = lazy_image_m__extends({}, { left: 0, right: 0, top: 0, bottom: 0 }, n);return e ? o.top >= -d.top && o.left >= -d.left && o.bottom <= i + d.bottom && o.right <= r + d.right : o.right >= -d.left && o.bottom >= -d.top && o.left <= r + d.right && o.top <= i + d.bottom;
+      }(t, e, n);r !== i && (i = r, "function" == typeof o && o(r));
+    };
+  }(t, n, o, i);return o.now && r(), window.addEventListener ? (window.addEventListener("DOMContentLoaded", r, !1), window.addEventListener("load", r, !1), window.addEventListener("scroll", r, !1), window.addEventListener("resize", r, !1), e(r)) : window.attachEvent ? (window.attachEvent("onDOMContentLoaded", r), window.attachEvent("onload", r), window.attachEvent("onscroll", r), window.attachEvent("onresize", r), e(r)) : void 0;
+}function i(e) {
+  if (e.loaded && e.visible) {
+    i = t[e.lazyId], window.removeEventListener ? (window.removeEventListener("DOMContentLoaded", i, !1), window.removeEventListener("load", i, !1), window.removeEventListener("scroll", i, !1), window.removeEventListener("resize", i, !1), n(i)) : window.detachEvent && (window.detachEvent("onDOMContentLoaded", i), window.detachEvent("onload", i), window.detachEvent("onscroll", i), window.detachEvent("onresize", i), n(i)), delete e.lazyId, e.removeAttribute("lazy-src");var o = e.parentElement;o.getAttribute("lazy-placeholder") && setTimeout(function () {
+      o.style.background = "", o.removeAttribute("lazy-placeholder");
+    }, 300);
+  }var i;
+}/* harmony default export */ var lazy_image_m = (function (t, e) {
+  void 0 === e && (e = {}), [].forEach.call(document.querySelectorAll("img[lazy-src]"), function (n) {
+    if (!n.lazyId) {
+      n.lazyId = o(n, t, e, function (t) {
+        if (n.visible = t, t) {
+          var e = n.getAttribute("lazy-src");e && n.setAttribute("src", e);
+        }i(n);
+      }), n.onload = function () {
+        n.loaded = !0, i(n);
+      };var r = n.parentElement,
+          d = r.getAttribute("lazy-placeholder");d && (r.style.background = "no-repeat center url(" + d + ") / cover");
+    }
+  });
+});;
+//# sourceMappingURL=lazy-image.m.js.map
 // EXTERNAL MODULE: ./utils/extensions/list.json
 var extensions_list = __webpack_require__("zI0X");
 var extensions_list_default = /*#__PURE__*/__webpack_require__.n(extensions_list);
@@ -4708,14 +4751,22 @@ var extensions_search = function search(term) {
 
 
 var Extension_Extension = function Extension(_ref) {
-  var extension = _ref.extension;
+  var extension = _ref.extension,
+      lazy = _ref.lazy;
+
+  var imgProps = { alt: extension.name, style: { maxHeight: '3em', maxWidth: '100%' } };
+  if (lazy) {
+    imgProps['lazy-src'] = extension.icon;
+  } else {
+    imgProps.src = extension.icon;
+  }
   return Object(preact_min["h"])(
     components_Row_Row,
     { top: true, left: true, fluid: true, style: { marginBottom: '.6em' } },
     Object(preact_min["h"])(
       components_Row_Row,
       { right: true, style: { width: '3em', marginTop: '1.2em', marginRight: '1em' } },
-      Object(preact_min["h"])('img', { src: extension.icon, alt: extension.name, style: { maxHeight: '3em', maxWidth: '100%' } })
+      Object(preact_min["h"])('img', imgProps)
     ),
     Object(preact_min["h"])(
       components_Row_Row,
@@ -4779,6 +4830,7 @@ function Extensions__inherits(subClass, superClass) { if (typeof superClass !== 
 
 
 
+
 var Extensions_Extensions = function (_Component) {
   Extensions__inherits(Extensions, _Component);
 
@@ -4791,10 +4843,15 @@ var Extensions_Extensions = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = Extensions__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { term: '' }, _this.extensions = extensions, _this.onChange = function (term) {
+    return _ret = (_temp = (_this = Extensions__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = { term: '' }, _this.extensions = extensions, _this.mounted = false, _this.onChange = function (term) {
       return _this.setState({ term: term });
     }, _temp), Extensions__possibleConstructorReturn(_this, _ret);
   }
+
+  Extensions.prototype.componentDidMount = function componentDidMount() {
+    this.mounted = true;
+    lazy_image_m(false, { top: 250, bottom: 250, now: true });
+  };
 
   Extensions.prototype.componentWillUpdate = function componentWillUpdate(nextProps, nextState) {
     if (nextState.term !== this.state.term) {
@@ -4803,6 +4860,8 @@ var Extensions_Extensions = function (_Component) {
   };
 
   Extensions.prototype.render = function render(_ref, _ref2) {
+    var _this2 = this;
+
     var term = _ref2.term;
 
     Extensions__objectDestructuringEmpty(_ref);
@@ -4815,7 +4874,7 @@ var Extensions_Extensions = function (_Component) {
         components_Row_Row,
         { column: true },
         this.extensions.map(function (extension) {
-          return Object(preact_min["h"])(Extensions_Extension_Extension, { extension: extension });
+          return Object(preact_min["h"])(Extensions_Extension_Extension, { extension: extension, lazy: !_this2.mounted });
         })
       )
     );
@@ -4929,6 +4988,8 @@ var App = __webpack_require__("S03M");
 var App_default = /*#__PURE__*/__webpack_require__.n(App);
 
 // CONCATENATED MODULE: ./App.js
+
+
 
 
 
@@ -5231,6 +5292,13 @@ var baseSetToString = __webpack_require__("UJWv"),
 var setToString = shortOut(baseSetToString);
 
 module.exports = setToString;
+
+/***/ }),
+
+/***/ "Kaoj":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
