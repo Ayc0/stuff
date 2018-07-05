@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ayc0-github-stuff",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn -s serve || yarn -s dev",
