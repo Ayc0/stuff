@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 
 import Collapse from '%/components/Collapse';
+import { onClick } from '%/utils/clickable';
 
 class Description extends Component {
   state = { open: false };
@@ -11,9 +12,9 @@ class Description extends Component {
     return (
       <Collapse
         open={open}
-        onClick={this.toggleOpen}
+        {...onClick(this.toggleOpen)}
         minHeight="1.2em"
-        clickable
+        tabIndex="0"
         style={{ textOverflow: 'ellipsis', whiteSpace: open ? '' : 'nowrap', ...style }}
       >
         {children}

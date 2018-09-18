@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import styled from 'preact-emotion';
 
-import getValue from '%/utils/getValue';
 import { getColor } from '%/utils/colors';
+import { onClick } from '%/utils/clickable';
 
 const Wrapper = styled.div(
   {
@@ -43,11 +43,13 @@ const Tag = ({ active, onToggle, color, ...props }) => {
   const children = props.children || [props.name];
 
   const clickable = onToggle !== undefined;
+  const toggle = () => (clickable ? onToggle(name) : null);
 
   return (
     <Wrapper active={active} noOutline={!clickable} color={color}>
-      <Checkbox id={id} type="checkbox" checked={active} value={name} onChange={getValue(onToggle || (() => {}))} />
-      <label for={id} className="no-outline" clickable={clickable}>
+      <Checkbox id={id} type="checkbox" checked={active} value={name} />
+
+      <label for={id} className="no-outline" tabIndex={clickable && 0} {...onClick(toggle)}>
         {children}
       </label>
     </Wrapper>

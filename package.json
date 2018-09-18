@@ -30,7 +30,8 @@
         "error",
         2
       ],
-      "react/jsx-indent-props": "off"
+      "react/jsx-indent-props": "off",
+      "react/jsx-no-bind": "off"
     }
   },
   "eslintIgnore": [

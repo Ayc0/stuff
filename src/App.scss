@@ -6,12 +6,16 @@ body {
   color: var(--text);
 }
 
-*[clickable]:hover {
-  cursor: pointer;
-}
-
-*[clickable]:not(.no-outline):hover {
-  box-shadow: inset 0 0 0 1px var(--background-d2);
+*[clickable],
+*[tabindex="0"] {
+  &:not(.no-outline):hover,
+  &:focus {
+    box-shadow: inset 0 0 0 1px var(--background-d2);
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 *[fluid] {
@@ -21,6 +25,11 @@ body {
 .link {
   color: var(--secondary-d2);
   text-decoration: none;
+}
+
+a:not(.link) {
+  text-decoration: underline;
+  text-decoration-style: dashed;
 }
 
 a.active {

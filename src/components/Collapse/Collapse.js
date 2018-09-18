@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import styled from 'preact-emotion';
 
-const Div = ({ className, style, clickable, fluid, children, onClick, $ref, ...props }) => (
-  <div ref={$ref} {...{ className, style, clickable, fluid, children, onClick }} />
+const Div = ({ className, style, clickable, tabIndex, fluid, children, onClick, onKeyPress, $ref, ...props }) => (
+  <div ref={$ref} {...{ className, style, clickable, tabIndex, fluid, children, onClick, onKeyPress }} />
 );
 
 const Wrapper = styled(Div)(({ timing }) => ({

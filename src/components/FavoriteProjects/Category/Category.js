@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 
 import { getColor } from '%/utils/colors';
+import { onClick } from '%/utils/clickable';
 import Row from '%/components/Row';
 import Collapse from '%/components/Collapse';
 
@@ -16,10 +17,14 @@ class Category extends Component {
   render({ name, projects }, { open }) {
     return (
       <div fluid>
-        <Row clickable onClick={this.toggleOpen}>
+        <Row tabIndex="0" {...onClick(this.toggleOpen)}>
           <Caret size=".5em" color={getColor('text')} style={{ marginRight: '1em' }} open={open} /> <h2>{name}</h2>
         </Row>
-        <Collapse open={open}>{projects.map(project => <Project key={project.name} project={project} />)}</Collapse>
+        <Collapse open={open}>
+          {projects.map(project => (
+            <Project key={project.name} project={project} />
+          ))}
+        </Collapse>
       </div>
     );
   }
