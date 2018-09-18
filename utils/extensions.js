@@ -6,7 +6,7 @@ const uniqBy = require('lodash/uniqBy');
 
 const filename = path.basename(__filename);
 
-const folder = '/mnt/c/Users/Kangoo/.vscode/extensions';
+const folder = '/Users/ayc0/.vscode/extensions';
 
 const dirs = fs.readdirSync(folder).filter(dir => dir !== filename);
 
@@ -34,15 +34,17 @@ const extensions = filter(
     const packageJson = JSON.parse(fs.readFileSync(packagePath));
 
     const id = packageJson.name;
-    const name = packageJson.displayName;
+    const name = packageJson.displayName || id;
     let description = packageJson.description;
 
     let github;
-    if (typeof packageJson.repository === 'string') {
-      github = packageJson.repository;
-    }
-    else {
-      github = packageJson.repository.url;
+    if (packageJson.repository) {
+      if (typeof packageJson.repository === 'string') {
+        github = packageJson.repository;
+      }
+      else {
+        github = packageJson.repository.url;
+      }
     }
 
     let icon;
@@ -50,8 +52,13 @@ const extensions = filter(
       const rawIconPath = path.join(folderPath, packageJson.icon);
       icon = copy(rawIconPath, id);
     }
+    else {
+      icon = 'https://cdn.vsassets.io/v/20180911T053002/_content/Header/default_icon.png';
+    }
     const marketplace = `https://marketplace.visualstudio.com/items?itemName=${packageJson.publisher}.${id}`;
-    return { id, name, description, icon, sources: { github, marketplace } };
+    return github
+      ? { id, name, description, icon, sources: { github, marketplace } }
+      : { id, name, description, icon, sources: { marketplace } };
   })
 );
 
