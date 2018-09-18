@@ -1,5 +1,24 @@
 [
   {
+    "id": "ejs-language-support",
+    "name": ".ejs",
+    "description": "EJS language support for Visual Studio Code, generated from gregory-m's (github) TextMate bundle",
+    "icon": "https://cdn.vsassets.io/v/20180911T053002/_content/Header/default_icon.png",
+    "sources": {
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=QassimFarid.ejs-language-support"
+    }
+  },
+  {
+    "id": "auto-close-tag",
+    "name": "Auto Close Tag",
+    "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text",
+    "icon": "auto-close-tag.png",
+    "sources": {
+      "github": "https://github.com/formulahendry/vscode-auto-close-tag.git",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag"
+    }
+  },
+  {
     "id": "auto-rename-tag",
     "name": "Auto Rename Tag",
     "description": "Auto rename paired HTML/XML tag",
@@ -40,16 +59,6 @@
     }
   },
   {
-    "id": "vscode-code-outline",
-    "name": "Code Outline",
-    "description": "A code outline tree provider for VSCode",
-    "icon": "vscode-code-outline.png",
-    "sources": {
-      "github": "https://github.com/patrys/vscode-code-outline",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=patrys.vscode-code-outline"
-    }
-  },
-  {
     "id": "code-spell-checker",
     "name": "Code Spell Checker",
     "description": "Spelling checker for source code",
@@ -60,13 +69,13 @@
     }
   },
   {
-    "id": "vscode-docker",
-    "name": "Docker",
-    "description": "Adds syntax highlighting, commands, hover tips, and linting for Dockerfile and docker-compose files.",
-    "icon": "vscode-docker.png",
+    "id": "debugger-for-chrome",
+    "name": "Debugger for Chrome",
+    "description": "%extension.description%",
+    "icon": "debugger-for-chrome.png",
     "sources": {
-      "github": "https://github.com/microsoft/vscode-docker.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker"
+      "github": "https://github.com/Microsoft/vscode-chrome-debug",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome"
     }
   },
   {
@@ -100,16 +109,6 @@
     }
   },
   {
-    "id": "flow-for-vscode",
-    "name": "Flow Language Support",
-    "description": "Flow support for VS Code",
-    "icon": "flow-for-vscode.png",
-    "sources": {
-      "github": "https://github.com/flowtype/flow-for-vscode.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode"
-    }
-  },
-  {
     "id": "vscode-language-pack-fr",
     "name": "French Language Pack for Visual Studio Code",
     "description": "Language pack extension for French",
@@ -120,23 +119,23 @@
     }
   },
   {
-    "id": "gitlens",
-    "name": "GitLens — Git supercharged",
-    "description": "Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more",
-    "icon": "gitlens.png",
+    "id": "Go",
+    "name": "Go",
+    "description": "Rich Go language support for Visual Studio Code",
+    "icon": "Go.png",
     "sources": {
-      "github": "https://github.com/eamodio/vscode-gitlens.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"
+      "github": "https://github.com/Microsoft/vscode-go.git",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go"
     }
   },
   {
-    "id": "graphql",
-    "name": "GraphQL",
-    "description": "Syntax highlighting for GraphQL queries and schemas",
-    "icon": "graphql.svg",
+    "id": "graphql-for-vscode",
+    "name": "GraphQL for VSCode",
+    "description": "GraphQL syntax highlighting, linting, auto-complete, and more!",
+    "icon": "graphql-for-vscode.png",
     "sources": {
-      "github": "https://github.com/apollostack/vscode-graphql.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=mquandalle.graphql"
+      "github": "https://github.com/kumarharsh/graphql-for-vscode.git",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode"
     }
   },
   {
@@ -150,23 +149,13 @@
     }
   },
   {
-    "id": "latex-support",
-    "name": "LaTeX language support",
-    "description": "LaTeX language support for Visual Studio Code",
-    "icon": "latex-support.png",
+    "id": "latex-workshop",
+    "name": "LaTeX Workshop",
+    "description": "Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more.",
+    "icon": "latex-workshop.png",
     "sources": {
-      "github": "https://github.com/ProAdd-ons/vscode-LaTeX-support",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=torn4dom4n.latex-support"
-    }
-  },
-  {
-    "id": "java",
-    "name": "Language Support for Java(TM) by Red Hat",
-    "description": "Java Linting, Intellisense, formatting, refactoring, Maven/Gradle support and more...",
-    "icon": "java.png",
-    "sources": {
-      "github": "https://github.com/redhat-developer/vscode-java",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=redhat.java"
+      "github": "https://github.com/James-Yu/LaTeX-Workshop.git",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop"
     }
   },
   {
@@ -180,43 +169,13 @@
     }
   },
   {
-    "id": "vscode-mermaid-preview",
-    "name": "Mermaid Preview",
-    "description": "Previews Mermaid diagrams in Visual Studio Code",
-    "icon": "vscode-mermaid-preview.png",
+    "id": "path-autocomplete",
+    "name": "Path Autocomplete",
+    "description": "Provides path completion for visual studio code.",
+    "icon": "path-autocomplete.png",
     "sources": {
-      "github": "https://github.com/vstirbu/vscode-mermaid-preview.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview"
-    }
-  },
-  {
-    "id": "node-debug2",
-    "name": "Node Debug 2",
-    "description": "%extension.description%",
-    "icon": "node-debug2.png",
-    "sources": {
-      "github": "https://github.com/Microsoft/vscode-node-debug2.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.node-debug2"
-    }
-  },
-  {
-    "id": "reasonml",
-    "name": "OCaml and Reason IDE",
-    "description": "OCaml and Reason language support",
-    "icon": "reasonml.png",
-    "sources": {
-      "github": "https://github.com/freebroccolo/vscode-reasonml.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=freebroccolo.reasonml"
-    }
-  },
-  {
-    "id": "path-intellisense",
-    "name": "Path Intellisense",
-    "description": "Visual Studio Code plugin that autocompletes filenames",
-    "icon": "path-intellisense.png",
-    "sources": {
-      "github": "https://github.com/ChristianKohler/PathIntellisense.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"
+      "github": "https://github.com/ionutvmi/path-autocomplete",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete"
     }
   },
   {
@@ -227,36 +186,6 @@
     "sources": {
       "github": "https://github.com/prettier/prettier-vscode.git",
       "marketplace": "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
-    }
-  },
-  {
-    "id": "python",
-    "name": "Python",
-    "description": "Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.",
-    "icon": "python.png",
-    "sources": {
-      "github": "https://github.com/Microsoft/vscode-python",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=ms-python.python"
-    }
-  },
-  {
-    "id": "vscode-react-native",
-    "name": "React Native Tools",
-    "description": "Code-hinting, debugging and integrated commands for React Native",
-    "icon": "vscode-react-native.png",
-    "sources": {
-      "github": "https://github.com/Microsoft/vscode-react-native",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native"
-    }
-  },
-  {
-    "id": "vscode-redux-devtools",
-    "name": "Redux DevTools",
-    "description": "vscode redux devtools wrapper",
-    "icon": "vscode-redux-devtools.png",
-    "sources": {
-      "github": "https://github.com/jkzing/vscode-redux-devtools",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools"
     }
   },
   {
@@ -280,16 +209,6 @@
     }
   },
   {
-    "id": "sublime-keybindings",
-    "name": "Sublime Text Keymap and Settings Importer",
-    "description": "Import Sublime Text settings and keybindings into VS Code.",
-    "icon": "sublime-keybindings.png",
-    "sources": {
-      "github": "https://github.com/Microsoft/vscode-sublime-keybindings.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings"
-    }
-  },
-  {
     "id": "vsliveshare",
     "name": "VS Live Share",
     "description": "Real-time collaborative development from the comfort of your favorite tools.",
@@ -300,12 +219,13 @@
     }
   },
   {
-    "id": "xml-format",
-    "name": "XML Format",
-    "description": "Format XML documents",
+    "id": "vetur",
+    "name": "Vetur",
+    "description": "Vue tooling for VS Code",
+    "icon": "vetur.png",
     "sources": {
-      "github": "https://github.com/mikeburgh/vscode-xml-format.git",
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=mikeburgh.xml-format"
+      "github": "https://github.com/vuejs/vetur.git",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=octref.vetur"
     }
   }
 ]

@@ -5,7 +5,7 @@ import rawList from './list.json';
 
 const list = sortBy(
   rawList.map(extension => {
-    if (extension.icon) {
+    if (extension.icon && !extension.icon.match(/^https?:\/\//)) {
       extension.icon = require('./icons/' + extension.icon);
     }
     return extension;
