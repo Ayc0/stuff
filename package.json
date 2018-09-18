@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ayc0-github-stuff",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "serve": "yarn -s build:preact && preact serve",
     "dev": "preact watch",
     "clean:build": "rm -rf build",
-    "build:preact": "preact build && mv build/stuff/* build/ && rmdir build/stuff && sed -i 's/stuff\\/stuff/stuff/g' build/sw.js",
+    "build:preact": "preact build && mv build/stuff/* build/ && rmdir build/stuff && sed -i '' 's/stuff\\/stuff/stuff/g' build/sw.js",
     "build": "yarn -s clean:build && yarn -s build:preact",
     "test:lint": "eslint src",
     "test:projects": "node src/utils/projects/verify.test.js",
