@@ -1361,6 +1361,13 @@ module.exports = mapToArray;
 
 /***/ }),
 
+/***/ "7Dak":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b7bc4e91150a8b31a0860aaa504ebfd0.png";
+
+/***/ }),
+
 /***/ "7Mmb":
 /***/ (function(module, exports) {
 
@@ -1387,6 +1394,13 @@ function stubArray() {
 }
 
 module.exports = stubArray;
+
+/***/ }),
+
+/***/ "7sTX":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b4169f44921820c43e54f748773b2cc4.png";
 
 /***/ }),
 
@@ -2171,23 +2185,23 @@ module.exports = sortBy;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var emotion_dist_index_es_namespaceObject = {};
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "flush", function() { return index_es_flush; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "hydrate", function() { return index_es_hydrate; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "cx", function() { return index_es_cx; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "merge", function() { return index_es_merge; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "getRegisteredStyles", function() { return index_es_getRegisteredStyles; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "injectGlobal", function() { return index_es_injectGlobal; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "keyframes", function() { return index_es_keyframes; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "css", function() { return index_es_css; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "sheet", function() { return index_es_sheet; });
-__webpack_require__.d(emotion_dist_index_es_namespaceObject, "caches", function() { return index_es_caches; });
+var dist_index_esm_namespaceObject = {};
+__webpack_require__.d(dist_index_esm_namespaceObject, "flush", function() { return index_esm_flush; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "hydrate", function() { return index_esm_hydrate; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "cx", function() { return index_esm_cx; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "merge", function() { return index_esm_merge; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "getRegisteredStyles", function() { return index_esm_getRegisteredStyles; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "injectGlobal", function() { return index_esm_injectGlobal; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "keyframes", function() { return index_esm_keyframes; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "css", function() { return index_esm_css; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "sheet", function() { return index_esm_sheet; });
+__webpack_require__.d(dist_index_esm_namespaceObject, "caches", function() { return index_esm_caches; });
 
 // EXTERNAL MODULE: ../node_modules/preact/dist/preact.min.js
 var preact_min = __webpack_require__("KM04");
 var preact_min_default = /*#__PURE__*/__webpack_require__.n(preact_min);
 
-// CONCATENATED MODULE: ../node_modules/@emotion/memoize/dist/index.es.js
+// CONCATENATED MODULE: ../node_modules/@emotion/memoize/dist/memoize.esm.js
 function memoize(fn) {
   var cache = {};
   return function (arg) {
@@ -2196,10 +2210,10 @@ function memoize(fn) {
   };
 }
 
-/* harmony default export */ var index_es = (memoize);
-//# sourceMappingURL=index.es.js.map
-// CONCATENATED MODULE: ../node_modules/@emotion/unitless/dist/index.es.js
-var index = {
+/* harmony default export */ var memoize_esm = (memoize);
+//# sourceMappingURL=memoize.esm.js.map
+// CONCATENATED MODULE: ../node_modules/@emotion/unitless/dist/unitless.esm.js
+var unitlessKeys = {
   animationIterationCount: 1,
   borderImageOutset: 1,
   borderImageSlice: 1,
@@ -2244,9 +2258,8 @@ var index = {
   strokeWidth: 1
 };
 
-/* harmony default export */ var dist_index_es = (index);
-//# sourceMappingURL=index.es.js.map
-// CONCATENATED MODULE: ../node_modules/@emotion/hash/dist/index.es.js
+/* harmony default export */ var unitless_esm = (unitlessKeys);
+// CONCATENATED MODULE: ../node_modules/@emotion/hash/dist/hash.esm.js
 /* eslint-disable */
 // murmurhash2 via https://github.com/garycourt/murmurhash-js/blob/master/murmurhash2_gc.js
 function murmurhash2_32_gc(str) {
@@ -2283,18 +2296,18 @@ function murmurhash2_32_gc(str) {
   return (h >>> 0).toString(36);
 }
 
-/* harmony default export */ var hash_dist_index_es = (murmurhash2_32_gc);
-//# sourceMappingURL=index.es.js.map
-// CONCATENATED MODULE: ../node_modules/@emotion/stylis/dist/index.es.js
-var V = function ca(W) {
-  function M(d, c, f, h, a) {
-    for (var k = 0, b = 0, u = 0, l = 0, q, m, e, D = 0, y = 0, r, E = r = q = 0, n = 0, J = m = 0, t = 0, K = f.length, F = K - 1, w, g = "", p = "", G = "", H = "", A; n < K;) {
-      e = f.charCodeAt(n);
-      n === F && 0 !== b + l + u + k && (0 !== b && (e = 47 === b ? 10 : 47), l = u = k = 0, K++, F++);
+/* harmony default export */ var hash_esm = (murmurhash2_32_gc);
+//# sourceMappingURL=hash.esm.js.map
+// CONCATENATED MODULE: ../node_modules/create-emotion/node_modules/@emotion/stylis/dist/stylis.esm.js
+var W = function da(X) {
+  function M(d, c, e, h, a) {
+    for (var m = 0, b = 0, v = 0, n = 0, q, g, x = 0, J = 0, k, u = k = q = 0, l = 0, r = 0, z = 0, t = 0, K = e.length, I = K - 1, y, f = '', p = '', F = '', G = '', C; l < K;) {
+      g = e.charCodeAt(l);
+      l === I && 0 !== b + n + v + m && (0 !== b && (g = 47 === b ? 10 : 47), n = v = m = 0, K++, I++);
 
-      if (0 === b + l + u + k) {
-        if (n === F && (0 < m && (g = g.replace(N, "")), 0 < g.trim().length)) {
-          switch (e) {
+      if (0 === b + n + v + m) {
+        if (l === I && (0 < r && (f = f.replace(N, '')), 0 < f.trim().length)) {
+          switch (g) {
             case 32:
             case 9:
             case 59:
@@ -2303,43 +2316,84 @@ var V = function ca(W) {
               break;
 
             default:
-              g += f.charAt(n);
+              f += e.charAt(l);
           }
 
-          e = 59;
+          g = 59;
         }
 
-        switch (e) {
+        switch (g) {
           case 123:
-            g = g.trim();
-            q = g.charCodeAt(0);
-            r = 1;
+            f = f.trim();
+            q = f.charCodeAt(0);
+            k = 1;
 
-            for (t = ++n; n < K;) {
-              e = f.charCodeAt(n);
-
-              switch (e) {
+            for (t = ++l; l < K;) {
+              switch (g = e.charCodeAt(l)) {
                 case 123:
-                  r++;
+                  k++;
                   break;
 
                 case 125:
-                  r--;
+                  k--;
+                  break;
+
+                case 47:
+                  switch (g = e.charCodeAt(l + 1)) {
+                    case 42:
+                    case 47:
+                      a: {
+                        for (u = l + 1; u < I; ++u) {
+                          switch (e.charCodeAt(u)) {
+                            case 47:
+                              if (42 === g && 42 === e.charCodeAt(u - 1) && l + 2 !== u) {
+                                l = u + 1;
+                                break a;
+                              }
+
+                              break;
+
+                            case 10:
+                              if (47 === g) {
+                                l = u + 1;
+                                break a;
+                              }
+
+                          }
+                        }
+
+                        l = u;
+                      }
+
+                  }
+
+                  break;
+
+                case 91:
+                  g++;
+
+                case 40:
+                  g++;
+
+                case 34:
+                case 39:
+                  for (; l++ < I && e.charCodeAt(l) !== g;) {}
+
               }
 
-              if (0 === r) break;
-              n++;
+              if (0 === k) break;
+              l++;
             }
 
-            e = f.substring(t, n);
-            0 === q && (q = (g = g.replace(da, "").trim()).charCodeAt(0));
+            k = e.substring(t, l);
+            0 === q && (q = (f = f.replace(ea, '').trim()).charCodeAt(0));
 
             switch (q) {
               case 64:
-                0 < m && (g = g.replace(N, ""));
-                m = g.charCodeAt(1);
+                0 < r && (f = f.replace(N, ''));
+                g = f.charCodeAt(1);
 
-                switch (m) {
+                switch (g) {
                   case 100:
                   case 109:
                   case 115:
@@ -2351,244 +2405,244 @@ var V = function ca(W) {
                     r = O;
                 }
 
-                e = M(c, r, e, m, a + 1);
-                t = e.length;
-                0 < z && (r = X(O, g, J), A = I(3, e, r, c, B, x, t, m, a, h), g = r.join(""), void 0 !== A && 0 === (t = (e = A.trim()).length) && (m = 0, e = ""));
-                if (0 < t) switch (m) {
+                k = M(c, r, k, g, a + 1);
+                t = k.length;
+                0 < B && (r = Y(O, f, z), C = H(3, k, r, c, D, A, t, g, a, h), f = r.join(''), void 0 !== C && 0 === (t = (k = C.trim()).length) && (g = 0, k = ''));
+                if (0 < t) switch (g) {
                   case 115:
-                    g = g.replace(ea, fa);
+                    f = f.replace(fa, ha);
 
                   case 100:
                   case 109:
                   case 45:
-                    e = g + "{" + e + "}";
+                    k = f + '{' + k + '}';
                     break;
 
                   case 107:
-                    g = g.replace(ha, "$1 $2");
-                    e = g + "{" + e + "}";
-                    e = 1 === v || 2 === v && L("@" + e, 3) ? "@-webkit-" + e + "@" + e : "@" + e;
+                    f = f.replace(ia, '$1 $2');
+                    k = f + '{' + k + '}';
+                    k = 1 === w || 2 === w && L('@' + k, 3) ? '@-webkit-' + k + '@' + k : '@' + k;
                     break;
 
                   default:
-                    e = g + e, 112 === h && (e = (p += e, ""));
-                } else e = "";
+                    k = f + k, 112 === h && (k = (p += k, ''));
+                } else k = '';
                 break;
 
               default:
-                e = M(c, X(c, g, J), e, h, a + 1);
+                k = M(c, Y(c, f, z), k, h, a + 1);
             }
 
-            G += e;
-            r = J = m = E = q = 0;
-            g = "";
-            e = f.charCodeAt(++n);
+            F += k;
+            k = z = r = u = q = 0;
+            f = '';
+            g = e.charCodeAt(++l);
             break;
 
           case 125:
           case 59:
-            g = (0 < m ? g.replace(N, "") : g).trim();
-            if (1 < (t = g.length)) switch (0 === E && (q = g.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (g = g.replace(" ", ":")).length), 0 < z && void 0 !== (A = I(1, g, c, d, B, x, p.length, h, a, h)) && 0 === (t = (g = A.trim()).length) && (g = "\x00\x00"), q = g.charCodeAt(0), m = g.charCodeAt(1), q) {
+            f = (0 < r ? f.replace(N, '') : f).trim();
+            if (1 < (t = f.length)) switch (0 === u && (q = f.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (f = f.replace(' ', ':')).length), 0 < B && void 0 !== (C = H(1, f, c, d, D, A, p.length, h, a, h)) && 0 === (t = (f = C.trim()).length) && (f = '\x00\x00'), q = f.charCodeAt(0), g = f.charCodeAt(1), q) {
               case 0:
                 break;
 
               case 64:
-                if (105 === m || 99 === m) {
-                  H += g + f.charAt(n);
+                if (105 === g || 99 === g) {
+                  G += f + e.charAt(l);
                   break;
                 }
 
               default:
-                58 !== g.charCodeAt(t - 1) && (p += P(g, q, m, g.charCodeAt(2)));
+                58 !== f.charCodeAt(t - 1) && (p += P(f, q, g, f.charCodeAt(2)));
             }
-            J = m = E = q = 0;
-            g = "";
-            e = f.charCodeAt(++n);
+            z = r = u = q = 0;
+            f = '';
+            g = e.charCodeAt(++l);
         }
       }
 
-      switch (e) {
+      switch (g) {
         case 13:
         case 10:
-          47 === b ? b = 0 : 0 === 1 + q && 107 !== h && 0 < g.length && (m = 1, g += "\x00");
-          0 < z * Y && I(0, g, c, d, B, x, p.length, h, a, h);
-          x = 1;
-          B++;
+          47 === b ? b = 0 : 0 === 1 + q && 107 !== h && 0 < f.length && (r = 1, f += '\x00');
+          0 < B * Z && H(0, f, c, d, D, A, p.length, h, a, h);
+          A = 1;
+          D++;
           break;
 
         case 59:
         case 125:
-          if (0 === b + l + u + k) {
-            x++;
+          if (0 === b + n + v + m) {
+            A++;
             break;
           }
 
         default:
-          x++;
-          w = f.charAt(n);
+          A++;
+          y = e.charAt(l);
 
-          switch (e) {
+          switch (g) {
             case 9:
             case 32:
-              if (0 === l + k + b) switch (D) {
+              if (0 === n + m + b) switch (x) {
                 case 44:
                 case 58:
                 case 9:
                 case 32:
-                  w = "";
+                  y = '';
                   break;
 
                 default:
-                  32 !== e && (w = " ");
+                  32 !== g && (y = ' ');
               }
               break;
 
             case 0:
-              w = "\\0";
+              y = '\\0';
               break;
 
             case 12:
-              w = "\\f";
+              y = '\\f';
               break;
 
             case 11:
-              w = "\\v";
+              y = '\\v';
               break;
 
             case 38:
-              0 === l + b + k && (m = J = 1, w = "\f" + w);
+              0 === n + b + m && (r = z = 1, y = '\f' + y);
               break;
 
             case 108:
-              if (0 === l + b + k + C && 0 < E) switch (n - E) {
+              if (0 === n + b + m + E && 0 < u) switch (l - u) {
                 case 2:
-                  112 === D && 58 === f.charCodeAt(n - 3) && (C = D);
+                  112 === x && 58 === e.charCodeAt(l - 3) && (E = x);
 
                 case 8:
-                  111 === y && (C = y);
+                  111 === J && (E = J);
               }
               break;
 
             case 58:
-              0 === l + b + k && (E = n);
+              0 === n + b + m && (u = l);
               break;
 
             case 44:
-              0 === b + u + l + k && (m = 1, w += "\r");
+              0 === b + v + n + m && (r = 1, y += '\r');
               break;
 
             case 34:
             case 39:
-              0 === b && (l = l === e ? 0 : 0 === l ? e : l);
+              0 === b && (n = n === g ? 0 : 0 === n ? g : n);
               break;
 
             case 91:
-              0 === l + b + u && k++;
+              0 === n + b + v && m++;
               break;
 
             case 93:
-              0 === l + b + u && k--;
+              0 === n + b + v && m--;
               break;
 
             case 41:
-              0 === l + b + k && u--;
+              0 === n + b + m && v--;
               break;
 
             case 40:
-              if (0 === l + b + k) {
-                if (0 === q) switch (2 * D + 3 * y) {
+              if (0 === n + b + m) {
+                if (0 === q) switch (2 * x + 3 * J) {
                   case 533:
                     break;
 
                   default:
                     q = 1;
                 }
-                u++;
+                v++;
               }
 
               break;
 
             case 64:
-              0 === b + u + l + k + E + r && (r = 1);
+              0 === b + v + n + m + u + k && (k = 1);
               break;
 
             case 42:
             case 47:
-              if (!(0 < l + k + u)) switch (b) {
+              if (!(0 < n + m + v)) switch (b) {
                 case 0:
-                  switch (2 * e + 3 * f.charCodeAt(n + 1)) {
+                  switch (2 * g + 3 * e.charCodeAt(l + 1)) {
                     case 235:
                       b = 47;
                       break;
 
                     case 220:
-                      t = n, b = 42;
+                      t = l, b = 42;
                   }
 
                   break;
 
                 case 42:
-                  47 === e && 42 === D && (33 === f.charCodeAt(t + 2) && (p += f.substring(t, n + 1)), w = "", b = 0);
+                  47 === g && 42 === x && t + 2 !== l && (33 === e.charCodeAt(t + 2) && (p += e.substring(t, l + 1)), y = '', b = 0);
               }
           }
 
-          0 === b && (g += w);
+          0 === b && (f += y);
       }
 
-      y = D;
-      D = e;
-      n++;
+      J = x;
+      x = g;
+      l++;
     }
 
     t = p.length;
 
     if (0 < t) {
       r = c;
-      if (0 < z && (A = I(2, p, r, d, B, x, t, h, a, h), void 0 !== A && 0 === (p = A).length)) return H + p + G;
-      p = r.join(",") + "{" + p + "}";
+      if (0 < B && (C = H(2, p, r, d, D, A, t, h, a, h), void 0 !== C && 0 === (p = C).length)) return G + p + F;
+      p = r.join(',') + '{' + p + '}';
 
-      if (0 !== v * C) {
-        2 !== v || L(p, 2) || (C = 0);
+      if (0 !== w * E) {
+        2 !== w || L(p, 2) || (E = 0);
 
-        switch (C) {
+        switch (E) {
           case 111:
-            p = p.replace(ia, ":-moz-$1") + p;
+            p = p.replace(ja, ':-moz-$1') + p;
             break;
 
           case 112:
-            p = p.replace(Q, "::-webkit-input-$1") + p.replace(Q, "::-moz-$1") + p.replace(Q, ":-ms-input-$1") + p;
+            p = p.replace(Q, '::-webkit-input-$1') + p.replace(Q, '::-moz-$1') + p.replace(Q, ':-ms-input-$1') + p;
         }
 
-        C = 0;
+        E = 0;
       }
     }
 
-    return H + p + G;
+    return G + p + F;
   }
 
-  function X(d, c, f) {
-    var h = c.trim().split(ja);
+  function Y(d, c, e) {
+    var h = c.trim().split(ka);
     c = h;
     var a = h.length,
-        k = d.length;
+        m = d.length;
 
-    switch (k) {
+    switch (m) {
       case 0:
       case 1:
         var b = 0;
 
-        for (d = 0 === k ? "" : d[0] + " "; b < a; ++b) {
-          c[b] = Z(d, c[b], f, k).trim();
+        for (d = 0 === m ? '' : d[0] + ' '; b < a; ++b) {
+          c[b] = aa(d, c[b], e, m).trim();
         }
 
         break;
 
       default:
-        var u = b = 0;
+        var v = b = 0;
 
         for (c = []; b < a; ++b) {
-          for (var l = 0; l < k; ++l) {
-            c[u++] = Z(d[l] + " ", h[b], f, k).trim();
+          for (var n = 0; n < m; ++n) {
+            c[v++] = aa(d[n] + ' ', h[b], e, m).trim();
           }
         }
 
@@ -2597,151 +2651,145 @@ var V = function ca(W) {
     return c;
   }
 
-  function Z(d, c, f) {
+  function aa(d, c, e) {
     var h = c.charCodeAt(0);
     33 > h && (h = (c = c.trim()).charCodeAt(0));
 
     switch (h) {
       case 38:
-        return c.replace(F, "$1" + d.trim());
+        return c.replace(F, '$1' + d.trim());
 
       case 58:
-        switch (c.charCodeAt(1)) {
-          case 103:
-            break;
-
-          default:
-            return d.trim() + c.replace(F, "$1" + d.trim());
-        }
+        return d.trim() + c.replace(F, '$1' + d.trim());
 
       default:
-        if (0 < 1 * f && 0 < c.indexOf("\f")) return c.replace(F, (58 === d.charCodeAt(0) ? "" : "$1") + d.trim());
+        if (0 < 1 * e && 0 < c.indexOf('\f')) return c.replace(F, (58 === d.charCodeAt(0) ? '' : '$1') + d.trim());
     }
 
     return d + c;
   }
 
-  function P(d, c, f, h) {
-    var a = d + ";",
-        k = 2 * c + 3 * f + 4 * h;
+  function P(d, c, e, h) {
+    var a = d + ';',
+        m = 2 * c + 3 * e + 4 * h;
 
-    if (944 === k) {
-      d = a.indexOf(":", 9) + 1;
+    if (944 === m) {
+      d = a.indexOf(':', 9) + 1;
       var b = a.substring(d, a.length - 1).trim();
-      b = a.substring(0, d).trim() + b + ";";
-      return 1 === v || 2 === v && L(b, 1) ? "-webkit-" + b + b : b;
+      b = a.substring(0, d).trim() + b + ';';
+      return 1 === w || 2 === w && L(b, 1) ? '-webkit-' + b + b : b;
     }
 
-    if (0 === v || 2 === v && !L(a, 1)) return a;
+    if (0 === w || 2 === w && !L(a, 1)) return a;
 
-    switch (k) {
+    switch (m) {
       case 1015:
-        return 97 === a.charCodeAt(10) ? "-webkit-" + a + a : a;
+        return 97 === a.charCodeAt(10) ? '-webkit-' + a + a : a;
 
       case 951:
-        return 116 === a.charCodeAt(3) ? "-webkit-" + a + a : a;
+        return 116 === a.charCodeAt(3) ? '-webkit-' + a + a : a;
 
       case 963:
-        return 110 === a.charCodeAt(5) ? "-webkit-" + a + a : a;
+        return 110 === a.charCodeAt(5) ? '-webkit-' + a + a : a;
 
       case 1009:
         if (100 !== a.charCodeAt(4)) break;
 
       case 969:
       case 942:
-        return "-webkit-" + a + a;
+        return '-webkit-' + a + a;
 
       case 978:
-        return "-webkit-" + a + "-moz-" + a + a;
+        return '-webkit-' + a + '-moz-' + a + a;
 
       case 1019:
       case 983:
-        return "-webkit-" + a + "-moz-" + a + "-ms-" + a + a;
+        return '-webkit-' + a + '-moz-' + a + '-ms-' + a + a;
 
       case 883:
-        if (45 === a.charCodeAt(8)) return "-webkit-" + a + a;
-        if (0 < a.indexOf("image-set(", 11)) return a.replace(ka, "$1-webkit-$2") + a;
+        if (45 === a.charCodeAt(8)) return '-webkit-' + a + a;
+        if (0 < a.indexOf('image-set(', 11)) return a.replace(la, '$1-webkit-$2') + a;
         break;
 
       case 932:
         if (45 === a.charCodeAt(4)) switch (a.charCodeAt(5)) {
           case 103:
-            return "-webkit-box-" + a.replace("-grow", "") + "-webkit-" + a + "-ms-" + a.replace("grow", "positive") + a;
+            return '-webkit-box-' + a.replace('-grow', '') + '-webkit-' + a + '-ms-' + a.replace('grow', 'positive') + a;
 
           case 115:
-            return "-webkit-" + a + "-ms-" + a.replace("shrink", "negative") + a;
+            return '-webkit-' + a + '-ms-' + a.replace('shrink', 'negative') + a;
 
           case 98:
-            return "-webkit-" + a + "-ms-" + a.replace("basis", "preferred-size") + a;
+            return '-webkit-' + a + '-ms-' + a.replace('basis', 'preferred-size') + a;
         }
-        return "-webkit-" + a + "-ms-" + a + a;
+        return '-webkit-' + a + '-ms-' + a + a;
 
       case 964:
-        return "-webkit-" + a + "-ms-flex-" + a + a;
+        return '-webkit-' + a + '-ms-flex-' + a + a;
 
       case 1023:
         if (99 !== a.charCodeAt(8)) break;
-        b = a.substring(a.indexOf(":", 15)).replace("flex-", "").replace("space-between", "justify");
-        return "-webkit-box-pack" + b + "-webkit-" + a + "-ms-flex-pack" + b + a;
+        b = a.substring(a.indexOf(':', 15)).replace('flex-', '').replace('space-between', 'justify');
+        return '-webkit-box-pack' + b + '-webkit-' + a + '-ms-flex-pack' + b + a;
 
       case 1005:
-        return la.test(a) ? a.replace(aa, ":-webkit-") + a.replace(aa, ":-moz-") + a : a;
+        return ma.test(a) ? a.replace(ba, ':-webkit-') + a.replace(ba, ':-moz-') + a : a;
 
       case 1e3:
         b = a.substring(13).trim();
-        c = b.indexOf("-") + 1;
+        c = b.indexOf('-') + 1;
 
         switch (b.charCodeAt(0) + b.charCodeAt(c)) {
           case 226:
-            b = a.replace(G, "tb");
+            b = a.replace(G, 'tb');
             break;
 
           case 232:
-            b = a.replace(G, "tb-rl");
+            b = a.replace(G, 'tb-rl');
             break;
 
           case 220:
-            b = a.replace(G, "lr");
+            b = a.replace(G, 'lr');
             break;
 
           default:
             return a;
         }
 
-        return "-webkit-" + a + "-ms-" + b + a;
+        return '-webkit-' + a + '-ms-' + b + a;
 
       case 1017:
-        if (-1 === a.indexOf("sticky", 9)) break;
+        if (-1 === a.indexOf('sticky', 9)) break;
 
       case 975:
         c = (a = d).length - 10;
-        b = (33 === a.charCodeAt(c) ? a.substring(0, c) : a).substring(d.indexOf(":", 7) + 1).trim();
+        b = (33 === a.charCodeAt(c) ? a.substring(0, c) : a).substring(d.indexOf(':', 7) + 1).trim();
 
-        switch (k = b.charCodeAt(0) + (b.charCodeAt(7) | 0)) {
+        switch (m = b.charCodeAt(0) + (b.charCodeAt(7) | 0)) {
           case 203:
             if (111 > b.charCodeAt(8)) break;
 
           case 115:
-            a = a.replace(b, "-webkit-" + b) + ";" + a;
+            a = a.replace(b, '-webkit-' + b) + ';' + a;
             break;
 
           case 207:
           case 102:
-            a = a.replace(b, "-webkit-" + (102 < k ? "inline-" : "") + "box") + ";" + a.replace(b, "-webkit-" + b) + ";" + a.replace(b, "-ms-" + b + "box") + ";" + a;
+            a = a.replace(b, '-webkit-' + (102 < m ? 'inline-' : '') + 'box') + ';' + a.replace(b, '-webkit-' + b) + ';' + a.replace(b, '-ms-' + b + 'box') + ';' + a;
         }
 
-        return a + ";";
+        return a + ';';
 
       case 938:
         if (45 === a.charCodeAt(5)) switch (a.charCodeAt(6)) {
           case 105:
-            return b = a.replace("-items", ""), "-webkit-" + a + "-webkit-box-" + b + "-ms-flex-" + b + a;
+            return b = a.replace('-items', ''), '-webkit-' + a + '-webkit-box-' + b + '-ms-flex-' + b + a;
 
           case 115:
-            return "-webkit-" + a + "-ms-flex-item-" + a.replace(ba, "") + a;
+            return '-webkit-' + a + '-ms-flex-item-' + a.replace(ca, '') + a;
 
           default:
-            return "-webkit-" + a + "-ms-flex-line-pack" + a.replace("align-content", "").replace(ba, "") + a;
+            return '-webkit-' + a + '-ms-flex-line-pack' + a.replace('align-content', '').replace(ca, '') + a;
         }
         break;
 
@@ -2751,31 +2799,31 @@ var V = function ca(W) {
 
       case 931:
       case 953:
-        if (!0 === ma.test(d)) return 115 === (b = d.substring(d.indexOf(":") + 1)).charCodeAt(0) ? P(d.replace("stretch", "fill-available"), c, f, h).replace(":fill-available", ":stretch") : a.replace(b, "-webkit-" + b) + a.replace(b, "-moz-" + b.replace("fill-", "")) + a;
+        if (!0 === na.test(d)) return 115 === (b = d.substring(d.indexOf(':') + 1)).charCodeAt(0) ? P(d.replace('stretch', 'fill-available'), c, e, h).replace(':fill-available', ':stretch') : a.replace(b, '-webkit-' + b) + a.replace(b, '-moz-' + b.replace('fill-', '')) + a;
         break;
 
       case 962:
-        if (a = "-webkit-" + a + (102 === a.charCodeAt(5) ? "-ms-" + a : "") + a, 211 === f + h && 105 === a.charCodeAt(13) && 0 < a.indexOf("transform", 10)) return a.substring(0, a.indexOf(";", 27) + 1).replace(na, "$1-webkit-$2") + a;
+        if (a = '-webkit-' + a + (102 === a.charCodeAt(5) ? '-ms-' + a : '') + a, 211 === e + h && 105 === a.charCodeAt(13) && 0 < a.indexOf('transform', 10)) return a.substring(0, a.indexOf(';', 27) + 1).replace(oa, '$1-webkit-$2') + a;
     }
 
     return a;
   }
 
   function L(d, c) {
-    var f = d.indexOf(1 === c ? ":" : "{"),
-        h = d.substring(0, 3 !== c ? f : 10);
-    f = d.substring(f + 1, d.length - 1);
-    return H(2 !== c ? h : h.replace(oa, "$1"), f, c);
+    var e = d.indexOf(1 === c ? ':' : '{'),
+        h = d.substring(0, 3 !== c ? e : 10);
+    e = d.substring(e + 1, d.length - 1);
+    return R(2 !== c ? h : h.replace(pa, '$1'), e, c);
   }
 
-  function fa(d, c) {
-    var f = P(c, c.charCodeAt(0), c.charCodeAt(1), c.charCodeAt(2));
-    return f !== c + ";" ? f.replace(pa, " or ($1)").substring(4) : "(" + c + ")";
+  function ha(d, c) {
+    var e = P(c, c.charCodeAt(0), c.charCodeAt(1), c.charCodeAt(2));
+    return e !== c + ';' ? e.replace(qa, ' or ($1)').substring(4) : '(' + c + ')';
   }
 
-  function I(d, c, f, h, a, k, b, u, l, q) {
-    for (var m = 0, e = c, v; m < z; ++m) {
-      switch (v = R[m].call(y, d, e, f, h, a, k, b, u, l, q)) {
+  function H(d, c, e, h, a, m, b, v, n, q) {
+    for (var g = 0, x = c, w; g < B; ++g) {
+      switch (w = S[g].call(z, d, x, e, h, a, m, b, v, n, q)) {
         case void 0:
         case !1:
         case !0:
@@ -2783,108 +2831,108 @@ var V = function ca(W) {
           break;
 
         default:
-          e = v;
+          x = w;
       }
     }
 
-    if (e !== c) return e;
+    if (x !== c) return x;
   }
 
-  function S(d) {
+  function T(d) {
     switch (d) {
       case void 0:
       case null:
-        z = R.length = 0;
+        B = S.length = 0;
         break;
 
       default:
         switch (d.constructor) {
           case Array:
-            for (var c = 0, f = d.length; c < f; ++c) {
-              S(d[c]);
+            for (var c = 0, e = d.length; c < e; ++c) {
+              T(d[c]);
             }
 
             break;
 
           case Function:
-            R[z++] = d;
+            S[B++] = d;
             break;
 
           case Boolean:
-            Y = !!d | 0;
+            Z = !!d | 0;
         }
 
     }
 
-    return S;
-  }
-
-  function T(d) {
-    d = d.prefix;
-    void 0 !== d && (H = null, d ? "function" !== typeof d ? v = 1 : (v = 2, H = d) : v = 0);
     return T;
   }
 
-  function y(d, c) {
-    if (void 0 !== this && this.constructor === y) return ca(d);
-    var f = d;
-    33 > f.charCodeAt(0) && (f = f.trim());
-    U = f;
-    f = [U];
+  function U(d) {
+    d = d.prefix;
+    void 0 !== d && (R = null, d ? 'function' !== typeof d ? w = 1 : (w = 2, R = d) : w = 0);
+    return U;
+  }
 
-    if (0 < z) {
-      var h = I(-1, c, f, f, B, x, 0, 0, 0, 0);
-      void 0 !== h && "string" === typeof h && (c = h);
+  function z(d, c) {
+    if (void 0 !== this && this.constructor === z) return da(d);
+    var e = d;
+    33 > e.charCodeAt(0) && (e = e.trim());
+    V = e;
+    e = [V];
+
+    if (0 < B) {
+      var h = H(-1, c, e, e, D, A, 0, 0, 0, 0);
+      void 0 !== h && 'string' === typeof h && (c = h);
     }
 
-    var a = M(O, f, c, 0, 0);
-    0 < z && (h = I(-2, a, f, f, B, x, a.length, 0, 0, 0), void 0 !== h && (a = h));
-    U = "";
-    C = 0;
-    x = B = 1;
+    var a = M(O, e, c, 0, 0);
+    0 < B && (h = H(-2, a, e, e, D, A, a.length, 0, 0, 0), void 0 !== h && (a = h));
+    V = '';
+    E = 0;
+    A = D = 1;
     return a;
   }
 
-  var da = /^\0+/g,
+  var ea = /^\0+/g,
       N = /[\0\r\f]/g,
-      aa = /: */g,
-      la = /zoo|gra/,
-      na = /([,: ])(transform)/g,
-      ja = /,\r+?/g,
+      ba = /: */g,
+      ma = /zoo|gra/,
+      oa = /([,: ])(transform)/g,
+      ka = /,\r+?/g,
       F = /([\t\r\n ])*\f?&/g,
-      ha = /@(k\w+)\s*(\S*)\s*/,
+      ia = /@(k\w+)\s*(\S*)\s*/,
       Q = /::(place)/g,
-      ia = /:(read-only)/g,
+      ja = /:(read-only)/g,
       G = /[svh]\w+-[tblr]{2}/,
-      ea = /\(\s*(.*)\s*\)/g,
-      pa = /([\s\S]*?);/g,
-      ba = /-self|flex-/g,
-      oa = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
-      ma = /stretch|:\s*\w+\-(?:conte|avail)/,
-      ka = /([^-])(image-set\()/,
-      x = 1,
-      B = 1,
-      C = 0,
-      v = 1,
+      fa = /\(\s*(.*)\s*\)/g,
+      qa = /([\s\S]*?);/g,
+      ca = /-self|flex-/g,
+      pa = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
+      na = /stretch|:\s*\w+\-(?:conte|avail)/,
+      la = /([^-])(image-set\()/,
+      A = 1,
+      D = 1,
+      E = 0,
+      w = 1,
       O = [],
-      R = [],
-      z = 0,
-      H = null,
-      Y = 0,
-      U = "";
-  y.use = S;
-  y.set = T;
-  void 0 !== W && T(W);
-  return y;
+      S = [],
+      B = 0,
+      R = null,
+      Z = 0,
+      V = '';
+  z.use = T;
+  z.set = U;
+  void 0 !== X && U(X);
+  return z;
 };
 
-/* harmony default export */ var stylis_dist_index_es = (V);
-//# sourceMappingURL=index.es.js.map
+/* harmony default export */ var stylis_esm = (W);
+//# sourceMappingURL=stylis.esm.js.map
 // EXTERNAL MODULE: ../node_modules/stylis-rule-sheet/index.js
 var stylis_rule_sheet = __webpack_require__("UYYs");
 var stylis_rule_sheet_default = /*#__PURE__*/__webpack_require__.n(stylis_rule_sheet);
 
-// CONCATENATED MODULE: ../node_modules/create-emotion/dist/index.es.js
+// CONCATENATED MODULE: ../node_modules/create-emotion/dist/index.esm.js
 
 
 
@@ -2892,15 +2940,15 @@ var stylis_rule_sheet_default = /*#__PURE__*/__webpack_require__.n(stylis_rule_s
 
 
 var hyphenateRegex = /[A-Z]|^ms/g;
-var processStyleName = index_es(function (styleName) {
+var processStyleName = memoize_esm(function (styleName) {
   return styleName.replace(hyphenateRegex, '-$&').toLowerCase();
 });
-var index_es_processStyleValue = function processStyleValue(key, value) {
+var index_esm_processStyleValue = function processStyleValue(key, value) {
   if (value == null || typeof value === 'boolean') {
     return '';
   }
 
-  if (dist_index_es[key] !== 1 && key.charCodeAt(1) !== 45 && // custom properties
+  if (unitless_esm[key] !== 1 && key.charCodeAt(1) !== 45 && // custom properties
   !isNaN(value) && value !== 0) {
     return value + 'px';
   }
@@ -2911,9 +2959,9 @@ var index_es_processStyleValue = function processStyleValue(key, value) {
 if (false) {
   var contentValuePattern = /(attr|calc|counters?|url)\(/;
   var contentValues = ['normal', 'none', 'counter', 'open-quote', 'close-quote', 'no-open-quote', 'no-close-quote', 'initial', 'inherit', 'unset'];
-  var oldProcessStyleValue = index_es_processStyleValue;
+  var oldProcessStyleValue = index_esm_processStyleValue;
 
-  index_es_processStyleValue = function processStyleValue(key, value) {
+  index_esm_processStyleValue = function processStyleValue(key, value) {
     if (key === 'content') {
       if (typeof value !== 'string' || contentValues.indexOf(value) === -1 && !contentValuePattern.test(value) && (value.charAt(0) !== value.charAt(value.length - 1) || value.charAt(0) !== '"' && value.charAt(0) !== "'")) {
         console.error("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"" + value + "\"'`");
@@ -3033,82 +3081,77 @@ function makeStyleTag(opts) {
   return tag;
 }
 
-function _StyleSheet(options) {
-  this.isSpeedy = "production" === 'production'; // the big drawback here is that the css won't be editable in devtools
-
-  this.tags = [];
-  this.ctr = 0;
-  this.opts = options;
-}
-
-function _inject() {
-  if (this.injected) {
-    throw new Error('already injected!');
-  }
-
-  this.tags[0] = makeStyleTag(this.opts);
-  this.injected = true;
-}
-
-function _speedy(bool) {
-  if (this.ctr !== 0) {
-    // cannot change speedy mode after inserting any rule to sheet. Either call speedy(${bool}) earlier in your app, or call flush() before speedy(${bool})
-    throw new Error("cannot change speedy now");
-  }
-
-  this.isSpeedy = !!bool;
-}
-
-function _insert(rule, sourceMap) {
-  // this is the ultrafast version, works across browsers
-  if (this.isSpeedy) {
-    var tag = this.tags[this.tags.length - 1];
-    var sheet = sheetForTag(tag);
-
-    try {
-      sheet.insertRule(rule, sheet.cssRules.length);
-    } catch (e) {
-      if (false) {
-        console.warn('illegal rule', rule); // eslint-disable-line no-console
-      }
-    }
-  } else {
-    var _tag = makeStyleTag(this.opts);
-
-    this.tags.push(_tag);
-
-    _tag.appendChild(document.createTextNode(rule + (sourceMap || '')));
-  }
-
-  this.ctr++;
-
-  if (this.ctr % 65000 === 0) {
-    this.tags.push(makeStyleTag(this.opts));
-  }
-}
-
-function index_es__ref(tag) {
-  return tag.parentNode.removeChild(tag);
-}
-
-function _flush() {
-  // $FlowFixMe
-  this.tags.forEach(index_es__ref);
-  this.tags = [];
-  this.ctr = 0; // todo - look for remnants in document.styleSheets
-
-  this.injected = false;
-}
-
 var StyleSheet =
 /*#__PURE__*/
 function () {
-  var _proto = _StyleSheet.prototype;
-  _proto.inject = _inject;
-  _proto.speedy = _speedy;
-  _proto.insert = _insert;
-  _proto.flush = _flush;
-  return _StyleSheet;
+  function StyleSheet(options) {
+    this.isSpeedy = "production" === 'production'; // the big drawback here is that the css won't be editable in devtools
+
+    this.tags = [];
+    this.ctr = 0;
+    this.opts = options;
+  }
+
+  var _proto = StyleSheet.prototype;
+
+  _proto.inject = function inject() {
+    if (this.injected) {
+      throw new Error('already injected!');
+    }
+
+    this.tags[0] = makeStyleTag(this.opts);
+    this.injected = true;
+  };
+
+  _proto.speedy = function speedy(bool) {
+    if (this.ctr !== 0) {
+      // cannot change speedy mode after inserting any rule to sheet. Either call speedy(${bool}) earlier in your app, or call flush() before speedy(${bool})
+      throw new Error("cannot change speedy now");
+    }
+
+    this.isSpeedy = !!bool;
+  };
+
+  _proto.insert = function insert(rule, sourceMap) {
+    // this is the ultrafast version, works across browsers
+    if (this.isSpeedy) {
+      var tag = this.tags[this.tags.length - 1];
+      var sheet = sheetForTag(tag);
+
+      try {
+        sheet.insertRule(rule, sheet.cssRules.length);
+      } catch (e) {
+        if (false) {
+          console.warn('illegal rule', rule); // eslint-disable-line no-console
+        }
+      }
+    } else {
+      var _tag = makeStyleTag(this.opts);
+
+      this.tags.push(_tag);
+
+      _tag.appendChild(document.createTextNode(rule + (sourceMap || '')));
+    }
+
+    this.ctr++;
+
+    if (this.ctr % 65000 === 0) {
+      this.tags.push(makeStyleTag(this.opts));
+    }
+  };
+
+  _proto.flush = function flush() {
+    // $FlowFixMe
+    this.tags.forEach(function (tag) {
+      return tag.parentNode.removeChild(tag);
+    });
+    this.tags = [];
+    this.ctr = 0; // todo - look for remnants in document.styleSheets
+
+    this.injected = false;
+  };
+
+  return StyleSheet;
 }();
 
 function createEmotion(context, options) {
@@ -3157,7 +3200,7 @@ function createEmotion(context, options) {
     sheet.inject();
   }
 
-  var stylis = new stylis_dist_index_es(stylisOptions);
+  var stylis = new stylis_esm(stylisOptions);
   stylis.use(options.stylisPlugins)(insertionPlugin);
   var currentSourceMap = '';
 
@@ -3207,38 +3250,32 @@ function createEmotion(context, options) {
 
     var string = '';
 
-    function _ref(interpolation) {
-      string += handleInterpolation.call(this, interpolation, false);
-    }
-
-    function _ref3(key) {
-      function _ref2(value) {
-        string += processStyleName(key) + ":" + index_es_processStyleValue(key, value) + ";";
-      }
-
-      if (typeof obj[key] !== 'object') {
-        if (caches.registered[obj[key]] !== undefined) {
-          string += key + "{" + caches.registered[obj[key]] + "}";
-        } else {
-          string += processStyleName(key) + ":" + index_es_processStyleValue(key, obj[key]) + ";";
-        }
-      } else {
-        if (key === 'NO_COMPONENT_SELECTOR' && "production" !== 'production') {
-          throw new Error('Component selectors can only be used in conjunction with babel-plugin-emotion.');
-        }
-
-        if (Array.isArray(obj[key]) && typeof obj[key][0] === 'string' && caches.registered[obj[key][0]] === undefined) {
-          obj[key].forEach(_ref2);
-        } else {
-          string += key + "{" + handleInterpolation.call(this, obj[key], false) + "}";
-        }
-      }
-    }
-
     if (Array.isArray(obj)) {
-      obj.forEach(_ref, this);
+      obj.forEach(function (interpolation) {
+        string += handleInterpolation.call(this, interpolation, false);
+      }, this);
     } else {
-      Object.keys(obj).forEach(_ref3, this);
+      Object.keys(obj).forEach(function (key) {
+        if (typeof obj[key] !== 'object') {
+          if (caches.registered[obj[key]] !== undefined) {
+            string += key + "{" + caches.registered[obj[key]] + "}";
+          } else {
+            string += processStyleName(key) + ":" + index_esm_processStyleValue(key, obj[key]) + ";";
+          }
+        } else {
+          if (key === 'NO_COMPONENT_SELECTOR' && "production" !== 'production') {
+            throw new Error('Component selectors can only be used in conjunction with babel-plugin-emotion.');
+          }
+
+          if (Array.isArray(obj[key]) && typeof obj[key][0] === 'string' && caches.registered[obj[key][0]] === undefined) {
+            obj[key].forEach(function (value) {
+              string += processStyleName(key) + ":" + index_esm_processStyleValue(key, value) + ";";
+            });
+          } else {
+            string += key + "{" + handleInterpolation.call(this, obj[key], false) + "}";
+          }
+        }
+      }, this);
     }
 
     objectToStringCache.set(obj, string);
@@ -3248,6 +3285,22 @@ function createEmotion(context, options) {
   var name;
   var stylesWithLabel;
   var labelPattern = /label:\s*([^\s;\n{]+)\s*;/g;
+
+  var createClassName = function createClassName(styles, identifierName) {
+    return hash_esm(styles + identifierName) + identifierName;
+  };
+
+  if (false) {
+    var oldCreateClassName = createClassName;
+    var sourceMappingUrlPattern = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//g;
+
+    createClassName = function createClassName(styles, identifierName) {
+      return oldCreateClassName(styles.replace(sourceMappingUrlPattern, function (sourceMap) {
+        currentSourceMap = sourceMap;
+        return '';
+      }), identifierName);
+    };
+  }
 
   var createStyles = function createStyles(strings) {
     var stringMode = true;
@@ -3278,17 +3331,14 @@ function createEmotion(context, options) {
       identifierName += "-" + p1;
       return '';
     });
-    name = hash_dist_index_es(styles + identifierName) + identifierName;
+    name = createClassName(styles, identifierName);
     return styles;
   };
 
   if (false) {
-    var sourceMapRegEx = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//;
     var oldStylis = stylis;
 
     stylis = function stylis(selector, styles) {
-      var result = sourceMapRegEx.exec(styles);
-      currentSourceMap = result ? result[0] : '';
       oldStylis(selector, styles);
       currentSourceMap = '';
     };
@@ -3375,16 +3425,14 @@ function createEmotion(context, options) {
     caches.registered = {};
   }
 
-  function _ref4(node) {
-    // $FlowFixMe
-    sheet.tags[0].parentNode.insertBefore(node, sheet.tags[0]); // $FlowFixMe
-
-    node.getAttribute("data-emotion-" + key).split(' ').forEach(hydrateSingleId);
-  }
-
   if (isBrowser) {
     var chunks = document.querySelectorAll("[data-emotion-" + key + "]");
-    Array.prototype.forEach.call(chunks, _ref4);
+    Array.prototype.forEach.call(chunks, function (node) {
+      // $FlowFixMe
+      sheet.tags[0].parentNode.insertBefore(node, sheet.tags[0]); // $FlowFixMe
+
+      node.getAttribute("data-emotion-" + key).split(' ').forEach(hydrateSingleId);
+    });
   }
 
   var emotion = {
@@ -3403,40 +3451,38 @@ function createEmotion(context, options) {
   return emotion;
 }
 
-/* harmony default export */ var create_emotion_dist_index_es = (createEmotion);
-//# sourceMappingURL=index.es.js.map
-// CONCATENATED MODULE: ../node_modules/emotion/dist/index.es.js
+/* harmony default export */ var index_esm = (createEmotion);
+//# sourceMappingURL=index.esm.js.map
+// CONCATENATED MODULE: ../node_modules/emotion/dist/index.esm.js
 
 
-var index_es_context = typeof global !== 'undefined' ? global : {};
+var index_esm_context = typeof global !== 'undefined' ? global : {};
 
-var _createEmotion = create_emotion_dist_index_es(index_es_context),
-    index_es_flush = _createEmotion.flush,
-    index_es_hydrate = _createEmotion.hydrate,
-    index_es_cx = _createEmotion.cx,
-    index_es_merge = _createEmotion.merge,
-    index_es_getRegisteredStyles = _createEmotion.getRegisteredStyles,
-    index_es_injectGlobal = _createEmotion.injectGlobal,
-    index_es_keyframes = _createEmotion.keyframes,
-    index_es_css = _createEmotion.css,
-    index_es_sheet = _createEmotion.sheet,
-    index_es_caches = _createEmotion.caches;
+var _createEmotion = index_esm(index_esm_context),
+    index_esm_flush = _createEmotion.flush,
+    index_esm_hydrate = _createEmotion.hydrate,
+    index_esm_cx = _createEmotion.cx,
+    index_esm_merge = _createEmotion.merge,
+    index_esm_getRegisteredStyles = _createEmotion.getRegisteredStyles,
+    index_esm_injectGlobal = _createEmotion.injectGlobal,
+    index_esm_keyframes = _createEmotion.keyframes,
+    index_esm_css = _createEmotion.css,
+    index_esm_sheet = _createEmotion.sheet,
+    index_esm_caches = _createEmotion.caches;
 
 
-//# sourceMappingURL=index.es.js.map
 // EXTERNAL MODULE: ../node_modules/prop-types/index.js
 var prop_types = __webpack_require__("5D9O");
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
-// CONCATENATED MODULE: ../node_modules/@emotion/is-prop-valid/dist/index.es.js
+// CONCATENATED MODULE: ../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.esm.js
 
 
-var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|accept|acceptCharset|accessKey|action|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|itemProp|itemScope|itemType|itemID|itemRef|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan)|(on[A-Z].*)|((data|aria)-.*))$/;
-var index_es_index = index_es(RegExp.prototype.test.bind(reactPropsRegex));
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|itemProp|itemScope|itemType|itemID|itemRef|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class)|(on[A-Z].*)|((data|aria|x)-.*))$/i;
+var index = memoize_esm(reactPropsRegex.test.bind(reactPropsRegex));
 
-/* harmony default export */ var is_prop_valid_dist_index_es = (index_es_index);
-//# sourceMappingURL=index.es.js.map
-// CONCATENATED MODULE: ../node_modules/create-emotion-styled/dist/index.es.js
+/* harmony default export */ var is_prop_valid_esm = (index);
+// CONCATENATED MODULE: ../node_modules/create-emotion-styled/dist/index.esm.js
 
 
 
@@ -3458,7 +3504,7 @@ function setTheme(theme) {
     theme: theme
   });
 }
-var testPickPropsOnStringTag = is_prop_valid_dist_index_es;
+var testPickPropsOnStringTag = is_prop_valid_esm;
 var testPickPropsOnComponent = function testPickPropsOnComponent(key) {
   return key !== 'theme' && key !== 'innerRef';
 };
@@ -3484,35 +3530,7 @@ var pickAssign = function pickAssign(testFn, target) {
   return target;
 };
 
-function _componentWillMount() {
-  if (this.context[channel] !== undefined) {
-    this.unsubscribe = this.context[channel].subscribe(setTheme.bind(this));
-  }
-}
-
-function _componentWillUnmount() {
-  if (this.unsubscribe !== undefined) {
-    this.context[channel].unsubscribe(this.unsubscribe);
-  }
-}
-
-function _get$1(target, property) {
-  switch (property) {
-    // react-hot-loader tries to access this stuff
-    case '__proto__':
-    case 'name':
-    case 'prototype':
-    case 'displayName':
-      {
-        return target[property];
-      }
-
-    default:
-      {
-        throw new Error("You're trying to use the styled shorthand without babel-plugin-emotion." + ("\nPlease install and setup babel-plugin-emotion or use the function call syntax(`styled('" + property + "')` instead of `styled." + property + "`)"));
-      }
-  }
-}
+var warnedAboutExtractStatic = false;
 
 function createEmotionStyled(emotion, view) {
   var _createStyled = function createStyled(tag, options) {
@@ -3527,16 +3545,14 @@ function createEmotionStyled(emotion, view) {
     var stableClassName;
     var shouldForwardProp;
 
-    function _ref(propName) {
-      return tag.__emotion_forwardProp(propName) && // $FlowFixMe
-      options.shouldForwardProp(propName);
-    }
-
     if (options !== undefined) {
       staticClassName = options.e;
       identifierName = options.label;
       stableClassName = options.target;
-      shouldForwardProp = tag.__emotion_forwardProp && options.shouldForwardProp ? _ref : options.shouldForwardProp;
+      shouldForwardProp = tag.__emotion_forwardProp && options.shouldForwardProp ? function (propName) {
+        return tag.__emotion_forwardProp(propName) && // $FlowFixMe
+        options.shouldForwardProp(propName);
+      } : options.shouldForwardProp;
     }
 
     var isReal = tag.__emotion_real === tag;
@@ -3544,15 +3560,6 @@ function createEmotionStyled(emotion, view) {
 
     if (typeof shouldForwardProp !== 'function') {
       shouldForwardProp = typeof baseTag === 'string' && baseTag.charAt(0) === baseTag.charAt(0).toLowerCase() ? testPickPropsOnStringTag : testPickPropsOnComponent;
-    }
-
-    function _value() {
-      if (false) {
-        return 'NO_COMPONENT_SELECTOR';
-      } // $FlowFixMe
-
-
-      return "." + stableClassName;
     }
 
     return function () {
@@ -3575,40 +3582,9 @@ function createEmotionStyled(emotion, view) {
             styles.push(args[i], args[0][i]);
           }
         }
-      }
-
-      function _render() {
-        var props = this.props,
-            state = this.state;
-        this.mergedProps = pickAssign(testAlwaysTrue, {}, props, {
-          theme: state !== null && state.theme || props.theme || {}
-        });
-        var className = '';
-        var classInterpolations = [];
-
-        if (props.className) {
-          if (staticClassName === undefined) {
-            className += emotion.getRegisteredStyles(classInterpolations, props.className);
-          } else {
-            className += props.className + " ";
-          }
-        }
-
-        if (staticClassName === undefined) {
-          className += emotion.css.apply(this, styles.concat(classInterpolations));
-        } else {
-          className += staticClassName;
-        }
-
-        if (stableClassName !== undefined) {
-          className += " " + stableClassName;
-        }
-
-        return view.createElement(baseTag, // $FlowFixMe
-        pickAssign(shouldForwardProp, {}, props, {
-          className: className,
-          ref: props.innerRef
-        }));
+      } else if (false) {
+        console.warn('extractStatic is deprecated and will be removed in emotion@10. We recommend disabling extractStatic or using other libraries like linaria or css-literal-loader');
+        warnedAboutExtractStatic = true;
       }
 
       var Styled =
@@ -3621,9 +3597,53 @@ function createEmotionStyled(emotion, view) {
         }
 
         var _proto = Styled.prototype;
-        _proto.componentWillMount = _componentWillMount;
-        _proto.componentWillUnmount = _componentWillUnmount;
-        _proto.render = _render;
+
+        _proto.componentWillMount = function componentWillMount() {
+          if (this.context[channel] !== undefined) {
+            this.unsubscribe = this.context[channel].subscribe(setTheme.bind(this));
+          }
+        };
+
+        _proto.componentWillUnmount = function componentWillUnmount() {
+          if (this.unsubscribe !== undefined) {
+            this.context[channel].unsubscribe(this.unsubscribe);
+          }
+        };
+
+        _proto.render = function render() {
+          var props = this.props,
+              state = this.state;
+          this.mergedProps = pickAssign(testAlwaysTrue, {}, props, {
+            theme: state !== null && state.theme || props.theme || {}
+          });
+          var className = '';
+          var classInterpolations = [];
+
+          if (props.className) {
+            if (staticClassName === undefined) {
+              className += emotion.getRegisteredStyles(classInterpolations, props.className);
+            } else {
+              className += props.className + " ";
+            }
+          }
+
+          if (staticClassName === undefined) {
+            className += emotion.css.apply(this, styles.concat(classInterpolations));
+          } else {
+            className += staticClassName;
+          }
+
+          if (stableClassName !== undefined) {
+            className += " " + stableClassName;
+          }
+
+          return view.createElement(baseTag, // $FlowFixMe
+          pickAssign(shouldForwardProp, {}, props, {
+            className: className,
+            ref: props.innerRef
+          }));
+        };
+
         return Styled;
       }(view.Component);
 
@@ -3640,8 +3660,14 @@ function createEmotionStyled(emotion, view) {
       Styled.__emotion_real = Styled;
       Styled.__emotion_forwardProp = shouldForwardProp;
       Object.defineProperty(Styled, 'toString', {
-        enumerable: false,
-        value: _value
+        value: function value() {
+          if (false) {
+            return 'NO_COMPONENT_SELECTOR';
+          } // $FlowFixMe
+
+
+          return "." + stableClassName;
+        }
       });
 
       Styled.withComponent = function (nextTag, nextOptions) {
@@ -3655,25 +3681,39 @@ function createEmotionStyled(emotion, view) {
 
   if (false) {
     _createStyled = new Proxy(_createStyled, {
-      get: _get$1
+      get: function get(target, property) {
+        switch (property) {
+          // react-hot-loader tries to access this stuff
+          case '__proto__':
+          case 'name':
+          case 'prototype':
+          case 'displayName':
+            {
+              return target[property];
+            }
+
+          default:
+            {
+              throw new Error("You're trying to use the styled shorthand without babel-plugin-emotion." + ("\nPlease install and setup babel-plugin-emotion or use the function call syntax(`styled('" + property + "')` instead of `styled." + property + "`)"));
+            }
+        }
+      }
     });
   }
 
   return _createStyled;
 }
 
-/* harmony default export */ var create_emotion_styled_dist_index_es = (createEmotionStyled);
-//# sourceMappingURL=index.es.js.map
-// CONCATENATED MODULE: ../node_modules/preact-emotion/dist/index.es.js
+/* harmony default export */ var dist_index_esm = (createEmotionStyled);
+// CONCATENATED MODULE: ../node_modules/preact-emotion/dist/index.esm.js
 
 
 
 
 
-var dist_index_es_index = create_emotion_styled_dist_index_es(emotion_dist_index_es_namespaceObject, preact_min_default.a);
+var index_esm_index = dist_index_esm(dist_index_esm_namespaceObject, preact_min_default.a);
 
-/* harmony default export */ var preact_emotion_dist_index_es = (dist_index_es_index);
-//# sourceMappingURL=index.es.js.map
+/* harmony default export */ var preact_emotion_dist_index_esm = (index_esm_index);
 // EXTERNAL MODULE: ../node_modules/@libshin/lazy-image/build/lazy-image.css
 var lazy_image = __webpack_require__("Kaoj");
 var lazy_image_default = /*#__PURE__*/__webpack_require__.n(lazy_image);
@@ -3744,7 +3784,7 @@ var Row_Row = function Row(_ref) {
     alignItems: alignItems
   };
 
-  var classNames = [].concat((className || '').split(' '), [/*#__PURE__*/index_es_css(style)]);
+  var classNames = [].concat((className || '').split(' '), [/*#__PURE__*/index_esm_css(style)]);
 
   return Object(preact_min["h"])(as, _extends({}, props, { className: classNames.join(' ') }));
 };
@@ -3828,7 +3868,7 @@ var getValue = function getValue(fn) {
 
 // source https://codepen.io/artemdemo/pen/HzDLn
 
-var MagnifyingGlass = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+var MagnifyingGlass = /*#__PURE__*/preact_emotion_dist_index_esm('div', {
   target: 'el79lao0'
 })('font-size:', function (props) {
   return props.size;
@@ -3865,7 +3905,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+var Wrapper = /*#__PURE__*/preact_emotion_dist_index_esm('div', {
   target: 'ekbohl70'
 })({
   position: 'relative',
@@ -3873,7 +3913,7 @@ var Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
   height: '1.6em'
 });
 
-var MGWrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+var MGWrapper = /*#__PURE__*/preact_emotion_dist_index_esm('div', {
   target: 'ekbohl71'
 })({
   position: 'absolute',
@@ -3881,7 +3921,7 @@ var MGWrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
   top: '0.15em'
 });
 
-var Input = /*#__PURE__*/preact_emotion_dist_index_es('input', {
+var Input = /*#__PURE__*/preact_emotion_dist_index_esm('input', {
   target: 'ekbohl72'
 })({
   backgroundColor: 'inherit',
@@ -3969,7 +4009,33 @@ Search_Search.defaultProps = {
 /* harmony default export */ var components_Search_Search = (Search_Search);
 // CONCATENATED MODULE: ./components/Search/index.js
 
+// CONCATENATED MODULE: ./utils/clickable.js
+var detectTab = function detectTab(fn) {
+  return function (event) {
+    if (event.keyCode !== 13 && event.keyCode !== 32) {
+      return;
+    }
+    event.preventDefault();
+    return fn(event);
+  };
+};
+
+var clickable_onClick = function onClick(fn) {
+  return {
+    onClick: fn,
+    onKeyPress: detectTab(fn)
+  };
+};
+
+var clickable_onChange = function onChange(fn) {
+  return {
+    onChange: fn,
+    onKeyPress: detectTab(fn)
+  };
+};
 // CONCATENATED MODULE: ./components/Tag/Tag.js
+var Tag__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 
 
 function Tag__objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3980,7 +4046,7 @@ function Tag__objectWithoutProperties(obj, keys) { var target = {}; for (var i i
 
 
 
-var Tag_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+var Tag_Wrapper = /*#__PURE__*/preact_emotion_dist_index_esm('div', {
   target: 'e1i0cbp10'
 })({
   border: 'none',
@@ -4005,7 +4071,7 @@ var Tag_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es('div', {
   };
 });
 
-var Checkbox = /*#__PURE__*/preact_emotion_dist_index_es('input', {
+var Checkbox = /*#__PURE__*/preact_emotion_dist_index_esm('input', {
   target: 'e1i0cbp11'
 })({
   display: 'none'
@@ -4033,14 +4099,17 @@ var Tag_Tag = function Tag(_ref2) {
   var children = props.children || [props.name];
 
   var clickable = onToggle !== undefined;
+  var toggle = function toggle() {
+    return clickable ? onToggle(name) : null;
+  };
 
   return Object(preact_min["h"])(
     Tag_Wrapper,
     { active: active, noOutline: !clickable, color: color },
-    Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, value: name, onChange: utils_getValue(onToggle || function () {}) }),
+    Object(preact_min["h"])(Checkbox, { id: id, type: 'checkbox', checked: active, value: name }),
     Object(preact_min["h"])(
       'label',
-      { 'for': id, className: 'no-outline', clickable: clickable },
+      Tag__extends({ 'for': id, className: 'no-outline', tabIndex: clickable && 0 }, clickable_onClick(toggle)),
       children
     )
   );
@@ -4112,16 +4181,18 @@ var Collapse_Div = function Div(_ref) {
   var className = _ref.className,
       style = _ref.style,
       clickable = _ref.clickable,
+      tabIndex = _ref.tabIndex,
       fluid = _ref.fluid,
       children = _ref.children,
       onClick = _ref.onClick,
+      onKeyPress = _ref.onKeyPress,
       $ref = _ref.$ref,
-      props = Collapse__objectWithoutProperties(_ref, ['className', 'style', 'clickable', 'fluid', 'children', 'onClick', '$ref']);
+      props = Collapse__objectWithoutProperties(_ref, ['className', 'style', 'clickable', 'tabIndex', 'fluid', 'children', 'onClick', 'onKeyPress', '$ref']);
 
-  return Object(preact_min["h"])('div', Collapse__extends({ ref: $ref }, { className: className, style: style, clickable: clickable, fluid: fluid, children: children, onClick: onClick }));
+  return Object(preact_min["h"])('div', Collapse__extends({ ref: $ref }, { className: className, style: style, clickable: clickable, tabIndex: tabIndex, fluid: fluid, children: children, onClick: onClick, onKeyPress: onKeyPress }));
 };
 
-var Collapse_Wrapper = /*#__PURE__*/preact_emotion_dist_index_es(Collapse_Div, {
+var Collapse_Wrapper = /*#__PURE__*/preact_emotion_dist_index_esm(Collapse_Div, {
   target: 'e2j8qdz0'
 })(function (_ref2) {
   var timing = _ref2.timing;
@@ -4217,7 +4288,7 @@ Collapse_Collapse.defaultProps = {
 // CONCATENATED MODULE: ./components/FavoriteProjects/Category/Caret.js
 
 
-var Caret = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+var Caret = /*#__PURE__*/preact_emotion_dist_index_esm('div', {
   target: 'e1ftyql10'
 })('font-size:', function (props) {
   return props.size;
@@ -4310,6 +4381,7 @@ function Description__inherits(subClass, superClass) { if (typeof superClass !==
 
 
 
+
 var Description_Description = function (_Component) {
   Description__inherits(Description, _Component);
 
@@ -4337,13 +4409,13 @@ var Description_Description = function (_Component) {
 
     return Object(preact_min["h"])(
       components_Collapse_Collapse,
-      {
-        open: open,
-        onClick: this.toggleOpen,
+      Description__extends({
+        open: open
+      }, clickable_onClick(this.toggleOpen), {
         minHeight: '1.2em',
-        clickable: true,
+        tabIndex: '0',
         style: Description__extends({ textOverflow: 'ellipsis', whiteSpace: open ? '' : 'nowrap' }, style)
-      },
+      }),
       children
     );
   };
@@ -4387,7 +4459,7 @@ var languages_getColor = function getColor(languageName) {
 
 
 
-var Tile = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
+var Tile = /*#__PURE__*/preact_emotion_dist_index_esm(components_Row_Row, {
   target: 'enkut0x0'
 })({
   margin: '1em 0',
@@ -4399,7 +4471,7 @@ var Tile = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
   };
 });
 
-var TagWrapper = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
+var TagWrapper = /*#__PURE__*/preact_emotion_dist_index_esm(components_Row_Row, {
   target: 'enkut0x1'
 })('@media (max-width:500px){order:1;flex-wrap:wrap;width:100%;margin-bottom:0.5em;}');
 
@@ -4449,6 +4521,8 @@ var Project_Project = function Project(_ref2) {
 // CONCATENATED MODULE: ./components/FavoriteProjects/Category/Project/index.js
 
 // CONCATENATED MODULE: ./components/FavoriteProjects/Category/Category.js
+var Category__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 
 
 function Category__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4456,6 +4530,7 @@ function Category__classCallCheck(instance, Constructor) { if (!(instance instan
 function Category__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function Category__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -4497,7 +4572,7 @@ var Category_Category = function (_Component) {
       { fluid: true },
       Object(preact_min["h"])(
         components_Row_Row,
-        { clickable: true, onClick: this.toggleOpen },
+        Category__extends({ tabIndex: '0' }, clickable_onClick(this.toggleOpen)),
         Object(preact_min["h"])(Category_Caret, { size: '.5em', color: getColor('text'), style: { marginRight: '1em' }, open: open }),
         ' ',
         Object(preact_min["h"])(
@@ -4546,7 +4621,7 @@ function FavoriteProjects__inherits(subClass, superClass) { if (typeof superClas
 
 
 
-var TagList = /*#__PURE__*/preact_emotion_dist_index_es(components_Row_Row, {
+var TagList = /*#__PURE__*/preact_emotion_dist_index_esm(components_Row_Row, {
   target: 'e1pho4wl0'
 })({
   padding: '.6em 0 .3em 0',
@@ -4722,7 +4797,7 @@ var extensions_list_default = /*#__PURE__*/__webpack_require__.n(extensions_list
 
 
 var utils_extensions_list = sortBy_default()(extensions_list_default.a.map(function (extension) {
-  if (extension.icon) {
+  if (extension.icon && !extension.icon.match(/^https?:\/\//)) {
     extension.icon = __webpack_require__("xKE5")("./" + extension.icon);
   }
   return extension;
@@ -4919,7 +4994,7 @@ var r = function r(url) {
   return (typeof window !== 'undefined' ? window.defaultPath : global.defaultPath) + url;
 };
 
-var cssRow = /*#__PURE__*/index_es_css({
+var cssRow = /*#__PURE__*/index_esm_css({
   background: 'linear-gradient(180deg, ' + getColor('background-d3') + ', rgba(0,0,0,0))',
   width: '100%',
   position: 'fixed',
@@ -4927,7 +5002,7 @@ var cssRow = /*#__PURE__*/index_es_css({
   top: 0,
   left: 0
 });
-var cssA = /*#__PURE__*/index_es_css({
+var cssA = /*#__PURE__*/index_esm_css({
   fontSize: '1.2em',
   padding: '1.2em 1em',
   ':hover': {
@@ -4939,7 +5014,7 @@ var views_A = function A(props) {
   return Object(preact_min["h"])(
     match["Link"],
     {
-      className: index_es_css(cssA) + ' link',
+      className: index_esm_css(cssA) + ' link',
       activeClassName: 'active', href: r(props.href) },
     props.children
   );
@@ -4960,7 +5035,7 @@ var views__ref2 = Object(preact_min["h"])(
 var views_Header = function Header() {
   return Object(preact_min["h"])(
     components_Row_Row,
-    { middle: true, className: index_es_css(cssRow)
+    { middle: true, className: index_esm_css(cssRow)
     },
     Object(preact_min["h"])(
       components_Row_Row,
@@ -4983,8 +5058,8 @@ var views_Routes = function Routes() {
 };
 
 /* harmony default export */ var views = (views_Routes);
-// EXTERNAL MODULE: ./App.css
-var App = __webpack_require__("S03M");
+// EXTERNAL MODULE: ./App.scss
+var App = __webpack_require__("yG2p");
 var App_default = /*#__PURE__*/__webpack_require__.n(App);
 
 // CONCATENATED MODULE: ./App.js
@@ -4997,13 +5072,13 @@ var App_default = /*#__PURE__*/__webpack_require__.n(App);
 
 
 
-var Container = /*#__PURE__*/preact_emotion_dist_index_es('div', {
+var Container = /*#__PURE__*/preact_emotion_dist_index_esm('div', {
   target: 'e88xnj40'
 })({
   margin: '1em auto 2em auto',
   paddingTop: '4em',
   maxWidth: '900px',
-  width: '100%'
+  width: '95%'
 });
 
 var App__ref = Object(preact_min["h"])(
@@ -5077,199 +5152,197 @@ module.exports = Map;
 
 !function () {
   "use strict";
-  function e() {}function t(t, n) {
-    var o,
+  function e(e, t) {
+    var n,
+        o,
         r,
         i,
-        l,
-        a = E;for (l = arguments.length; l-- > 2;) {
-      W.push(arguments[l]);
-    }n && null != n.children && (W.length || W.push(n.children), delete n.children);while (W.length) {
-      if ((r = W.pop()) && void 0 !== r.pop) for (l = r.length; l--;) {
-        W.push(r[l]);
-      } else "boolean" == typeof r && (r = null), (i = "function" != typeof t) && (null == r ? r = "" : "number" == typeof r ? r += "" : "string" != typeof r && (i = !1)), i && o ? a[a.length - 1] += r : a === E ? a = [r] : a.push(r), o = i;
-    }var u = new e();return u.nodeName = t, u.children = a, u.attributes = null == n ? void 0 : n, u.key = null == n ? void 0 : n.key, void 0 !== S.vnode && S.vnode(u), u;
-  }function n(e, t) {
+        l = M;for (i = arguments.length; i-- > 2;) {
+      T.push(arguments[i]);
+    }t && null != t.children && (T.length || T.push(t.children), delete t.children);while (T.length) {
+      if ((o = T.pop()) && void 0 !== o.pop) for (i = o.length; i--;) {
+        T.push(o[i]);
+      } else "boolean" == typeof o && (o = null), (r = "function" != typeof e) && (null == o ? o = "" : "number" == typeof o ? o += "" : "string" != typeof o && (r = !1)), r && n ? l[l.length - 1] += o : l === M ? l = [o] : l.push(o), n = r;
+    }var a = new S();return a.nodeName = e, a.children = l, a.attributes = null == t ? void 0 : t, a.key = null == t ? void 0 : t.key, void 0 !== L.vnode && L.vnode(a), a;
+  }function t(e, t) {
     for (var n in t) {
       e[n] = t[n];
     }return e;
-  }function o(e, o) {
-    return t(e.nodeName, n(n({}, e.attributes), o), arguments.length > 2 ? [].slice.call(arguments, 2) : e.children);
-  }function r(e) {
-    !e.__d && (e.__d = !0) && 1 == A.push(e) && (S.debounceRendering || P)(i);
-  }function i() {
+  }function n(n, o) {
+    return e(n.nodeName, t(t({}, n.attributes), o), arguments.length > 2 ? [].slice.call(arguments, 2) : n.children);
+  }function o(e) {
+    !e.__d && (e.__d = !0) && 1 == D.push(e) && (L.debounceRendering || P)(r);
+  }function r() {
     var e,
-        t = A;A = [];while (e = t.pop()) {
-      e.__d && k(e);
+        t = D;D = [];while (e = t.pop()) {
+      e.__d && C(e);
     }
-  }function l(e, t, n) {
-    return "string" == typeof t || "number" == typeof t ? void 0 !== e.splitText : "string" == typeof t.nodeName ? !e._componentConstructor && a(e, t.nodeName) : n || e._componentConstructor === t.nodeName;
-  }function a(e, t) {
+  }function i(e, t, n) {
+    return "string" == typeof t || "number" == typeof t ? void 0 !== e.splitText : "string" == typeof t.nodeName ? !e._componentConstructor && l(e, t.nodeName) : n || e._componentConstructor === t.nodeName;
+  }function l(e, t) {
     return e.__n === t || e.nodeName.toLowerCase() === t.toLowerCase();
-  }function u(e) {
-    var t = n({}, e.attributes);t.children = e.children;var o = e.nodeName.defaultProps;if (void 0 !== o) for (var r in o) {
-      void 0 === t[r] && (t[r] = o[r]);
-    }return t;
-  }function _(e, t) {
+  }function a(e) {
+    var n = t({}, e.attributes);n.children = e.children;var o = e.nodeName.defaultProps;if (void 0 !== o) for (var r in o) {
+      void 0 === n[r] && (n[r] = o[r]);
+    }return n;
+  }function p(e, t) {
     var n = t ? document.createElementNS("http://www.w3.org/2000/svg", e) : document.createElement(e);return n.__n = e, n;
-  }function p(e) {
+  }function s(e) {
     var t = e.parentNode;t && t.removeChild(e);
-  }function c(e, t, n, o, r) {
+  }function u(e, t, n, o, r) {
     if ("className" === t && (t = "class"), "key" === t) ;else if ("ref" === t) n && n(null), o && o(e);else if ("class" !== t || r) {
       if ("style" === t) {
         if (o && "string" != typeof o && "string" != typeof n || (e.style.cssText = o || ""), o && "object" == typeof o) {
           if ("string" != typeof n) for (var i in n) {
             i in o || (e.style[i] = "");
           }for (var i in o) {
-            e.style[i] = "number" == typeof o[i] && !1 === V.test(i) ? o[i] + "px" : o[i];
+            e.style[i] = "number" == typeof o[i] && !1 === W.test(i) ? o[i] + "px" : o[i];
           }
         }
       } else if ("dangerouslySetInnerHTML" === t) o && (e.innerHTML = o.__html || "");else if ("o" == t[0] && "n" == t[1]) {
-        var l = t !== (t = t.replace(/Capture$/, ""));t = t.toLowerCase().substring(2), o ? n || e.addEventListener(t, f, l) : e.removeEventListener(t, f, l), (e.__l || (e.__l = {}))[t] = o;
-      } else if ("list" !== t && "type" !== t && !r && t in e) s(e, t, null == o ? "" : o), null != o && !1 !== o || e.removeAttribute(t);else {
+        var l = t !== (t = t.replace(/Capture$/, ""));t = t.toLowerCase().substring(2), o ? n || e.addEventListener(t, c, l) : e.removeEventListener(t, c, l), (e.__l || (e.__l = {}))[t] = o;
+      } else if ("list" !== t && "type" !== t && !r && t in e) {
+        try {
+          e[t] = null == o ? "" : o;
+        } catch (e) {}null != o && !1 !== o || "spellcheck" == t || e.removeAttribute(t);
+      } else {
         var a = r && t !== (t = t.replace(/^xlink:?/, ""));null == o || !1 === o ? a ? e.removeAttributeNS("http://www.w3.org/1999/xlink", t.toLowerCase()) : e.removeAttribute(t) : "function" != typeof o && (a ? e.setAttributeNS("http://www.w3.org/1999/xlink", t.toLowerCase(), o) : e.setAttribute(t, o));
       }
     } else e.className = o || "";
-  }function s(e, t, n) {
-    try {
-      e[t] = n;
-    } catch (e) {}
-  }function f(e) {
-    return this.__l[e.type](S.event && S.event(e) || e);
-  }function d() {
-    var e;while (e = D.pop()) {
-      S.afterMount && S.afterMount(e), e.componentDidMount && e.componentDidMount();
+  }function c(e) {
+    return this.__l[e.type](L.event && L.event(e) || e);
+  }function _() {
+    var e;while (e = E.pop()) {
+      L.afterMount && L.afterMount(e), e.componentDidMount && e.componentDidMount();
     }
-  }function h(e, t, n, o, r, i) {
-    H++ || (R = null != r && void 0 !== r.ownerSVGElement, j = null != e && !("__preactattr_" in e));var l = m(e, t, n, o, i);return r && l.parentNode !== r && r.appendChild(l), --H || (j = !1, i || d()), l;
-  }function m(e, t, n, o, r) {
+  }function d(e, t, n, o, r, i) {
+    V++ || (A = null != r && void 0 !== r.ownerSVGElement, H = null != e && !("__preactattr_" in e));var l = f(e, t, n, o, i);return r && l.parentNode !== r && r.appendChild(l), --V || (H = !1, i || _()), l;
+  }function f(e, t, n, o, r) {
     var i = e,
-        l = R;if (null != t && "boolean" != typeof t || (t = ""), "string" == typeof t || "number" == typeof t) return e && void 0 !== e.splitText && e.parentNode && (!e._component || r) ? e.nodeValue != t && (e.nodeValue = t) : (i = document.createTextNode(t), e && (e.parentNode && e.parentNode.replaceChild(i, e), b(e, !0))), i.__preactattr_ = !0, i;var u = t.nodeName;if ("function" == typeof u) return U(e, t, n, o);if (R = "svg" === u || "foreignObject" !== u && R, u += "", (!e || !a(e, u)) && (i = _(u, R), e)) {
+        a = A;if (null != t && "boolean" != typeof t || (t = ""), "string" == typeof t || "number" == typeof t) return e && void 0 !== e.splitText && e.parentNode && (!e._component || r) ? e.nodeValue != t && (e.nodeValue = t) : (i = document.createTextNode(t), e && (e.parentNode && e.parentNode.replaceChild(i, e), m(e, !0))), i.__preactattr_ = !0, i;var s = t.nodeName;if ("function" == typeof s) return x(e, t, n, o);if (A = "svg" === s || "foreignObject" !== s && A, s += "", (!e || !l(e, s)) && (i = p(s, A), e)) {
       while (e.firstChild) {
         i.appendChild(e.firstChild);
-      }e.parentNode && e.parentNode.replaceChild(i, e), b(e, !0);
-    }var p = i.firstChild,
+      }e.parentNode && e.parentNode.replaceChild(i, e), m(e, !0);
+    }var u = i.firstChild,
         c = i.__preactattr_,
-        s = t.children;if (null == c) {
-      c = i.__preactattr_ = {};for (var f = i.attributes, d = f.length; d--;) {
-        c[f[d].name] = f[d].value;
+        _ = t.children;if (null == c) {
+      c = i.__preactattr_ = {};for (var d = i.attributes, f = d.length; f--;) {
+        c[d[f].name] = d[f].value;
       }
-    }return !j && s && 1 === s.length && "string" == typeof s[0] && null != p && void 0 !== p.splitText && null == p.nextSibling ? p.nodeValue != s[0] && (p.nodeValue = s[0]) : (s && s.length || null != p) && v(i, s, n, o, j || null != c.dangerouslySetInnerHTML), g(i, t.attributes, c), R = l, i;
-  }function v(e, t, n, o, r) {
-    var i,
+    }return !H && _ && 1 === _.length && "string" == typeof _[0] && null != u && void 0 !== u.splitText && null == u.nextSibling ? u.nodeValue != _[0] && (u.nodeValue = _[0]) : (_ && _.length || null != u) && h(i, _, n, o, H || null != c.dangerouslySetInnerHTML), b(i, t.attributes, c), A = a, i;
+  }function h(e, t, n, o, r) {
+    var l,
         a,
+        p,
         u,
-        _,
         c,
-        s = e.childNodes,
-        f = [],
-        d = {},
-        h = 0,
+        _ = e.childNodes,
+        d = [],
+        h = {},
         v = 0,
-        y = s.length,
+        b = 0,
+        y = _.length,
         g = 0,
         w = t ? t.length : 0;if (0 !== y) for (var C = 0; C < y; C++) {
-      var x = s[C],
+      var x = _[C],
           N = x.__preactattr_,
-          k = w && N ? x._component ? x._component.__k : N.key : null;null != k ? (h++, d[k] = x) : (N || (void 0 !== x.splitText ? !r || x.nodeValue.trim() : r)) && (f[g++] = x);
+          k = w && N ? x._component ? x._component.__k : N.key : null;null != k ? (v++, h[k] = x) : (N || (void 0 !== x.splitText ? !r || x.nodeValue.trim() : r)) && (d[g++] = x);
     }if (0 !== w) for (var C = 0; C < w; C++) {
-      _ = t[C], c = null;var k = _.key;if (null != k) h && void 0 !== d[k] && (c = d[k], d[k] = void 0, h--);else if (!c && v < g) for (i = v; i < g; i++) {
-        if (void 0 !== f[i] && l(a = f[i], _, r)) {
-          c = a, f[i] = void 0, i === g - 1 && g--, i === v && v++;break;
+      u = t[C], c = null;var k = u.key;if (null != k) v && void 0 !== h[k] && (c = h[k], h[k] = void 0, v--);else if (b < g) for (l = b; l < g; l++) {
+        if (void 0 !== d[l] && i(a = d[l], u, r)) {
+          c = a, d[l] = void 0, l === g - 1 && g--, l === b && b++;break;
         }
-      }c = m(c, _, n, o), u = s[C], c && c !== e && c !== u && (null == u ? e.appendChild(c) : c === u.nextSibling ? p(u) : e.insertBefore(c, u));
-    }if (h) for (var C in d) {
-      void 0 !== d[C] && b(d[C], !1);
-    }while (v <= g) {
-      void 0 !== (c = f[g--]) && b(c, !1);
+      }c = f(c, u, n, o), p = _[C], c && c !== e && c !== p && (null == p ? e.appendChild(c) : c === p.nextSibling ? s(p) : e.insertBefore(c, p));
+    }if (v) for (var C in h) {
+      void 0 !== h[C] && m(h[C], !1);
+    }while (b <= g) {
+      void 0 !== (c = d[g--]) && m(c, !1);
     }
-  }function b(e, t) {
-    var n = e._component;n ? L(n) : (null != e.__preactattr_ && e.__preactattr_.ref && e.__preactattr_.ref(null), !1 !== t && null != e.__preactattr_ || p(e), y(e));
-  }function y(e) {
+  }function m(e, t) {
+    var n = e._component;n ? N(n) : (null != e.__preactattr_ && e.__preactattr_.ref && e.__preactattr_.ref(null), !1 !== t && null != e.__preactattr_ || s(e), v(e));
+  }function v(e) {
     e = e.lastChild;while (e) {
-      var t = e.previousSibling;b(e, !0), e = t;
+      var t = e.previousSibling;m(e, !0), e = t;
     }
-  }function g(e, t, n) {
+  }function b(e, t, n) {
     var o;for (o in n) {
-      t && null != t[o] || null == n[o] || c(e, o, n[o], n[o] = void 0, R);
+      t && null != t[o] || null == n[o] || u(e, o, n[o], n[o] = void 0, A);
     }for (o in t) {
-      "children" === o || "innerHTML" === o || o in n && t[o] === ("value" === o || "checked" === o ? e[o] : n[o]) || c(e, o, n[o], n[o] = t[o], R);
+      "children" === o || "innerHTML" === o || o in n && t[o] === ("value" === o || "checked" === o ? e[o] : n[o]) || u(e, o, n[o], n[o] = t[o], A);
     }
-  }function w(e) {
-    var t = e.constructor.name;(I[t] || (I[t] = [])).push(e);
-  }function C(e, t, n) {
+  }function y(e, t, n) {
     var o,
-        r = I[e.name];if (e.prototype && e.prototype.render ? (o = new e(t, n), T.call(o, t, n)) : (o = new T(t, n), o.constructor = e, o.render = x), r) for (var i = r.length; i--;) {
-      if (r[i].constructor === e) {
-        o.__b = r[i].__b, r.splice(i, 1);break;
-      }
+        r = B.length;e.prototype && e.prototype.render ? (o = new e(t, n), k.call(o, t, n)) : (o = new k(t, n), o.constructor = e, o.render = g);while (r--) {
+      if (B[r].constructor === e) return o.__b = B[r].__b, B.splice(r, 1), o;
     }return o;
-  }function x(e, t, n) {
+  }function g(e, t, n) {
     return this.constructor(e, n);
-  }function N(e, t, n, o, i) {
-    e.__x || (e.__x = !0, (e.__r = t.ref) && delete t.ref, (e.__k = t.key) && delete t.key, !e.base || i ? e.componentWillMount && e.componentWillMount() : e.componentWillReceiveProps && e.componentWillReceiveProps(t, o), o && o !== e.context && (e.__c || (e.__c = e.context), e.context = o), e.__p || (e.__p = e.props), e.props = t, e.__x = !1, 0 !== n && (1 !== n && !1 === S.syncComponentUpdates && e.base ? r(e) : k(e, 1, i)), e.__r && e.__r(e));
-  }function k(e, t, o, r) {
+  }function w(e, t, n, r, i) {
+    e.__x || (e.__x = !0, e.__r = t.ref, e.__k = t.key, delete t.ref, delete t.key, void 0 === e.constructor.getDerivedStateFromProps && (!e.base || i ? e.componentWillMount && e.componentWillMount() : e.componentWillReceiveProps && e.componentWillReceiveProps(t, r)), r && r !== e.context && (e.__c || (e.__c = e.context), e.context = r), e.__p || (e.__p = e.props), e.props = t, e.__x = !1, 0 !== n && (1 !== n && !1 === L.syncComponentUpdates && e.base ? o(e) : C(e, 1, i)), e.__r && e.__r(e));
+  }function C(e, n, o, r) {
     if (!e.__x) {
       var i,
           l,
-          a,
-          _ = e.props,
-          p = e.state,
+          p,
+          s = e.props,
+          u = e.state,
           c = e.context,
-          s = e.__p || _,
-          f = e.__s || p,
-          m = e.__c || c,
-          v = e.base,
-          y = e.__b,
-          g = v || y,
-          w = e._component,
-          x = !1;if (v && (e.props = s, e.state = f, e.context = m, 2 !== t && e.shouldComponentUpdate && !1 === e.shouldComponentUpdate(_, p, c) ? x = !0 : e.componentWillUpdate && e.componentWillUpdate(_, p, c), e.props = _, e.state = p, e.context = c), e.__p = e.__s = e.__c = e.__b = null, e.__d = !1, !x) {
-        i = e.render(_, p, c), e.getChildContext && (c = n(n({}, c), e.getChildContext()));var U,
-            T,
-            M = i && i.nodeName;if ("function" == typeof M) {
-          var W = u(i);l = w, l && l.constructor === M && W.key == l.__k ? N(l, W, 1, c, !1) : (U = l, e._component = l = C(M, W, c), l.__b = l.__b || y, l.__u = e, N(l, W, 0, c, !1), k(l, 1, o, !0)), T = l.base;
-        } else a = g, U = w, U && (a = e._component = null), (g || 1 === t) && (a && (a._component = null), T = h(a, i, c, o || !v, g && g.parentNode, !0));if (g && T !== g && l !== w) {
-          var E = g.parentNode;E && T !== E && (E.replaceChild(T, g), U || (g._component = null, b(g, !1)));
-        }if (U && L(U), e.base = T, T && !r) {
-          var P = e,
-              V = e;while (V = V.__u) {
-            (P = V).base = T;
-          }T._component = P, T._componentConstructor = P.constructor;
+          f = e.__p || s,
+          h = e.__s || u,
+          v = e.__c || c,
+          b = e.base,
+          g = e.__b,
+          x = b || g,
+          k = e._component,
+          U = !1,
+          S = v;if (e.constructor.getDerivedStateFromProps && (u = t(t({}, u), e.constructor.getDerivedStateFromProps(s, u)), e.state = u), b && (e.props = f, e.state = h, e.context = v, 2 !== n && e.shouldComponentUpdate && !1 === e.shouldComponentUpdate(s, u, c) ? U = !0 : e.componentWillUpdate && e.componentWillUpdate(s, u, c), e.props = s, e.state = u, e.context = c), e.__p = e.__s = e.__c = e.__b = null, e.__d = !1, !U) {
+        i = e.render(s, u, c), e.getChildContext && (c = t(t({}, c), e.getChildContext())), b && e.getSnapshotBeforeUpdate && (S = e.getSnapshotBeforeUpdate(f, h));var T,
+            M,
+            P = i && i.nodeName;if ("function" == typeof P) {
+          var W = a(i);l = k, l && l.constructor === P && W.key == l.__k ? w(l, W, 1, c, !1) : (T = l, e._component = l = y(P, W, c), l.__b = l.__b || g, l.__u = e, w(l, W, 0, c, !1), C(l, 1, o, !0)), M = l.base;
+        } else p = x, T = k, T && (p = e._component = null), (x || 1 === n) && (p && (p._component = null), M = d(p, i, c, o || !b, x && x.parentNode, !0));if (x && M !== x && l !== k) {
+          var D = x.parentNode;D && M !== D && (D.replaceChild(M, x), T || (x._component = null, m(x, !1)));
+        }if (T && N(T), e.base = M, M && !r) {
+          var A = e,
+              H = e;while (H = H.__u) {
+            (A = H).base = M;
+          }M._component = A, M._componentConstructor = A.constructor;
         }
-      }if (!v || o ? D.unshift(e) : x || (e.componentDidUpdate && e.componentDidUpdate(s, f, m), S.afterUpdate && S.afterUpdate(e)), null != e.__h) while (e.__h.length) {
+      }!b || o ? E.unshift(e) : U || (e.componentDidUpdate && e.componentDidUpdate(f, h, S), L.afterUpdate && L.afterUpdate(e));while (e.__h.length) {
         e.__h.pop().call(e);
-      }H || r || d();
+      }V || r || _();
     }
-  }function U(e, t, n, o) {
+  }function x(e, t, n, o) {
     var r = e && e._component,
         i = r,
         l = e,
-        a = r && e._componentConstructor === t.nodeName,
-        _ = a,
-        p = u(t);while (r && !_ && (r = r.__u)) {
-      _ = r.constructor === t.nodeName;
-    }return r && _ && (!o || r._component) ? (N(r, p, 3, n, o), e = r.base) : (i && !a && (L(i), e = l = null), r = C(t.nodeName, p, n), e && !r.__b && (r.__b = e, l = null), N(r, p, 1, n, o), e = r.base, l && e !== l && (l._component = null, b(l, !1))), e;
-  }function L(e) {
-    S.beforeUnmount && S.beforeUnmount(e);var t = e.base;e.__x = !0, e.componentWillUnmount && e.componentWillUnmount(), e.base = null;var n = e._component;n ? L(n) : t && (t.__preactattr_ && t.__preactattr_.ref && t.__preactattr_.ref(null), e.__b = t, p(t), w(e), y(t)), e.__r && e.__r(null);
-  }function T(e, t) {
-    this.__d = !0, this.context = t, this.props = e, this.state = this.state || {};
-  }function M(e, t, n) {
-    return h(n, e, {}, !1, t, !1);
-  }var S = {},
-      W = [],
-      E = [],
+        p = r && e._componentConstructor === t.nodeName,
+        s = p,
+        u = a(t);while (r && !s && (r = r.__u)) {
+      s = r.constructor === t.nodeName;
+    }return r && s && (!o || r._component) ? (w(r, u, 3, n, o), e = r.base) : (i && !p && (N(i), e = l = null), r = y(t.nodeName, u, n), e && !r.__b && (r.__b = e, l = null), w(r, u, 1, n, o), e = r.base, l && e !== l && (l._component = null, m(l, !1))), e;
+  }function N(e) {
+    L.beforeUnmount && L.beforeUnmount(e);var t = e.base;e.__x = !0, e.componentWillUnmount && e.componentWillUnmount(), e.base = null;var n = e._component;n ? N(n) : t && (t.__preactattr_ && t.__preactattr_.ref && t.__preactattr_.ref(null), e.__b = t, s(t), B.push(e), v(t)), e.__r && e.__r(null);
+  }function k(e, t) {
+    this.__d = !0, this.context = t, this.props = e, this.state = this.state || {}, this.__h = [];
+  }function U(e, t, n) {
+    return d(n, e, {}, !1, t, !1);
+  }var S = function S() {},
+      L = {},
+      T = [],
+      M = [],
       P = "function" == typeof Promise ? Promise.resolve().then.bind(Promise.resolve()) : setTimeout,
-      V = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,
-      A = [],
+      W = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,
       D = [],
-      H = 0,
-      R = !1,
-      j = !1,
-      I = {};n(T.prototype, { setState: function setState(e, t) {
-      var o = this.state;this.__s || (this.__s = n({}, o)), n(o, "function" == typeof e ? e(o, this.props) : e), t && (this.__h = this.__h || []).push(t), r(this);
+      E = [],
+      V = 0,
+      A = !1,
+      H = !1,
+      B = [];t(k.prototype, { setState: function setState(e, n) {
+      this.__s || (this.__s = this.state), this.state = t(t({}, this.state), "function" == typeof e ? e(this.state, this.props) : e), n && this.__h.push(n), o(this);
     }, forceUpdate: function forceUpdate(e) {
-      e && (this.__h = this.__h || []).push(e), k(this, 2);
-    }, render: function render() {} });var $ = { h: t, createElement: t, cloneElement: o, Component: T, render: M, rerender: i, options: S }; true ? module.exports = $ : self.preact = $;
+      e && this.__h.push(e), C(this, 2);
+    }, render: function render() {} });var F = { h: e, createElement: e, cloneElement: n, Component: k, render: U, rerender: r, options: L }; true ? module.exports = F : self.preact = F;
 }();
 //# sourceMappingURL=preact.min.js.map
 
@@ -5388,6 +5461,13 @@ function isArrayLike(value) {
 }
 
 module.exports = isArrayLike;
+
+/***/ }),
+
+/***/ "LSAK":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "cd75a822f96b293ad970d9ed6a34149d.png";
 
 /***/ }),
 
@@ -5659,6 +5739,13 @@ module.exports = baseUnary;
 
 /***/ }),
 
+/***/ "Qk8Z":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e1ea82cb1c39656b925012efe60f22ea.png";
+
+/***/ }),
+
 /***/ "QmqX":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5696,6 +5783,13 @@ function isIterateeCall(value, index, object) {
 }
 
 module.exports = isIterateeCall;
+
+/***/ }),
+
+/***/ "R91j":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "65a57caddbed6faeb5b0983ab6d6b359.png";
 
 /***/ }),
 
@@ -5747,13 +5841,6 @@ function baseIndexOf(array, value, fromIndex) {
 }
 
 module.exports = baseIndexOf;
-
-/***/ }),
-
-/***/ "S03M":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -7532,6 +7619,13 @@ module.exports = baseAssignValue;
 
 /***/ }),
 
+/***/ "dNMX":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e04fb0087292ce1b22833a6a4dd3ee82.png";
+
+/***/ }),
+
 /***/ "dRuq":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8119,6 +8213,13 @@ module.exports = defineProperty;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "abd2410829a9aeb07e6d204107d8a838.png";
+
+/***/ }),
+
+/***/ "kuEt":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "8ab615545354a59db3ed4a838e4f4b76.png";
 
 /***/ }),
 
@@ -9801,26 +9902,33 @@ module.exports = listCacheHas;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./Go.png": "7sTX",
+	"./auto-close-tag.png": "R91j",
 	"./auto-rename-tag.png": "qMb6",
 	"./ayu.png": "pZJ7",
 	"./better-comments.png": "XwFc",
 	"./bracket-pair-colorizer.png": "8kPM",
 	"./code-spell-checker.png": "/uVk",
+	"./debugger-for-chrome.png": "kuEt",
 	"./es7-react-js-snippets.png": "EKTW",
 	"./flow-for-vscode.png": "+af4",
 	"./gc-excelviewer.png": "M/IF",
 	"./gitlens.png": "m9AN",
+	"./graphql-for-vscode.png": "7Dak",
 	"./graphql.svg": "SA0F",
 	"./java.png": "83Dg",
 	"./latex-support.png": "5q/H",
+	"./latex-workshop.png": "LSAK",
 	"./material-icon-theme.png": "onNr",
 	"./node-debug2.png": "uBHo",
+	"./path-autocomplete.png": "dNMX",
 	"./path-intellisense.png": "XkPx",
 	"./prettier-vscode.png": "zOv4",
 	"./python.png": "AoNO",
 	"./reasonml.png": "L5mU",
 	"./regex.png": "pfsb",
 	"./sublime-keybindings.png": "8C03",
+	"./vetur.png": "Qk8Z",
 	"./vscode-code-outline.png": "Zq9j",
 	"./vscode-docker.png": "9MfR",
 	"./vscode-eslint.png": "cLAf",
@@ -9896,6 +10004,13 @@ function assocIndexOf(array, key) {
 }
 
 module.exports = assocIndexOf;
+
+/***/ }),
+
+/***/ "yG2p":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -10001,7 +10116,7 @@ module.exports = baseMatchesProperty;
 /***/ "zI0X":
 /***/ (function(module, exports) {
 
-module.exports = [{"id":"auto-rename-tag","name":"Auto Rename Tag","description":"Auto rename paired HTML/XML tag","icon":"auto-rename-tag.png","sources":{"github":"https://github.com/formulahendry/vscode-auto-rename-tag.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"}},{"id":"ayu","name":"Ayu","description":"A simple theme with bright colors and comes in three versions — dark, light and mirage for all day long comfortable work.","icon":"ayu.png","sources":{"github":"https://github.com/jsenjoy/vscode-ayu","marketplace":"https://marketplace.visualstudio.com/items?itemName=teabyii.ayu"}},{"id":"better-comments","name":"Better Comments","description":"Improve your code commenting by annotating with alert, informational, TODOs, and more!","icon":"better-comments.png","sources":{"github":"https://github.com/aaron-bond/better-comments","marketplace":"https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments"}},{"id":"bracket-pair-colorizer","name":"Bracket Pair Colorizer","description":"A customizable extension for colorizing matching brackets","icon":"bracket-pair-colorizer.png","sources":{"github":"https://github.com/CoenraadS/BracketPair","marketplace":"https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"}},{"id":"vscode-code-outline","name":"Code Outline","description":"A code outline tree provider for VSCode","icon":"vscode-code-outline.png","sources":{"github":"https://github.com/patrys/vscode-code-outline","marketplace":"https://marketplace.visualstudio.com/items?itemName=patrys.vscode-code-outline"}},{"id":"code-spell-checker","name":"Code Spell Checker","description":"Spelling checker for source code","icon":"code-spell-checker.png","sources":{"github":"https://github.com/Jason-Rev/vscode-spell-checker","marketplace":"https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"}},{"id":"vscode-docker","name":"Docker","description":"Adds syntax highlighting, commands, hover tips, and linting for Dockerfile and docker-compose files.","icon":"vscode-docker.png","sources":{"github":"https://github.com/microsoft/vscode-docker.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker"}},{"id":"es7-react-js-snippets","name":"ES7 React/Redux/GraphQL/React-Native snippets","description":"Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax","icon":"es7-react-js-snippets.png","sources":{"github":"https://github.com/dsznajder/vscode-es7-javascript-react-snippets","marketplace":"https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets"}},{"id":"vscode-eslint","name":"ESLint","description":"Integrates ESLint JavaScript into VS Code.","icon":"vscode-eslint.png","sources":{"github":"https://github.com/Microsoft/vscode-eslint.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint"}},{"id":"gc-excelviewer","name":"Excel Viewer","description":"View Excel spreadsheets and CSV files within Visual Studio Code workspaces.","icon":"gc-excelviewer.png","sources":{"github":"https://github.com/jjuback/gc-excelviewer.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer"}},{"id":"flow-for-vscode","name":"Flow Language Support","description":"Flow support for VS Code","icon":"flow-for-vscode.png","sources":{"github":"https://github.com/flowtype/flow-for-vscode.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode"}},{"id":"vscode-language-pack-fr","name":"French Language Pack for Visual Studio Code","description":"Language pack extension for French","icon":"vscode-language-pack-fr.png","sources":{"github":"https://github.com/Microsoft/vscode-loc","marketplace":"https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr"}},{"id":"gitlens","name":"GitLens — Git supercharged","description":"Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more","icon":"gitlens.png","sources":{"github":"https://github.com/eamodio/vscode-gitlens.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"}},{"id":"graphql","name":"GraphQL","description":"Syntax highlighting for GraphQL queries and schemas","icon":"graphql.svg","sources":{"github":"https://github.com/apollostack/vscode-graphql.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=mquandalle.graphql"}},{"id":"vscode-import-cost","name":"Import Cost","description":"Display import/require package size in the editor","icon":"vscode-import-cost.png","sources":{"github":"https://github.com/wix/import-cost.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost"}},{"id":"latex-support","name":"LaTeX language support","description":"LaTeX language support for Visual Studio Code","icon":"latex-support.png","sources":{"github":"https://github.com/ProAdd-ons/vscode-LaTeX-support","marketplace":"https://marketplace.visualstudio.com/items?itemName=torn4dom4n.latex-support"}},{"id":"java","name":"Language Support for Java(TM) by Red Hat","description":"Java Linting, Intellisense, formatting, refactoring, Maven/Gradle support and more...","icon":"java.png","sources":{"github":"https://github.com/redhat-developer/vscode-java","marketplace":"https://marketplace.visualstudio.com/items?itemName=redhat.java"}},{"id":"material-icon-theme","name":"Material Icon Theme","description":"Material Design Icons for Visual Studio Code","icon":"material-icon-theme.png","sources":{"github":"https://github.com/PKief/vscode-material-icon-theme.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"}},{"id":"vscode-mermaid-preview","name":"Mermaid Preview","description":"Previews Mermaid diagrams in Visual Studio Code","icon":"vscode-mermaid-preview.png","sources":{"github":"https://github.com/vstirbu/vscode-mermaid-preview.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview"}},{"id":"node-debug2","name":"Node Debug 2","description":"%extension.description%","icon":"node-debug2.png","sources":{"github":"https://github.com/Microsoft/vscode-node-debug2.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vscode.node-debug2"}},{"id":"reasonml","name":"OCaml and Reason IDE","description":"OCaml and Reason language support","icon":"reasonml.png","sources":{"github":"https://github.com/freebroccolo/vscode-reasonml.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=freebroccolo.reasonml"}},{"id":"path-intellisense","name":"Path Intellisense","description":"Visual Studio Code plugin that autocompletes filenames","icon":"path-intellisense.png","sources":{"github":"https://github.com/ChristianKohler/PathIntellisense.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"}},{"id":"prettier-vscode","name":"Prettier - Code formatter","description":"VS Code plugin for prettier/prettier","icon":"prettier-vscode.png","sources":{"github":"https://github.com/prettier/prettier-vscode.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"}},{"id":"python","name":"Python","description":"Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.","icon":"python.png","sources":{"github":"https://github.com/Microsoft/vscode-python","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-python.python"}},{"id":"vscode-react-native","name":"React Native Tools","description":"Code-hinting, debugging and integrated commands for React Native","icon":"vscode-react-native.png","sources":{"github":"https://github.com/Microsoft/vscode-react-native","marketplace":"https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native"}},{"id":"vscode-redux-devtools","name":"Redux DevTools","description":"vscode redux devtools wrapper","icon":"vscode-redux-devtools.png","sources":{"github":"https://github.com/jkzing/vscode-redux-devtools","marketplace":"https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools"}},{"id":"vscode-regexp-preivew","name":"RegExp Preview and Editor","description":"VSCode extension based on regexper-static","icon":"vscode-regexp-preivew.png","sources":{"github":"https://github.com/le0zh/vscode-regexp-preivew.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew"}},{"id":"regex","name":"Regex Previewer","description":"Regex matches previewer for JavaScript, TypeScript, PHP and Haxe in Visual Studio Code.","icon":"regex.png","sources":{"github":"https://github.com/chrmarti/vscode-regex.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=chrmarti.regex"}},{"id":"sublime-keybindings","name":"Sublime Text Keymap and Settings Importer","description":"Import Sublime Text settings and keybindings into VS Code.","icon":"sublime-keybindings.png","sources":{"github":"https://github.com/Microsoft/vscode-sublime-keybindings.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings"}},{"id":"vsliveshare","name":"VS Live Share","description":"Real-time collaborative development from the comfort of your favorite tools.","icon":"vsliveshare.png","sources":{"github":"https://github.com/MicrosoftDocs/live-share","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare"}},{"id":"xml-format","name":"XML Format","description":"Format XML documents","sources":{"github":"https://github.com/mikeburgh/vscode-xml-format.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=mikeburgh.xml-format"}}]
+module.exports = [{"id":"ejs-language-support","name":".ejs","description":"EJS language support for Visual Studio Code, generated from gregory-m's (github) TextMate bundle","icon":"https://cdn.vsassets.io/v/20180911T053002/_content/Header/default_icon.png","sources":{"marketplace":"https://marketplace.visualstudio.com/items?itemName=QassimFarid.ejs-language-support"}},{"id":"auto-close-tag","name":"Auto Close Tag","description":"Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text","icon":"auto-close-tag.png","sources":{"github":"https://github.com/formulahendry/vscode-auto-close-tag.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag"}},{"id":"auto-rename-tag","name":"Auto Rename Tag","description":"Auto rename paired HTML/XML tag","icon":"auto-rename-tag.png","sources":{"github":"https://github.com/formulahendry/vscode-auto-rename-tag.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"}},{"id":"ayu","name":"Ayu","description":"A simple theme with bright colors and comes in three versions — dark, light and mirage for all day long comfortable work.","icon":"ayu.png","sources":{"github":"https://github.com/jsenjoy/vscode-ayu","marketplace":"https://marketplace.visualstudio.com/items?itemName=teabyii.ayu"}},{"id":"better-comments","name":"Better Comments","description":"Improve your code commenting by annotating with alert, informational, TODOs, and more!","icon":"better-comments.png","sources":{"github":"https://github.com/aaron-bond/better-comments","marketplace":"https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments"}},{"id":"bracket-pair-colorizer","name":"Bracket Pair Colorizer","description":"A customizable extension for colorizing matching brackets","icon":"bracket-pair-colorizer.png","sources":{"github":"https://github.com/CoenraadS/BracketPair","marketplace":"https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"}},{"id":"code-spell-checker","name":"Code Spell Checker","description":"Spelling checker for source code","icon":"code-spell-checker.png","sources":{"github":"https://github.com/Jason-Rev/vscode-spell-checker","marketplace":"https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"}},{"id":"debugger-for-chrome","name":"Debugger for Chrome","description":"%extension.description%","icon":"debugger-for-chrome.png","sources":{"github":"https://github.com/Microsoft/vscode-chrome-debug","marketplace":"https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome"}},{"id":"es7-react-js-snippets","name":"ES7 React/Redux/GraphQL/React-Native snippets","description":"Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax","icon":"es7-react-js-snippets.png","sources":{"github":"https://github.com/dsznajder/vscode-es7-javascript-react-snippets","marketplace":"https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets"}},{"id":"vscode-eslint","name":"ESLint","description":"Integrates ESLint JavaScript into VS Code.","icon":"vscode-eslint.png","sources":{"github":"https://github.com/Microsoft/vscode-eslint.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint"}},{"id":"gc-excelviewer","name":"Excel Viewer","description":"View Excel spreadsheets and CSV files within Visual Studio Code workspaces.","icon":"gc-excelviewer.png","sources":{"github":"https://github.com/jjuback/gc-excelviewer.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer"}},{"id":"vscode-language-pack-fr","name":"French Language Pack for Visual Studio Code","description":"Language pack extension for French","icon":"vscode-language-pack-fr.png","sources":{"github":"https://github.com/Microsoft/vscode-loc","marketplace":"https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr"}},{"id":"Go","name":"Go","description":"Rich Go language support for Visual Studio Code","icon":"Go.png","sources":{"github":"https://github.com/Microsoft/vscode-go.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go"}},{"id":"graphql-for-vscode","name":"GraphQL for VSCode","description":"GraphQL syntax highlighting, linting, auto-complete, and more!","icon":"graphql-for-vscode.png","sources":{"github":"https://github.com/kumarharsh/graphql-for-vscode.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode"}},{"id":"vscode-import-cost","name":"Import Cost","description":"Display import/require package size in the editor","icon":"vscode-import-cost.png","sources":{"github":"https://github.com/wix/import-cost.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost"}},{"id":"latex-workshop","name":"LaTeX Workshop","description":"Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more.","icon":"latex-workshop.png","sources":{"github":"https://github.com/James-Yu/LaTeX-Workshop.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop"}},{"id":"material-icon-theme","name":"Material Icon Theme","description":"Material Design Icons for Visual Studio Code","icon":"material-icon-theme.png","sources":{"github":"https://github.com/PKief/vscode-material-icon-theme.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"}},{"id":"path-autocomplete","name":"Path Autocomplete","description":"Provides path completion for visual studio code.","icon":"path-autocomplete.png","sources":{"github":"https://github.com/ionutvmi/path-autocomplete","marketplace":"https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete"}},{"id":"prettier-vscode","name":"Prettier - Code formatter","description":"VS Code plugin for prettier/prettier","icon":"prettier-vscode.png","sources":{"github":"https://github.com/prettier/prettier-vscode.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"}},{"id":"vscode-regexp-preivew","name":"RegExp Preview and Editor","description":"VSCode extension based on regexper-static","icon":"vscode-regexp-preivew.png","sources":{"github":"https://github.com/le0zh/vscode-regexp-preivew.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew"}},{"id":"regex","name":"Regex Previewer","description":"Regex matches previewer for JavaScript, TypeScript, PHP and Haxe in Visual Studio Code.","icon":"regex.png","sources":{"github":"https://github.com/chrmarti/vscode-regex.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=chrmarti.regex"}},{"id":"vsliveshare","name":"VS Live Share","description":"Real-time collaborative development from the comfort of your favorite tools.","icon":"vsliveshare.png","sources":{"github":"https://github.com/MicrosoftDocs/live-share","marketplace":"https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare"}},{"id":"vetur","name":"Vetur","description":"Vue tooling for VS Code","icon":"vetur.png","sources":{"github":"https://github.com/vuejs/vetur.git","marketplace":"https://marketplace.visualstudio.com/items?itemName=octref.vetur"}}]
 
 /***/ }),
 
