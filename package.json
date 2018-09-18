@@ -3,6 +3,10 @@
   "name": "ayc0-github-stuff",
   "version": "0.2.5",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ayc0/stuff.git"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn -s serve || yarn -s dev",
     "serve": "yarn -s build:preact && preact serve",
