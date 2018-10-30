@@ -1,5 +1,5 @@
 import View from '%/components/View';
-import Extensions from '%/components/Extensions';
+import Extensions from '%/containers/Extensions';
 
 export const name = 'Ayc0 - VS Code extensions';
 

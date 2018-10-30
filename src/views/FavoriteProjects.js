@@ -1,5 +1,5 @@
 import View from '%/components/View';
-import FavoriteProjects from '%/components/FavoriteProjects';
+import FavoriteProjects from '%/containers/FavoriteProjects';
 
 export const name = 'Ayc0 - Packages browser';
 
