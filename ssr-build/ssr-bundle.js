@@ -5175,10 +5175,6 @@ var Extensions_view = function view() {
 
 
 
-var views_r = function r(url) {
-  return (typeof window !== 'undefined' ? window.defaultPath : global.defaultPath) + url;
-};
-
 var cssRow = /*#__PURE__*/index_esm_css({
   background: 'linear-gradient(180deg, ' + getColor('background-d3') + ', rgba(0,0,0,0))',
   width: '100%',
@@ -5200,7 +5196,7 @@ var views_A = function A(props) {
     match["Link"],
     {
       className: index_esm_css(cssA) + ' link',
-      activeClassName: 'active', href: views_r(props.href) },
+      activeClassName: 'active', href: props.href },
     Object(preact_min["h"])(
       react_only_preact_es,
       { on: 'mdUp' },
@@ -5216,13 +5212,13 @@ var views_A = function A(props) {
 
 var views__ref = Object(preact_min["h"])(
   views_A,
-  { href: 'projects' },
+  { href: '/projects' },
   'Favorite Projects'
 );
 
 var views__ref2 = Object(preact_min["h"])(
   views_A,
-  { href: 'extensions' },
+  { href: '/extensions' },
   'VSCode extensions'
 );
 
@@ -5240,18 +5236,18 @@ var views_Header = function Header() {
   );
 };
 
-var views__ref3 = Object(preact_min["h"])(views_FavoriteProjects, { 'default': true });
+var views__ref3 = Object(preact_min["h"])(
+  preact_router_es["default"],
+  null,
+  Object(preact_min["h"])(views_FavoriteProjects, { 'default': true }),
+  Object(preact_min["h"])(views_Extensions, { path: '/extensions' })
+);
 
-var views_Routes = function Routes() {
-  return Object(preact_min["h"])(
-    preact_router_es["default"],
-    null,
-    views__ref3,
-    Object(preact_min["h"])(views_Extensions, { path: views_r('extensions') })
-  );
+var Routes = function Routes() {
+  return views__ref3;
 };
 
-/* harmony default export */ var views = (views_Routes);
+/* harmony default export */ var views = (Routes);
 // EXTERNAL MODULE: ./App.scss
 var App = __webpack_require__("yG2p");
 var App_default = /*#__PURE__*/__webpack_require__.n(App);
