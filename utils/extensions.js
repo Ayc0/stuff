@@ -15,10 +15,10 @@ const filter = array => sortBy(uniqBy(array.filter(Boolean), 'name'), 'name');
 const outPath = path.resolve(__dirname, '../src/utils/extensions/');
 const iconFolder = path.join(outPath, 'icons/');
 
-const copy = (filename, name) => {
-  const imgName = name + path.extname(filename);
+const copy = (fileName, name) => {
+  const imgName = name + path.extname(fileName);
   const outImgPath = path.join(iconFolder, imgName);
-  fs.copyFileSync(filename, outImgPath);
+  fs.copyFileSync(fileName, outImgPath);
   return imgName;
 };
 
@@ -35,7 +35,7 @@ const extensions = filter(
 
     const id = packageJson.name;
     const name = packageJson.displayName || id;
-    let description = packageJson.description;
+    const description = packageJson.description;
 
     let github;
     if (packageJson.repository) {

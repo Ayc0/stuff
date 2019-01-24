@@ -32,13 +32,18 @@
       ],
       "react/jsx-indent-props": "off",
       "react/jsx-no-bind": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "16.0"
+      }
     }
   },
   "eslintIgnore": [
     "build/*"
   ],
   "devDependencies": {
-    "babel-plugin-emotion": "^9.2.4",
+    "babel-plugin-emotion": "^9.2.11",
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
     "identity-obj-proxy": "^3.0.0",
@@ -46,16 +51,17 @@
     "preact-cli": "^2.1.0"
   },
   "dependencies": {
-    "@libshin/lazy-image": "^0.2.1",
-    "emotion": "^9.2.4",
-    "fuse.js": "^3.2.1",
-    "joi": "^13.4.0",
+    "@libshin/lazy-image": "^0.3.1",
+    "emotion": "^9.2.12",
+    "fuse.js": "^3.3.0",
+    "joi": "^14.0.2",
     "lodash": "^4.17.10",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.4",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
-    "preact-emotion": "^9.2.4",
+    "preact-emotion": "^9.2.12",
     "preact-router": "^2.5.7",
+    "react-only": "^0.8.0",
     "sass-loader": "^7.0.3"
   }
 }

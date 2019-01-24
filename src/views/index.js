@@ -2,6 +2,7 @@ import { h } from 'preact';
 import Router from 'preact-router';
 import { Link } from 'preact-router/match';
 import { css } from 'emotion';
+import Only from 'react-only/preact';
 
 import Row from '%/components/Row';
 import { getColor } from '%/utils/colors';
@@ -29,7 +30,8 @@ const cssA = css({
 
 const A = props => (
   <Link className="link" css={cssA} activeClassName="active" href={r(props.href)}>
-    {props.children}
+    <Only on="mdUp">{props.children}</Only>
+    <Only on="smDown">{props.children}</Only>
   </Link>
 );
 
