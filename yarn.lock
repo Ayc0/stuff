@@ -7424,10 +7424,10 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-only@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/react-only/-/react-only-0.8.0.tgz#98186ea62d8edbcf54d2de63098411d93dbd1679"
-  integrity sha512-Q3JvrjtvIQ04soNua+m+0PPK06j8f38VpjoOdaW/HQ4d6P1I8W1LvpWyeCIdf0sPoSwwD6GJRuC7trrdSOluvA==
+react-only@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-only/-/react-only-0.8.3.tgz#aa660852386b3aebac0e5ec009959d0ace6144e7"
+  integrity sha512-R8Pjmlgxvutgt9TUwLrbAcBrRNxJS+cYy9CWz6n5IFgBucS/k4w2nkuKBrmjEzSn1K2hUlLlZSUJirv0YXiBWw==
 
 read-all-stream@^3.0.0:
   version "3.1.0"
