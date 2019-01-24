@@ -68,8 +68,7 @@
     },
     "language": "Python",
     "keywords": ["array", "vector"],
-    "description":
-      "NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."
+    "description": "NumPy is a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without sacrificing too much speed for small multi-dimensional arrays. NumPy is built on the Numeric code base and adds features introduced by numarray as well as an extended C-API and the ability to create arrays of arbitrary type which also makes NumPy suitable for interfacing with general-purpose data-base applications."
   },
   {
     "name": "Fuse.js",
@@ -121,8 +120,7 @@
     },
     "keywords": ["GQL", "API", "full-stack"],
     "language": "TypeScript",
-    "description":
-      "Apollo is a family of technologies you can incrementally add to your stack: Apollo Client to connect data to your UI, Apollo Engine for infrastructure and tooling, and Apollo Server to translate your REST API and backends into a GraphQL schema."
+    "description": "Apollo is a family of technologies you can incrementally add to your stack: Apollo Client to connect data to your UI, Apollo Engine for infrastructure and tooling, and Apollo Server to translate your REST API and backends into a GraphQL schema."
   },
   {
     "name": "Vibrant",
@@ -154,8 +152,7 @@
     },
     "keywords": ["jsx", "text editor"],
     "language": "JavaScript",
-    "description":
-      "Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences."
+    "description": "Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences."
   },
   {
     "name": "Styletron",
@@ -165,8 +162,7 @@
     },
     "keywords": ["CSS-in-JS", "atomic"],
     "language": "JavaScript",
-    "description":
-      "Styletron is completely un-opinionated about the shape of style objects. Styletron is made up of three key concepts: Styled components, Drivers, Rendering engines"
+    "description": "Styletron is completely un-opinionated about the shape of style objects. Styletron is made up of three key concepts: Styled components, Drivers, Rendering engines"
   },
   {
     "name": "Emotion",
@@ -176,19 +172,28 @@
     },
     "keywords": ["CSS-in-JS"],
     "language": "JavaScript",
-    "description":
-      "Emotion is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS."
+    "description": "Emotion is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS."
   },
   {
     "name": "SortableJS",
     "sources": {
-      "website": "http://cheton.github.io/react-sortable/",
+      "website": "http://sortablejs.github.io/react-sortablejs/",
       "github": "https://github.com/cheton/react-sortable",
       "npm": "https://www.npmjs.com/package/react-sortablejs"
     },
     "keywords": ["drag", "jsx"],
     "language": "JavaScript",
-    "description":
-      "Sortable is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices"
+    "description": "Sortable is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices"
+  },
+  {
+    "name": "React-DND",
+    "sources": {
+      "website": "http://react-dnd.github.io/react-dnd/",
+      "github": "https://github.com/react-dnd/react-dnd/",
+      "npm": "https://www.npmjs.com/package/react-dnd"
+    },
+    "keywords": ["drag", "jsx"],
+    "language": "JavaScript",
+    "description": "Drag and Drop for React"
   }
 ]
