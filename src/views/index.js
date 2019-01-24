@@ -10,8 +10,6 @@ import { getColor } from '%/utils/colors';
 import FavoriteProjects from './FavoriteProjects';
 import Extensions from './Extensions';
 
-const r = url => (typeof window !== 'undefined' ? window.defaultPath : global.defaultPath) + url;
-
 const cssRow = css({
   background: `linear-gradient(180deg, ${getColor('background-d3')}, rgba(0,0,0,0))`,
   width: '100%',
@@ -29,7 +27,7 @@ const cssA = css({
 });
 
 const A = props => (
-  <Link className="link" css={cssA} activeClassName="active" href={r(props.href)}>
+  <Link className="link" css={cssA} activeClassName="active" href={props.href}>
     <Only on="mdUp">{props.children}</Only>
     <Only on="smDown">{props.children}</Only>
   </Link>
@@ -38,8 +36,8 @@ const A = props => (
 export const Header = () => (
   <Row middle css={cssRow}>
     <Row right style={{ maxWidth: '900px', width: '100%' }}>
-      <A href="projects">Favorite Projects</A>
-      <A href="extensions">VSCode extensions</A>
+      <A href="/projects">Favorite Projects</A>
+      <A href="/extensions">VSCode extensions</A>
     </Row>
   </Row>
 );
@@ -47,7 +45,7 @@ export const Header = () => (
 const Routes = () => (
   <Router>
     <FavoriteProjects default />
-    <Extensions path={r('extensions')} />
+    <Extensions path="/extensions" />
   </Router>
 );
 
