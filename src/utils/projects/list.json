@@ -188,7 +188,7 @@
   {
     "name": "React-DND",
     "sources": {
-      "website": "http://react-dnd.github.io/react-dnd/",
+      "website": "http://react-dnd.github.io/react-dnd",
       "github": "https://github.com/react-dnd/react-dnd/",
       "npm": "https://www.npmjs.com/package/react-dnd"
     },
