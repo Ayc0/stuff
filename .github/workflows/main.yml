@@ -21,16 +21,17 @@ jobs:
         run: |
           yarn install
           yarn test
-          yarn build
-          yarn bump
 
       - name: Build 🏗
         run: |
           yarn build
-          yarn bump
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages
           folder: build
+
+      - name: Bump version 🏗
+        run: |
+          yarn bump
