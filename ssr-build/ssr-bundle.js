@@ -5212,13 +5212,13 @@ var views_A = function A(props) {
 
 var views__ref = Object(preact_min["h"])(
   views_A,
-  { href: '/projects' },
+  { href: '/stuff' },
   'Favorite Projects'
 );
 
 var views__ref2 = Object(preact_min["h"])(
   views_A,
-  { href: '/extensions' },
+  { href: '/stuff/extensions' },
   'VSCode extensions'
 );
 
@@ -5240,7 +5240,7 @@ var views__ref3 = Object(preact_min["h"])(
   preact_router_es["default"],
   null,
   Object(preact_min["h"])(views_FavoriteProjects, { 'default': true }),
-  Object(preact_min["h"])(views_Extensions, { path: '/extensions' })
+  Object(preact_min["h"])(views_Extensions, { path: '/stuff/extensions' })
 );
 
 var Routes = function Routes() {
