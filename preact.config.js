@@ -3,6 +3,10 @@ const path = require('path');
 // const findPluginsByName = (config, name) => config.plugins.filter(plugin => plugin.constructor.name === name);
 
 export default (config, env, helpers) => {
+  if (process.env.CI) {
+    config.output.publicPath = '/stuff/';
+  }
+
   // Find configs / plugins
   const babelConfig = helpers.getLoadersByName(config, 'babel-loader')[0].rule.options;
 
