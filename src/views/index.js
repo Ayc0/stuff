@@ -36,8 +36,8 @@ const A = props => (
 export const Header = () => (
   <Row middle css={cssRow}>
     <Row right style={{ maxWidth: '900px', width: '100%' }}>
-      <A href="/projects">Favorite Projects</A>
-      <A href="/extensions">VSCode extensions</A>
+      <A href="/stuff">Favorite Projects</A>
+      <A href="/stuff/extensions">VSCode extensions</A>
     </Row>
   </Row>
 );
@@ -45,7 +45,7 @@ export const Header = () => (
 const Routes = () => (
   <Router>
     <FavoriteProjects default />
-    <Extensions path="/extensions" />
+    <Extensions path="/stuff/extensions" />
   </Router>
 );
 
