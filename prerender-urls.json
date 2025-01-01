@@ -1,14 +1,14 @@
 [
   {
-    "url": "/stuff/",
+    "url": "/",
     "title": "Ayc0 - Packages browser"
   },
   {
-    "url": "/stuff/projects",
+    "url": "/projects",
     "title": "Ayc0 - Packages browser"
   },
   {
-    "url": "/stuff/extensions",
+    "url": "/extensions",
     "title": "Ayc0 - VS Code extensions"
   }
 ]
