@@ -21,7 +21,7 @@
     "test:projects": "node src/utils/projects/verify.test.js",
     "test": "yarn -s test:lint && yarn -s test:projects",
     "commit:tag": "git commit -am $npm_package_version && git tag $npm_package_version",
-    "bump:tag": "git add build && yarn -s commit:tag",
+    "bump:tag": "yarn -s commit:tag",
     "bump:bump_version": "node utils/bumpVersion.js",
     "bump": "yarn bump:bump_version && yarn bump:tag"
   },
